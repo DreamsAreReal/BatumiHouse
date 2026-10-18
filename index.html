@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173f35">
+<meta name="description" content="Подбор квартир в аренду в Батуми под ваш бюджет. Свяжитесь с Алексеем в Telegram.">
+<title>Квартира в Батуми — подбор аренды</title>
+<style>
+:root{--green:#173f35;--green2:#24594b;--cream:#f6f4ee;--ink:#202923;--muted:#68736c;--line:#e4e5dd;--white:#fff;--sand:#e8e1d2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{height:76px;display:flex;align-items:center;border-bottom:1px solid #ecece6;background:#fff}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:.02em;color:var(--green)}.brand-mark{display:grid;place-items:center;background:var(--green);color:white;width:38px;height:38px;border-radius:12px;font-size:19px}.brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.17em;color:var(--muted);margin-top:1px}.navlinks{display:flex;align-items:center;gap:26px;font-size:14px;color:#49564f}.navlinks a:hover{color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;font-size:14px;border:1px solid var(--green);transition:.2s;cursor:pointer}.btn:hover{background:var(--green2);transform:translateY(-1px)}.btn.light{background:#fff;color:var(--green);border-color:#d8dfd9}.btn.light:hover{background:#f4f7f4}.btn.small{padding:10px 15px;font-size:13px}
+.hero{background:var(--cream);padding:54px 0 62px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:var(--green);margin-bottom:18px}.dot{width:7px;height:7px;background:#c08b53;border-radius:50%}h1{font-size:clamp(38px,5vw,64px);line-height:1.04;letter-spacing:-.045em;margin:0 0 22px;font-weight:800;color:#1c3028}h1 em{font-style:normal;color:#718a78}.hero p{font-size:17px;color:#5b675f;max-width:490px;margin:0 0 28px}.hero-actions{display:flex;flex-wrap:wrap;gap:11px}.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:29px;color:#6c766f;font-size:12px}.trust span{display:flex;align-items:center;gap:7px}.trust b{color:var(--green);font-size:15px}.hero-photo{position:relative;min-height:410px;border-radius:24px;overflow:hidden;background:#d8ddd5}.hero-photo img{width:100%;height:430px;object-fit:cover;display:block}.photo-note{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.94);border-radius:15px;padding:14px 17px;box-shadow:0 8px 30px #172b2214}.photo-note strong{display:block;color:var(--green);font-size:16px}.photo-note small{color:var(--muted);font-size:12px}.floating-tag{position:absolute;right:16px;top:16px;background:#fff;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:700;color:var(--green)}
+section{padding:76px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px}.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:#8a7457;margin-bottom:9px}.section-head h2,.about h2,.contact h2{font-size:clamp(29px,3vw,42px);line-height:1.12;letter-spacing:-.035em;margin:0;color:#1d3028}.section-head p{max-width:400px;margin:0;color:var(--muted);font-size:14px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}.filter{display:inline-flex;align-items:center;gap:8px;border:1px solid #e4e5dd;background:linear-gradient(180deg,#fff 0%,#fbfbf8 100%);border-radius:16px;padding:12px 15px;font-size:14px;font-weight:650;color:#526158;cursor:pointer;box-shadow:0 2px 5px #203c2b08;transition:transform .18s,box-shadow .18s,border-color .18s}.filter:before{content:"$";display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#edf2ec;color:#24594b;font-size:13px;font-weight:850}.filter:hover{border-color:#b9c9bc;transform:translateY(-2px);box-shadow:0 7px 16px #203c2b10}.filter.active{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 7px 18px #173f3526}.filter.active:before{background:#ffffff24;color:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:19px;overflow:hidden;background:#fff;transition:.22s}.card:hover{transform:translateY(-4px);box-shadow:0 16px 35px #203c2b12}.card-img{height:220px;position:relative;background:#e9e7df;overflow:hidden}.card-img:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#142b2350);pointer-events:none}.card-img img{width:100%;height:100%;object-fit:cover;display:block}.sample-label{position:absolute;z-index:1;left:12px;top:12px;background:#fffdf5f2;border:1px solid #ffffffa8;border-radius:999px;padding:7px 11px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:#6b614c;box-shadow:0 4px 14px #172b2212}.card-body{padding:18px}.price{display:flex;align-items:center;gap:9px;font-size:26px;font-weight:850;letter-spacing:-.04em;color:var(--green)}.price:before{content:"$";display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:#eaf0e8;color:#24594b;font-size:17px;letter-spacing:0}.price small{margin-left:auto;background:#f5f5ef;border-radius:8px;padding:5px 7px;font-size:11px;font-weight:650;letter-spacing:0;color:var(--muted)}.price small{font-size:12px;font-weight:600;letter-spacing:0;color:var(--muted)}.card h3{font-size:18px;margin:7px 0 5px;letter-spacing:-.02em}.location{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}.features{display:flex;gap:14px;padding:14px 0 17px;margin-top:12px;border-top:1px solid #eeeee9;color:#626e66;font-size:12px}.card .btn{width:100%}.demo-note{margin-top:19px;font-size:12px;color:#777c74;background:#f8f7f2;padding:12px 15px;border-radius:10px}
+.why{background:#f7f6f1}.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}.why-item{padding:23px;border:1px solid #e5e5dc;border-radius:17px;background:#fff}.why-icon{width:43px;height:43px;border-radius:13px;background:#eaf0e8;display:grid;place-items:center;font-size:20px;margin-bottom:18px}.why-item h3{font-size:17px;margin:0 0 8px}.why-item p{font-size:13px;color:var(--muted);margin:0}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:58px;align-items:center}.about-photo{height:350px;border-radius:22px;overflow:hidden;background:#e8e2d8}.about-photo img{width:100%;height:100%;object-fit:cover}.about p{color:var(--muted);font-size:15px}.about-list{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px;color:#48564d;font-size:14px}.about-list li:before{content:"✓";display:inline-grid;place-items:center;background:#eaf0e8;color:var(--green);font-weight:900;width:22px;height:22px;border-radius:50%;margin-right:9px}
+.contact{background:var(--green);color:#fff;padding:62px 0}.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:32px}.contact h2{color:#fff;max-width:600px}.contact p{color:#d0ddd4;margin:13px 0 0}.contact .btn{background:#fff;color:var(--green);border-color:#fff;white-space:nowrap}.contact .btn:hover{background:#f0f4ef}
+footer{padding:25px 0;background:#12342c;color:#c7d2ca;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font-weight:800;color:#fff;letter-spacing:.04em}.telegram-float{position:fixed;right:20px;bottom:20px;z-index:5;box-shadow:0 8px 28px #0f2e2550;border-radius:999px;background:#229ed9;color:white;padding:14px 18px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:9px}.telegram-float:hover{background:#168bc3}
+ .lang-toggle{display:inline-flex;align-items:center;gap:6px;border:1px solid #d8dfd9;background:#fff;color:var(--green);border-radius:999px;padding:9px 12px;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap}.daily-section{background:#fff}.daily-card .card-img{height:205px}.daily-price{font-size:25px;font-weight:800;color:var(--green)}.daily-price small{font-size:12px;font-weight:600;color:var(--muted)}.listing-desc{font-size:13px;color:var(--muted);margin:12px 0 15px;line-height:1.55}.daily-disclaimer{margin-top:18px;font-size:12px;color:#777c74;background:#f8f7f2;padding:12px 15px;border-radius:10px}
+@media(max-width:850px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr;gap:30px}.hero{padding:42px 0}.hero-photo img{height:340px}.hero-photo{min-height:340px}.grid{grid-template-columns:repeat(2,1fr)}.about-grid{gap:30px}.section-head{align-items:start;flex-direction:column}.contact-inner{align-items:flex-start;flex-direction:column}.why-grid{gap:14px}}
+@media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.filters{gap:8px}.filter{padding:9px 11px;border-radius:14px;font-size:13px;gap:6px}.filter:before{width:21px;height:21px;border-radius:7px;font-size:12px}.price{font-size:24px}.price:before{width:31px;height:31px}.price small{font-size:10px}.lang-toggle{padding:8px 9px}header{height:66px}.brand-mark{width:34px;height:34px}.nav>.btn{padding:10px 12px;font-size:12px}.hero{padding:35px 0 42px}h1{font-size:42px}.hero p{font-size:15px}.hero-photo img{height:285px}.hero-photo{min-height:285px}.hero-actions .btn{width:100%}.trust{gap:12px}.trust span{font-size:11px}section{padding:54px 0}.grid{grid-template-columns:1fr;gap:15px}.card-img{height:230px}.why-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;gap:25px}.about-photo{height:260px}.contact{padding:48px 0}.contact .btn{width:100%}.footer-inner{align-items:flex-start;flex-direction:column;gap:8px}.telegram-float{right:12px;bottom:12px;padding:12px 15px}}
+
+.request-section{background:#f7f6f1}
+.request-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
+.request-grid h2{font-size:clamp(29px,3vw,42px);line-height:1.12;letter-spacing:-.035em;margin:0;color:#1d3028}
+.request-intro{color:var(--muted);max-width:440px}
+.request-points{display:grid;gap:10px;color:#48564d;font-size:14px;margin-top:22px}
+.lead-form{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:9px;box-shadow:0 10px 30px #203c2b08}
+.lead-form label{font-size:13px;font-weight:750;color:#34483d;margin-top:5px}
+.lead-form input,.lead-form select{width:100%;min-width:0;border:1px solid #dfe3dc;border-radius:11px;padding:13px 12px;background:#fff;color:var(--ink);font:inherit;font-size:14px}
+.lead-form input:focus,.lead-form select:focus{outline:2px solid #9db9a8;outline-offset:1px}
+.form-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-submit{width:100%;margin-top:10px}
+.form-note{font-size:11px;color:var(--muted);margin:3px 0 0}
+.card-img img{background:linear-gradient(135deg,#e9e7df,#d8ddd5)}
+@media(max-width:850px){.request-grid{grid-template-columns:1fr;gap:22px}}
+@media(max-width:560px){.nav{gap:8px}.brand{gap:7px;font-size:12px}.brand small{font-size:8px;letter-spacing:.1em}.nav>.btn{font-size:0;padding:10px 12px}.nav>.btn:after{content:"Telegram";font-size:12px}.lang-toggle{font-size:11px}.form-two{grid-template-columns:1fr}.lead-form{padding:18px}.telegram-float{font-size:12px;max-width:calc(100% - 24px)}}
+
+
+/* Modern visual refresh */
+:root{--green:#123d33;--green2:#1e5a49;--cream:#f4f5f1;--ink:#17251f;--muted:#69766f;--line:#e5e9e3;--sand:#e9e3d6}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.01em}
+header{height:78px;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(226,232,225,.8)}
+.brand-mark{border-radius:14px;box-shadow:0 5px 14px #123d3320}
+.btn{box-shadow:0 6px 18px #123d3310}.btn:focus-visible,.filter:focus-visible,.lang-toggle:focus-visible{outline:3px solid #b8d3c3;outline-offset:3px}
+.hero{padding:68px 0 76px;background:radial-gradient(ellipse at 8% 0%,#e6eee6 0%,transparent 48%),linear-gradient(135deg,#f7f7f2 0%,#eef2ec 100%)}
+.hero-grid{gap:58px}.hero .eyebrow{background:#e4eee5;padding:9px 13px;border-radius:999px;letter-spacing:.11em;margin-bottom:22px}
+h1{font-size:clamp(42px,5.3vw,70px);line-height:1.01;letter-spacing:-.055em;max-width:650px}h1 em{color:#638575}
+.hero p{font-size:18px;line-height:1.7;max-width:510px}.hero-actions{gap:12px}.hero-actions .btn{padding:15px 21px}
+.trust{gap:11px}.trust span{background:#ffffffb8;border:1px solid #e6eae3;border-radius:999px;padding:9px 12px}.trust b{font-size:13px}
+.hero-photo{min-height:460px;border-radius:30px;box-shadow:0 25px 70px #1b39251c;border:7px solid #ffffffa8}.hero-photo img{height:460px;object-position:center}.floating-tag{right:20px;top:20px;box-shadow:0 8px 22px #162d2016;padding:11px 15px}.photo-note{left:20px;bottom:20px;border:1px solid #ffffffb8;backdrop-filter:blur(10px);padding:16px 19px}
+section{padding:88px 0}.section-head{margin-bottom:34px}.kicker{color:#997a50}.section-head h2,.about h2,.contact h2,.request-grid h2{letter-spacing:-.045em}.section-head p{line-height:1.7}
+.filters{gap:10px}.filter{padding:11px 16px;font-weight:650;box-shadow:0 2px 7px #162d2005;transition:all .18s}.filter:hover{transform:translateY(-1px)}
+.grid{gap:22px}.card{border-radius:24px;border-color:#e5e9e2;box-shadow:0 5px 20px #172a1e06}.card:hover{transform:translateY(-5px);box-shadow:0 20px 45px #172a1e12}.card-img{height:230px}.card-img img{transition:transform .45s}.card:hover .card-img img{transform:scale(1.035)}.sample-label{border-radius:999px;padding:7px 11px;letter-spacing:.04em}.card-body{padding:21px}.price,.daily-price{font-size:29px;letter-spacing:-.05em}.price small,.daily-price small{font-size:12px;letter-spacing:0}.card h3{font-size:19px;line-height:1.35}.features{gap:10px;flex-wrap:wrap}.features span{background:#f6f8f4;padding:6px 9px;border-radius:8px}.card .btn{padding:13px 15px}
+.demo-note,.daily-disclaimer{border:1px solid #ece9df;border-radius:14px;line-height:1.65;background:#faf9f5}
+.why{background:linear-gradient(180deg,#f5f6f1,#eef2ec)}.why-item{border-radius:22px;padding:26px;box-shadow:0 8px 25px #172a1e05}.why-icon{border-radius:15px;background:#e8f0e8}
+.about-photo{border-radius:28px;box-shadow:0 20px 50px #172a1e10}.contact{background:radial-gradient(ellipse at 90% 0%,#2d6655 0%,transparent 45%),#123d33}.contact .btn{box-shadow:0 10px 25px #071e1828}
+.request-section{background:#f4f5f1}.lead-form{border-radius:24px;box-shadow:0 16px 45px #172a1e0a;padding:28px}.lead-form input,.lead-form select{border-radius:13px;padding:14px}
+.telegram-float{box-shadow:0 12px 32px #0f2e2540;transition:transform .2s}.telegram-float:hover{transform:translateY(-2px)}
+footer{background:#0d3028}
+@media(max-width:850px){.hero{padding:45px 0 52px}.hero-grid{gap:30px}.hero-photo,.hero-photo img{height:370px;min-height:370px}section{padding:68px 0}}
+@media(max-width:560px){header{height:68px}.hero{padding:35px 0 42px}.hero-grid{gap:25px}h1{font-size:clamp(38px,10vw,46px);line-height:1.03}.hero p{font-size:15px;line-height:1.65}.hero-photo,.hero-photo img{height:285px;min-height:285px}.hero-photo{border-width:4px;border-radius:23px}.photo-note{left:12px;bottom:12px;right:12px}.photo-note strong{font-size:14px}.photo-note small{font-size:11px}.floating-tag{right:12px;top:12px;font-size:10px;padding:8px 10px}.trust span{font-size:10px;padding:7px 9px}.trust{gap:7px}section{padding:56px 0}.section-head{gap:12px}.section-head h2{font-size:32px}.filters{gap:8px}.filter{font-size:12px;padding:10px 12px}.grid{gap:16px}.card{border-radius:21px}.card-img{height:220px}.card-body{padding:18px}.price,.daily-price{font-size:27px}.telegram-float{right:12px;bottom:12px}}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top" aria-label="На главную"><span class="brand-mark">⌂</span><span>BATUMI HOME<small>АРЕНДА НЕДВИЖИМОСТИ</small></span></a>
+  <nav class="navlinks"><a href="#apartments">Квартиры на месяц</a><a href="#daily">Посуточно</a><a href="#request">Оставить заявку</a><a href="#how">Как работаю</a><a href="#about">Обо мне</a></nav>
+  <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language" title="Switch language">🌐 <span id="langLabel">EN</span></button>
+  <a class="btn small" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Написать в Telegram ↗</a>
+ </div>
+</header>
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow"><span class="dot"></span> Недвижимость · Батуми</div>
+   <h1>Найдём квартиру.<br><em>Без квеста</em> на выживание.</h1>
+   <p>Подберу варианты для жизни в Батуми под твой бюджет. Без бесконечных просмотров и загадок в переписке.</p>
+   <div class="hero-actions"><a class="btn" href="#request">Подобрать квартиру <span>↗</span></a><a class="btn light" href="#apartments">Посмотреть варианты ↓</a></div>
+   <div class="trust"><span><b>✓</b> Подбор под бюджет</span><span><b>✓</b> Общение напрямую</span><span><b>✓</b> Батуми и районы</span></div>
+  </div>
+  <div class="hero-photo">
+   <img src="images/alliance-02-living-sea-view.jpeg" alt="Светлая современная гостиная" fetchpriority="high">
+   <span class="floating-tag">Alliance Marriott · вид на море</span>
+   <div class="photo-note"><strong>Квартиры в Батуми</strong><small>Долгосрочно и посуточно · подбор под бюджет</small></div>
+  </div>
+ </div>
+</section>
+<section id="apartments">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Подборка</div><h2>Квартиры под твой бюджет</h2></div><p>Выбери ориентир по цене и напиши мне. Уточним актуальные варианты и условия аренды.</p></div>
+  <div class="filters" role="group" aria-label="Фильтр по цене">
+   <button class="filter active" data-filter="all">Все варианты</button><button class="filter" data-filter="300-400">$300–400</button><button class="filter" data-filter="400-500">$400–500</button><button class="filter" data-filter="500-600">$500–600</button><button class="filter" data-filter="600-700">$600–700</button><button class="filter" data-filter="700-800">$700–800</button><button class="filter" data-filter="800-1000">$800–1,000</button><button class="filter" data-filter="1000+">$1,000+</button>
+  </div>
+  <div class="grid" id="cards">
+   <article class="card" data-price="300">
+    <div class="card-img"><img src="images/IMG_5973.jpeg" alt="Пример интерьера уютной квартиры" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="price">$300 <small>/ месяц · ориентир</small></div><h3>Уютная квартира для одного или пары</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 1 спальня</span><span>⌂ Для жизни</span><span>₾ Долгосрок</span></div><a class="btn small tg-link" data-apartment="Квартира около $300" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
+   </article>
+   <article class="card" data-price="350">
+    <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Пример современного интерьера" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="price">$350 <small>/ месяц · ориентир</small></div><h3>Современный интерьер и больше пространства</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 1–2 комнаты</span><span>☼ Светлая</span><span>₾ Долгосрок</span></div><a class="btn small tg-link" data-apartment="Квартира около $350" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
+   </article>
+   <article class="card" data-price="400">
+    <div class="card-img"><img src="images/rental400-01-main.jpeg" alt="Студия для долгосрочной аренды в Батуми" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">Реальные фото</span></div>
+    <div class="card-body"><div class="price">$400 <small>/ месяц · долгосрочная аренда</small></div><h3>Современная студия</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/rental400-03-bedroom.jpeg" alt="Спальная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-02-bathroom.jpeg" alt="Ванная комната студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-06-kitchen.jpeg" alt="Кухонная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-05-interior.jpeg" alt="Интерьер квартиры" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-09-kitchen-angle.jpeg" alt="Кухня и спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ Студия</span><span>✦ Современный интерьер</span><span>₾ Долгосрок</span></div><p class="listing-desc">Уютная студия с современной отделкой, кухонной зоной и спальным местом. Подойдёт для комфортного проживания в Батуми. Стоимость — $400 в месяц. Напиши, чтобы уточнить район, доступность и условия аренды.</p><a class="btn small tg-link" data-apartment="Долгосрочная аренда, студия, $400" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
+   </article>
+   <article class="card" data-price="500">
+    <div class="card-img"><img src="images/alliance-09-dining-kitchen.jpeg" alt="Пример квартиры повышенного комфорта" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="price">$500 <small>/ месяц · ориентир</small></div><h3>Квартира с дополнительным пространством</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 2 комнаты</span><span>☼ Комфорт</span><span>₾ Долгосрок</span></div><a class="btn small tg-link" data-apartment="Квартира около $500" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
+   </article>
+   <article class="card" data-price="700">
+    <div class="card-img"><img src="images/IMG_6134.jpeg" alt="Гостиная и кухня квартиры для долгосрочной аренды в Батуми" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">Реальные фото</span></div>
+    <div class="card-body"><div class="price">$700 <small>/ месяц · долгосрочная аренда</small></div><h3>Квартира 2+1 · 75 м²</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/IMG_6135.jpeg" alt="Кухня и обеденная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6134.jpeg" alt="Гостиная" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6130.jpeg" alt="Спальня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6139.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6132.jpeg" alt="Кухонная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · ул. Григория Элиава, 32Д</div><div class="features"><span>▱ Планировка 2+1</span><span>⌂ 75 м²</span><span>♧ 2 санузла</span><span>✦ Хороший ремонт</span></div><p class="listing-desc">Просторная квартира планировки 2+1 площадью 75 м² на улице Григория Элиава, 32Д. Хороший ремонт, удобная планировка, кухня и гостиная, отдельные спальные комнаты и два санузла — практичный вариант для комфортного долгосрочного проживания. Стоимость — $700 в месяц. Напиши, чтобы уточнить доступность и условия аренды.</p><a class="btn small tg-link" data-apartment="Долгосрочная аренда, квартира 2+1, 75 м², $700, ул. Григория Элиава 32Д" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
+   </article>
+   <article class="card" data-price="800">
+    <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Пример просторной квартиры повышенного класса" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="price">$800 <small>/ месяц · ориентир</small></div><h3>Просторная квартира повышенного класса</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 2–3 комнаты</span><span>✦ Просторная</span><span>₾ Долгосрок</span></div><a class="btn small tg-link" data-apartment="Квартира около $800" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
+   </article>
+  </div>
+  <div class="demo-note">Важно: карточки за $400 и $700 содержат реальные фотографии объектов. Остальные карточки — примеры бюджета, а не подтверждённые объявления.</div>
+ </div>
+</section>
+
+<section class="daily-section" id="daily">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Короткая поездка или отпуск</div><h2>Посуточная аренда в Батуми</h2><p class="booking-hint">Выбери вариант и перейди на отдельную страницу бронирования.</p></div><p>Квартира на выходные, несколько дней или отпуск у моря. Напиши даты — уточним доступность и стоимость.</p></div>
+  <div class="grid">
+
+
+   <article class="card daily-card">
+    <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Апартамент 1+1 в Alliance Marriott с видом на море" loading="lazy"><span class="sample-label" style="background:#e8f4ed;color:#204036">Реальные фото</span></div>
+    <div class="card-body"><div class="daily-price">130 ₾ <small>/ сутки</small></div><h3>Просторный апартамент 1+1 в Alliance Marriott</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · Alliance Marriott · 7-й этаж</div><div class="features"><span>▱ 50 м²</span><span>⌂ 1+1</span><span>☼ Для отдыха и поездок</span></div><p class="listing-desc">Просторный апартамент площадью 50 м² в комплексе Alliance Marriott на 7-м этаже. Формат 1+1 позволяет удобно разделить пространство для отдыха и сна — хороший вариант для пары, небольшой семьи или поездки с друзьями. Стоимость — 130 ₾ за сутки. Напиши, чтобы уточнить свободные даты и окончательные условия проживания.</p><a class="btn small" href="daily-booking.html?property=alliance&amp;rate=130">Проверить даты ↗</a></div>
+   </article>
+   <article class="card daily-card">
+    <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Студия в Orbi City, башня D2" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">Реальные фото</span></div>
+    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Компактная студия в Orbi City — 40-й этаж</h3><div class="location">⌖ Батуми · Orbi City, башня D2</div><div class="features"><span>▱ 30 м²</span><span>⌂ До 2 гостей</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Уютная студия на высоком этаже с двуспальной кроватью, мини-кухней, холодильником, микроволновкой, кондиционером и санузлом с душевой кабиной. Подойдёт для пары или соло-путешественника, которому важно комфортное место для отдыха после прогулок по Батуми.</p><a class="btn small" href="daily-booking.html?property=orbi&amp;rate=60">Проверить даты ↗</a></div>
+   </article>
+
+   <article class="card daily-card">
+    <div class="card-img"><img src="images/IMG_5973.jpeg" alt="Пример квартиры для посуточной аренды" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="daily-price">от 90 ₾ <small>/ ночь · ориентир</small></div><h3>Уютная квартира для короткой поездки</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ Студия / 1 комната</span><span>☼ Для пары</span></div><a class="btn small" href="daily-booking.html?property=cozy&amp;rate=90">Забронировать ↗</a></div>
+   </article>
+   <article class="card daily-card">
+    <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Пример современной квартиры для отдыха" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="daily-price">от 130 ₾ <small>/ ночь · ориентир</small></div><h3>Современный интерьер для отдыха</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 1–2 комнаты</span><span>⌂ Для семьи</span></div><a class="btn small" href="daily-booking.html?property=modern&amp;rate=130">Забронировать ↗</a></div>
+   </article>
+   <article class="card daily-card">
+    <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Пример просторной квартиры для посуточной аренды" loading="lazy"><span class="sample-label">Пример формата</span></div>
+    <div class="card-body"><div class="daily-price">от 180 ₾ <small>/ ночь · ориентир</small></div><h3>Просторный вариант для компании</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 2 комнаты</span><span>⌂ Больше места</span></div><a class="btn small" href="daily-booking.html?property=spacious&amp;rate=180">Забронировать ↗</a></div>
+   </article>
+  </div>
+  <div class="daily-disclaimer">Первая карточка — объект по предоставленным фотографиям и данным. Доступность на выбранные даты и итоговую стоимость нужно подтвердить перед бронированием. Остальные карточки ниже — демонстрационные примеры.</div>
+ </div>
+</section>>
+
+
+<section id="request" class="request-section">
+ <div class="wrap request-grid">
+  <div>
+   <div class="kicker">Подбор без лишней переписки</div>
+   <h2>Подберём квартиру под твой запрос</h2>
+   <p class="request-intro">Заполни несколько полей — Telegram откроется с готовым сообщением. Проверь текст и отправь его Алексею.</p>
+   <div class="request-points"><span>✓ Долгосрочная аренда</span><span>✓ Посуточная аренда</span><span>✓ Бюджет и даты сразу в заявке</span></div>
+  </div>
+  <form id="leadForm" class="lead-form">
+   <label for="rentType">Тип аренды</label>
+   <select id="rentType" name="rentType" required>
+    <option value="Долгосрочная аренда">Долгосрочная аренда</option>
+    <option value="Посуточная аренда">Посуточная аренда</option>
+   </select>
+   <label for="budget">Бюджет</label>
+   <select id="budget" name="budget" required>
+    <option value="$300–400">$300–400</option>
+    <option value="$400–500">$400–500</option>
+    <option value="$500–600">$500–600</option>
+    <option value="$800–1,000">$800–1,000</option>
+    <option value="Обсудим">Другой / обсудим</option>
+   </select>
+   <div class="form-two">
+    <div><label for="moveDate">Дата заезда</label><input id="moveDate" name="moveDate" type="date"></div>
+    <div><label for="duration">Срок / ночей</label><input id="duration" name="duration" type="text" placeholder="Например, 6 месяцев"></div>
+   </div>
+   <label for="area">Район или пожелания</label>
+   <input id="area" name="area" type="text" placeholder="Например, рядом с морем, 1 спальня">
+   <button class="btn form-submit" type="submit">Собрать заявку в Telegram ↗</button>
+   <p class="form-note">Заявка не отправляется автоматически: Telegram откроется, и ты сам нажмёшь «Отправить».</p>
+  </form>
+ </div>
+</section>
+
+<section class="why" id="how">
+ <div class="wrap"><div class="kicker">Просто и понятно</div><h2 style="font-size:clamp(29px,3vw,42px);line-height:1.12;letter-spacing:-.035em;margin:0;color:#1d3028">Как проходит подбор</h2>
+  <div class="why-grid">
+   <div class="why-item"><div class="why-icon">💬</div><h3>1. Рассказываешь задачу</h3><p>Бюджет, сроки, район, сколько человек и что важно в квартире.</p></div>
+   <div class="why-item"><div class="why-icon">⌕</div><h3>2. Смотрим подходящие варианты</h3><p>Отбираем квартиры под запрос и уточняем условия до просмотра.</p></div>
+   <div class="why-item"><div class="why-icon">🔑</div><h3>3. Договариваемся о просмотре</h3><p>Обсуждаем детали и следующий шаг напрямую в Telegram.</p></div>
+  </div>
+ </div>
+</section>
+<section id="about">
+ <div class="wrap about-grid">
+  <div class="about-photo"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Современная квартира в нейтральных тонах" loading="lazy"></div>
+  <div class="about"><div class="kicker">Твой риэлтор в Батуми</div><h2>Меньше хаоса.<br>Больше подходящих квартир.</h2><p>Я Алексей. Помогаю с поиском жилья в Батуми и стараюсь сделать процесс аренды понятным: сначала выясняем, что нужно, затем отбираем подходящие варианты.</p><ul class="about-list"><li>Бюджеты от $300 и выше — в зависимости от запроса</li><li>Обсуждаем район, сроки и условия заранее</li><li>Быстро связываемся в Telegram</li></ul><a class="btn" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Написать Алексею ↗</a></div>
+ </div>
+</section>
+<section class="contact">
+ <div class="wrap contact-inner"><div><div class="kicker" style="color:#d9c5a6">Начнём с сообщения</div><h2>Расскажи, какую квартиру ищешь.</h2><p>Напиши бюджет и дату заезда — начнём с этого.</p></div><a class="btn" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Открыть Telegram ↗</a></div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><div class="footer-brand">BATUMI HOME · АЛЕКСЕЙ</div><div>Подбор квартир в аренду · Батуми, Грузия</div><div>© <span id="year"></span></div></div></footer>
+<a class="telegram-float" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener" aria-label="Написать в Telegram"><span>➤</span> Написать в Telegram</a>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const filters=document.querySelectorAll('.filter');
+filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('#apartments .card').forEach(card=>{const p=Number(card.dataset.price);card.style.display=(f==='all'||(f==='300-400'&&p>=300&&p<=400)||(f==='400-500'&&p>400&&p<=500)||(f==='500-600'&&p>500&&p<=600)||(f==='600-700'&&p>600&&p<=700)||(f==='700-800'&&p>700&&p<=800)||(f==='800-1000'&&p>800&&p<=1000)||(f==='1000+'&&p>1000))?'':'none';});}));
+const leadForm=document.getElementById('leadForm');
+if(leadForm){leadForm.addEventListener('submit',function(e){e.preventDefault();const val=id=>document.getElementById(id).value.trim();const parts=['Здравствуйте, Алексей! Ищу квартиру в Батуми.','Тип аренды: '+val('rentType'),'Бюджет: '+val('budget'),'Дата заезда: '+(val('moveDate')||'не указана'),'Срок / ночей: '+(val('duration')||'не указано'),'Район и пожелания: '+(val('area')||'не указаны')];const message=parts.join('\n');const url='https://t.me/share/url?url=&text='+encodeURIComponent(message);window.open(url,'_blank','noopener');});}
+document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forEach(img=>{img.addEventListener('error',()=>{img.style.display='none';});});
+
+
+const translations = {
+"Недвижимость · Батуми":"Real estate · Batumi",
+"Найдём квартиру.":"Let's find your place.",
+"Без квеста":"Without the headache",
+" на выживание.":" or endless searching.",
+"Подберу варианты для жизни в Батуми под твой бюджет. Без бесконечных просмотров и загадок в переписке.":"I'll help you find a place in Batumi that fits your budget — without endless viewings or confusing messages.",
+"Подобрать квартиру":"Find my apartment",
+"Посмотреть варианты ↓":"Browse rentals ↓",
+"Подбор под бюджет":"Matched to your budget",
+"Общение напрямую":"Direct communication",
+"Батуми и районы":"Batumi & neighbourhoods",
+"Твой бюджет — наш ориентир":"Your budget is our starting point",
+"Подбираем жильё под реальные задачи":"Homes matched to your needs",
+"Квартиры на месяц":"Monthly rentals",
+"Посуточно":"Daily rentals",
+"Как работаю":"How it works",
+"Обо мне":"About me",
+"Написать в Telegram ↗":"Message on Telegram ↗",
+"Оставить заявку":"Send a request",
+"Подберём квартиру под твой запрос":"Let’s find an apartment for you",
+"Подбор без лишней переписки":"Find a place without endless messages",
+"Заполни несколько полей — Telegram откроется с готовым сообщением. Проверь текст и отправь его Алексею.":"Fill in a few details and Telegram will open with a ready-to-send message for Alexey.",
+"Долгосрочная аренда":"Long-term rental",
+"Посуточная аренда":"Daily rental",
+"Бюджет":"Budget",
+"Дата заезда":"Move-in date",
+"Срок / ночей":"Duration / nights",
+"Район или пожелания":"Area or preferences",
+"Собрать заявку в Telegram ↗":"Prepare request in Telegram ↗",
+"Заявка не отправляется автоматически: Telegram откроется, и ты сам нажмёшь «Отправить».":"The message is not sent automatically. Telegram opens so you can review and send it.",
+"Подборка":"Featured rentals",
+"Квартиры под твой бюджет":"Apartments for your budget",
+"Выбери ориентир по цене и напиши мне. Уточним актуальные варианты и условия аренды.":"Choose a price range and message me. We'll check current availability and rental terms.",
+"Все варианты":"All rentals",
+"700–900 ₾":"₾700–900",
+"900–1 200 ₾":"₾900–1,200",
+"1 200–1 500 ₾":"₾1,200–1,500",
+"2 000–2 500 ₾":"₾2,000–2,500",
+"Пример формата":"Sample listing",
+"800 ₾":"₾800",
+"/ месяц · ориентир":"/ month · guide price",
+"Уютная квартира для одного или пары":"A cosy apartment for one person or a couple",
+"⌖ Батуми · район уточняется":"⌖ Batumi · area to be confirmed",
+"▱ 1 спальня":"▱ 1 bedroom",
+"⌂ Для жизни":"⌂ Residential",
+"₾ Долгосрок":"₾ Long-term",
+"Узнать о вариантах ↗":"Ask about options ↗",
+"950 ₾":"₾950",
+"/ месяц · ориентир":"/ month · guide price",
+"Современный интерьер и больше пространства":"Modern interior with extra space",
+"▱ 1–2 комнаты":"▱ 1–2 rooms",
+"☼ Светлая":"☼ Bright",
+"1 150 ₾":"₾1,150",
+"1 350 ₾":"₾1,350",
+"2 250 ₾":"₾2,250",
+"Квартира с дополнительным пространством":"An apartment with extra space",
+"Просторная квартира повышенного класса":"A spacious upgraded apartment",
+"☼ Комфорт":"☼ Comfort",
+"▱ 2–3 комнаты":"▱ 2–3 rooms",
+"✦ Просторная":"✦ Spacious",
+"Просторный вариант для комфортной жизни":"A spacious home for comfortable living",
+"▱ 2 комнаты":"▱ 2 rooms",
+"⌂ Для пары":"⌂ For a couple",
+"Важно: карточки за $400 и $700 содержат реальные фотографии объектов. Остальные карточки — примеры бюджета, а не подтверждённые объявления.":"Important: the $400 and $700 cards contain real property photos. Other cards are budget examples, not verified listings.",
+"Короткая поездка или отпуск":"Short stay or holiday",
+"Посуточная аренда в Батуми":"Daily rentals in Batumi",
+"Квартира на выходные, несколько дней или отпуск у моря. Напиши даты — уточним доступность и стоимость.":"A weekend break, a few days away, or a seaside holiday. Send your dates and we'll check availability and rates.",
+"от 90 ₾":"From ₾90",
+"/ ночь · ориентир":"/ night · guide price",
+"Уютная квартира для короткой поездки":"A cosy apartment for a short stay",
+"⌖ Батуми · район уточняется":"⌖ Batumi · area to be confirmed",
+"▱ Студия / 1 комната":"▱ Studio / 1 room",
+"☼ Для пары":"☼ For a couple",
+"Уточнить даты ↗":"Check dates ↗",
+"от 130 ₾":"From ₾130",
+"Современный интерьер для отдыха":"A modern space for your stay",
+"⌂ Для семьи":"⌂ Family-friendly",
+"от 180 ₾":"From ₾180",
+"Просторный вариант для компании":"A spacious option for a group",
+"⌂ Больше места":"⌂ Extra space",
+"Первая карточка — объект по предоставленным фотографиям и данным. Доступность на выбранные даты и итоговую стоимость нужно подтвердить перед бронированием. Остальные карточки ниже — демонстрационные примеры.":"These are sample cards, not verified listings. Prices and details are examples only and must be replaced with current offers.",
+"Просто и понятно":"Simple and clear",
+"Как проходит подбор":"How it works",
+"1. Рассказываешь задачу":"1. Tell me what you need",
+"Бюджет, сроки, район, сколько человек и что важно в квартире.":"Your budget, dates, preferred area, number of guests, and must-haves.",
+"2. Смотрим подходящие варианты":"2. Review suitable options",
+"Отбираем квартиры под запрос и уточняем условия до просмотра.":"I shortlist homes for your needs and confirm terms before a viewing.",
+"3. Договариваемся о просмотре":"3. Arrange a viewing",
+"Обсуждаем детали и следующий шаг напрямую в Telegram.":"We discuss the details and next steps directly on Telegram.",
+"Твой риэлтор в Батуми":"Your real estate agent in Batumi",
+"Меньше хаоса.":"Less chaos.",
+"Больше подходящих квартир.":"More suitable homes.",
+"Я Алексей. Помогаю с поиском жилья в Батуми и стараюсь сделать процесс аренды понятным: сначала выясняем, что нужно, затем отбираем подходящие варианты.":"I'm Alexey. I help people find rentals in Batumi and keep the process straightforward: first we define what you need, then shortlist suitable options.",
+"Бюджеты от $300 и выше — в зависимости от запроса":"Budgets from ₾700 to ₾2,500, depending on your needs",
+"Обсуждаем район, сроки и условия заранее":"Discuss area, dates, and terms in advance",
+"Быстро связываемся в Telegram":"Quick contact on Telegram",
+"Написать Алексею ↗":"Message Alexey ↗",
+"Начнём с сообщения":"Let's start with a message",
+"Расскажи, какую квартиру ищешь.":"Tell me what kind of place you're looking for.",
+"Напиши бюджет и дату заезда — начнём с этого.":"Send your budget and move-in date to get started.",
+"Открыть Telegram ↗":"Open Telegram ↗",
+"Подбор квартир в аренду · Батуми, Грузия":"Rental apartment search · Batumi, Georgia",
+"Написать в Telegram":"Message on Telegram",
+"Например, 6 месяцев":"For example, 6 months",
+"Например, рядом с морем, 1 спальня":"For example, near the sea, 1 bedroom",
+"Другой / обсудим":"Other / let’s discuss",
+"Все варианты":"All rentals"
+};
+
+const georgianTranslations = {"Недвижимость · Батуми": "უძრავი ქონება · ბათუმი", "Найдём квартиру.": "ვიპოვოთ ბინა.", "Без квеста": "ზედმეტი სირთულეების გარეშე", " на выживание.": " და უსასრულო ძიების გარეშე.", "Подберу варианты для жизни в Батуми под твой бюджет. Без бесконечных просмотров и загадок в переписке.": "ბათუმში შეგირჩევ ბინას შენი ბიუჯეტის მიხედვით. უსასრულო დათვალიერებისა და გაურკვეველი მიმოწერის გარეშე.", "Подобрать квартиру": "ბინის შერჩევა", "Посмотреть варианты ↓": "ვარიანტების ნახვა ↓", "Подбор под бюджет": "შერჩევა ბიუჯეტის მიხედვით", "Общение напрямую": "პირდაპირი კომუნიკაცია", "Батуми и районы": "ბათუმი და უბნები", "Квартиры на месяц": "ბინები გრძელვადიანი ქირით", "Посуточно": "დღიურად ქირავდება", "Как работаю": "როგორ ვმუშაობ", "Обо мне": "ჩემ შესახებ", "Написать в Telegram ↗": "მომწერე Telegram-ში ↗", "Оставить заявку": "განაცხადის დატოვება", "Подберём квартиру под твой запрос": "შეგირჩევ ბინას შენი მოთხოვნის მიხედვით", "Подбор без лишней переписки": "შერჩევა ზედმეტი მიმოწერის გარეშე", "Заполни несколько полей — Telegram откроется с готовым сообщением. Проверь текст и отправь его Алексею.": "შეავსე რამდენიმე ველი და Telegram-ში მზა შეტყობინება გაიხსნება. გადაამოწმე ტექსტი და გაუგზავნე ალექსეის.", "Долгосрочная аренда": "გრძელვადიანი ქირა", "Посуточная аренда": "დღიური ქირა", "Бюджет": "ბიუჯეტი", "Дата заезда": "შესვლის თარიღი", "Срок аренды": "ქირაობის ვადა", "Район и пожелания": "უბანი და სურვილები", "Все варианты": "ყველა ვარიანტი", "Узнать о вариантах ↗": "ვარიანტების შესახებ კითხვა ↗", "/ месяц · ориентир": "/ თვეში · საორიენტაციო ფასი", "Короткая поездка или отпуск": "მოკლე მოგზაურობა ან დასვენება", "Посуточная аренда в Батуми": "ბინის დღიური ქირა ბათუმში", "Квартира на выходные, несколько дней или отпуск у моря. Напиши даты — уточним доступность и стоимость.": "ბინა შაბათ-კვირისთვის, რამდენიმე დღით ან ზღვისპირა დასვენებისთვის. მოგვწერე თარიღები და გადავამოწმებთ ხელმისაწვდომობასა და ფასს.", "Просторный апартамент 1+1 в Alliance Marriott": "ფართო 1+1 აპარტამენტი Alliance Marriott-ში", "Компактная студия в Orbi City — 40-й этаж": "კომპაქტური სტუდიო Orbi City-ში, 40-ე სართული", "Проверить даты ↗": "თარიღების შემოწმება ↗", "Забронировать ↗": "დაჯავშნა ↗", "Просто и понятно": "მარტივად და გასაგებად", "Как проходит подбор": "როგორ ხდება შერჩევა", "1. Рассказываешь задачу": "1. გვიყვები, რა გჭირდება", "Бюджет, сроки, район, сколько человек и что важно в квартире.": "ბიუჯეტი, ვადები, უბანი, ადამიანების რაოდენობა და ბინისთვის მნიშვნელოვანი პირობები.", "2. Смотрим подходящие варианты": "2. ვარჩევთ შესაფერის ვარიანტებს", "Отбираем квартиры под запрос и уточняем условия до просмотра.": "შენი მოთხოვნის მიხედვით ვარჩევთ ბინებს და დათვალიერებამდე ვაზუსტებთ პირობებს.", "3. Договариваемся о просмотре": "3. ვთანხმდებით დათვალიერებაზე", "Обсуждаем детали и следующий шаг напрямую в Telegram.": "დეტალებსა და შემდეგ ნაბიჯზე პირდაპირ Telegram-ში ვთანხმდებით.", "Твой риэлтор в Батуми": "შენი უძრავი ქონების აგენტი ბათუმში", "Меньше хаоса.": "ნაკლები ქაოსი.", "Больше подходящих квартир.": "მეტი შესაფერისი ბინა.", "Я Алексей. Помогаю с поиском жилья в Батуми и стараюсь сделать процесс аренды понятным: сначала выясняем, что нужно, затем отбираем подходящие варианты.": "მე ალექსეი ვარ. დაგეხმარები ბათუმში საცხოვრებლის მოძებნაში: ჯერ გავარკვევთ შენს საჭიროებებს, შემდეგ კი შესაფერის ვარიანტებს შევარჩევთ.", "Обсуждаем район, сроки и условия заранее": "უბანს, ვადებსა და პირობებს წინასწარ ვაზუსტებთ", "Быстро связываемся в Telegram": "Telegram-ში სწრაფად დაგიკავშირდები", "Начнём с сообщения": "დავიწყოთ შეტყობინებით", "Расскажи, какую квартиру ищешь.": "მოგვიყევი, რა ტიპის ბინას ეძებ.", "Напиши бюджет и дату заезда — начнём с этого.": "მოგვწერე ბიუჯეტი და შესვლის თარიღი — აქედან დავიწყოთ.", "Открыть Telegram ↗": "Telegram-ის გახსნა ↗", "Подбор квартир в аренду · Батуми, Грузия": "ბინების შერჩევა ქირით · ბათუმი, საქართველო", "Например, 6 месяцев": "მაგალითად, 6 თვე", "Например, рядом с морем, 1 спальня": "მაგალითად, ზღვასთან ახლოს, ერთი საძინებლით", "Другой / обсудим": "სხვა / შევათანხმოთ", "Важно: карточки за $400 и $700 содержат реальные фотографии объектов. Остальные карточки — примеры бюджета, а не подтверждённые объявления.": "მნიშვნელოვანია: $400 და $700-იანი ბინების ბარათებში რეალური ფოტოებია. დანარჩენი ბარათები ბიუჯეტის მაგალითებია და არა დადასტურებული განცხადებები."};
+let currentLang='ru';
+function walkTextNodes(root, fn){
+ const walker=document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+ const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+ nodes.forEach(fn);
+}
+const originalTexts=new WeakMap();
+walkTextNodes(document.body, n=>originalTexts.set(n,n.nodeValue));
+const originalAttrs=new WeakMap();
+const translatableAttrs=['placeholder','aria-label','title'];
+function rememberAttrs(){
+ document.querySelectorAll('input,textarea,button,a,select').forEach(el=>{
+  if(!originalAttrs.has(el)){const attrs={};translatableAttrs.forEach(a=>{if(el.hasAttribute(a))attrs[a]=el.getAttribute(a)});originalAttrs.set(el,attrs)}
+ });
+}
+rememberAttrs();
+function setLanguage(lang){
+ currentLang=lang;
+ walkTextNodes(document.body, n=>{
+  if(!originalTexts.has(n)) originalTexts.set(n,n.nodeValue);
+  const original=originalTexts.get(n), trimmed=original.trim();
+  if(lang==='en' && translations[trimmed] || lang==='ka' && georgianTranslations[trimmed]){
+   const leading=original.match(/^\s*/)?.[0]||'';
+   const trailing=original.match(/\s*$/)?.[0]||'';
+   const translated=lang==='en'?translations[trimmed]:georgianTranslations[trimmed];
+   n.nodeValue=leading+translated+trailing;
+  } else n.nodeValue=original;
+ });
+ rememberAttrs();
+ document.querySelectorAll('input,textarea,button,a,select').forEach(el=>{
+  const attrs=originalAttrs.get(el)||{};
+  translatableAttrs.forEach(a=>{
+   if(attrs[a]) el.setAttribute(a,lang==='en'?(translations[attrs[a]]||attrs[a]):lang==='ka'?(georgianTranslations[attrs[a]]||attrs[a]):attrs[a]);
+  });
+ });
+ const label=document.getElementById('langLabel');
+ const toggle=document.getElementById('langToggle');
+ if(label) label.textContent=lang==='ru'?'EN':lang==='en'?'GE':'RU';
+ if(toggle){const labels={ru:['Switch language','Переключить на русский'],en:['Switch language','Switch to Georgian'],ka:['ენის შეცვლა','რუსულ ენაზე გადართვა']};toggle.setAttribute('aria-label',labels[lang][0]);toggle.setAttribute('title',labels[lang][1]);}
+ document.documentElement.lang=lang;
+ document.title=lang==='ru'?'Квартира в Батуми — подбор аренды':lang==='en'?'Batumi Apartments — Rental Search':'ბინები ბათუმში — ქირის შერჩევა';
+}
+const langToggle=document.getElementById('langToggle');
+if(langToggle){
+ langToggle.addEventListener('click',function(event){event.preventDefault();setLanguage(currentLang==='ru'?'en':currentLang==='en'?'ka':'ru');});
+}
+</script>
+</body>
+</html>
