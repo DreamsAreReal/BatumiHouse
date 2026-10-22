@@ -51,19 +51,21 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 <script>
 const properties={
  alliance:{rate:130,title:'Апартамент 1+1, 50 м² в Alliance Marriott, 7-й этаж',image:'images/alliance-02-living-sea-view.jpeg',one:'50 м² · 1+1',two:'Alliance Marriott'},
- orbi:{rate:60,title:'Студия 30 м² в Orbi City, башня D2, 40-й этаж',image:'images/IMG_5974.jpeg',one:'30 м² · студия',two:'Orbi City · D2'},
+ orbi:{rate:60,title:'Студия Orbi City, блок D2',image:'images/IMG_5974.jpeg',one:'Студия',two:'Orbi City · D2'},
+ 'orbi-d2':{rate:60,title:'Студия Orbi City, блок D2',image:'images/IMG_5974.jpeg',one:'Студия',two:'Orbi City · D2'},
+ 'orbi-c2':{rate:60,title:'Студия Orbi City, блок C2',image:'',one:'Студия',two:'Orbi City · C2'},
  cozy:{rate:90,title:'Уютная квартира для короткой поездки',image:'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80',one:'Студия / 1 комната',two:'Для пары'},
  modern:{rate:130,title:'Современный интерьер для отдыха',image:'images/alliance-02-living-sea-view.jpeg',one:'1–2 комнаты',two:'Для семьи'},
  spacious:{rate:180,title:'Просторный вариант для компании',image:'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80',one:'2 комнаты',two:'Больше места'}
 };
 const params=new URLSearchParams(location.search), key=params.get('property')||'cozy', property=properties[key]||properties.cozy, rate=Number(params.get('rate'))||property.rate;
 document.getElementById('propertyImage').src=property.image;
-if(key==='orbi'){document.getElementById('propertyArea').textContent='Батуми · Orbi City, блок D2 · 40-й этаж';document.getElementById('notice').textContent='Бронирование подтверждается вручную после проверки доступности. Цена 60 ₾/сутки указана как предложенный ориентир; уточни финальную стоимость перед оплатой.';}
+if(key==='orbi'||key==='orbi-d2'||key==='orbi-c2'){document.getElementById('propertyArea').textContent='Батуми · Orbi City, блок '+(key==='orbi-c2'?'C2':'D2');document.getElementById('notice').textContent='Бронирование подтверждается вручную после проверки доступности. Цена 60 ₾/сутки указана как предложенный ориентир; уточни финальную стоимость перед оплатой.';}
 if(key==='alliance'){document.getElementById('allianceGallery').style.display='flex';document.getElementById('propertyArea').textContent='Батуми · Alliance Marriott · 7-й этаж';document.getElementById('notice').textContent='Фото этого объекта ещё не добавлены. Бронирование подтверждается вручную после проверки доступности и итоговой цены.';}
 document.getElementById('propertyTitle').textContent=property.title;
 document.getElementById('propertyPrice').innerHTML='от '+rate+' ₾ <span class="muted">/ ночь · ориентир</span>';
 document.getElementById('featureOne').textContent=property.one;document.getElementById('featureTwo').textContent=property.two;
-if(key==='orbi'){document.getElementById('propertyDescription').textContent='30 м² на 40-м этаже башни D2. Двуспальная кровать, мини-кухня, холодильник, микроволновка, кондиционер, душ и стиральная машина. Подходит для пары или одного гостя.';}
+if(key==='orbi'||key==='orbi-d2'||key==='orbi-c2'){document.getElementById('propertyDescription').textContent='Студия в Orbi City, блок '+(key==='orbi-c2'?'C2':'D2')+'. Двуспальная кровать, мини-кухня, холодильник, микроволновка, кондиционер, душ и стиральная машина. Подходит для пары или одного гостя.';}
 if(key==='alliance'){document.getElementById('propertyDescription').textContent='Апартамент 1+1 площадью 50 м² на 7-м этаже комплекса Alliance Marriott. Пространство удобно разделено на зону отдыха и отдельную комнату. Цена-ориентир — 130 ₾ за сутки; наличие и условия нужно подтвердить.';}
 const checkin=document.getElementById('checkin'),checkout=document.getElementById('checkout');
 const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const todayStr=today.toISOString().slice(0,10);checkin.min=todayStr;checkout.min=todayStr;
