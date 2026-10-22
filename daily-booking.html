@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#203e33">
+<title>Бронирование посуточной квартиры в Батуми — Alexey Realtor</title>
+<style>
+:root{--green:#203e33;--ink:#222923;--muted:#6d766e;--line:#e2e5de;--cream:#f7f6f1}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+a{color:inherit}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
+.header{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:13px;font-weight:850;letter-spacing:.04em;color:var(--green)}.brand small{display:block;font-size:9px;letter-spacing:.18em;color:var(--muted)}
+.header-right{display:flex;gap:10px;align-items:center}.lang,.back{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;text-decoration:none;font-size:13px;font-weight:750;cursor:pointer}
+.hero{padding:42px 0 28px;background:var(--cream)}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:800;color:#6d766e}.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.04em;max-width:720px;margin:10px 0}.hero p{color:var(--muted);max-width:620px;margin:0}
+.layout{display:grid;grid-template-columns:1fr .95fr;gap:26px;padding:30px 0 55px;align-items:start}
+.preview,.form-card,.notice{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff}.preview img{width:100%;height:260px;object-fit:cover;display:block;background:#e9e7df}.preview-body{padding:22px}.tag{display:inline-block;background:var(--cream);padding:5px 9px;border-radius:7px;color:#706957;font-size:10px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}.price{font-size:28px;color:var(--green);font-weight:850;margin:12px 0 2px}.muted{color:var(--muted);font-size:13px}.preview h2{font-size:23px;line-height:1.2;margin:8px 0}.features{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.features span{border:1px solid var(--line);padding:6px 9px;border-radius:999px;font-size:12px;color:#58635a}
+.form-card{padding:24px}.form-card h2{font-size:25px;line-height:1.2;margin:0 0 5px}.form-card>p{color:var(--muted);font-size:13px;margin:0 0 20px}
+form{display:grid;gap:9px}label{font-size:12px;font-weight:800;color:#435348;margin-top:5px}input,select,textarea{font:inherit;font-size:14px;width:100%;border:1px solid #dfe3dc;border-radius:11px;padding:12px;background:#fff;color:var(--ink);min-width:0}input:focus,select:focus,textarea:focus{outline:2px solid #9db9a8;outline-offset:1px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.estimate{border-radius:12px;background:var(--cream);padding:13px 14px;margin:9px 0 2px;font-size:13px}.estimate strong{display:block;font-size:21px;color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;background:var(--green);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:15px 18px;font:inherit;font-weight:800;cursor:pointer;margin-top:7px}.fine{font-size:11px!important;color:var(--muted);margin:8px 0 0!important}.notice{margin-top:18px;padding:15px 17px;background:#fbfaf7;color:#676e65;font-size:12px}
+footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:12px}
+@media(max-width:760px){.layout{grid-template-columns:1fr;gap:18px;padding-top:20px}.hero{padding-top:30px}.preview img{height:220px}.form-card{padding:19px}.header{height:64px}.two{grid-template-columns:1fr 1fr}}
+@media(max-width:390px){.wrap{width:calc(100% - 24px)}.brand{font-size:11px}.back,.lang{padding:8px 10px;font-size:12px}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap header"><a class="brand" href="index.html" style="text-decoration:none">BATUMI HOME <small>ALEXEY · REALTOR</small></a><div class="header-right"><a class="back" href="index.html#daily" id="backLink">← Все квартиры</a><button class="lang" type="button" id="langButton">EN</button></div></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow" id="eyebrow">Бронирование · Батуми</div><h1 id="title">Выбери даты — проверим доступность квартиры</h1><p id="intro">Оставь даты и количество гостей. Заявка откроется в Telegram — бронирование подтвердим после проверки календаря и условий.</p></div></section>
+<main class="wrap layout">
+<section>
+ <article class="preview">
+  <img id="propertyImage" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80" alt="Пример квартиры для посуточной аренды">
+<div id="allianceGallery" style="display:none;display:flex;gap:8px;overflow-x:auto;margin:10px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"></div>
+  <div class="preview-body"><span class="tag" id="sampleTag">Пример формата</span><div class="price" id="propertyPrice">от 90 ₾ <span class="muted">/ ночь · ориентир</span></div><h2 id="propertyTitle">Уютная квартира для короткой поездки</h2><div class="muted" id="propertyArea">Батуми · район уточняется</div><div class="features"><span id="featureOne">Студия / 1 комната</span><span id="featureTwo">Для пары</span></div><p id="propertyDescription" class="muted" style="margin-top:14px">Удобная студия для отдыха в Батуми.</p></div>
+ </article>
+ <div class="notice" id="notice">Важно: сейчас это демонстрационный вариант. Отправка формы не означает автоматическое подтверждение брони или оплату. Алексей подтвердит доступность, точную цену и правила проживания в Telegram.</div>
+</section>
+<section class="form-card">
+ <h2 id="formTitle">Запросить бронирование</h2><p id="formIntro">Укажи даты и контакты для обратной связи.</p>
+ <form id="bookingForm">
+  <label for="checkin" id="checkinLabel">Дата заезда</label><input id="checkin" type="date" required>
+  <label for="checkout" id="checkoutLabel">Дата выезда</label><input id="checkout" type="date" required>
+  <div class="two"><div><label for="guests" id="guestsLabel">Гостей</label><select id="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div><div><label for="phone" id="phoneLabel">Телефон (необязательно)</label><input id="phone" type="tel" placeholder="+995 ..."></div></div>
+  <label for="wishes" id="wishesLabel">Пожелания</label><textarea id="wishes" rows="3" placeholder="Например, нужен паркинг или детская кроватка"></textarea>
+  <div class="estimate"><span id="estimateLabel">Предварительная стоимость по ориентиру</span><strong id="estimateValue">Выбери даты</strong><span class="muted" id="estimateSmall">Итоговая цена зависит от дат и условий объекта.</span></div>
+  <button class="btn" type="submit" id="submitButton">Отправить запрос в Telegram ↗</button>
+  <p class="fine" id="finePrint">Это запрос, а не подтверждённая бронь. Сообщение откроется в Telegram, его нужно отправить вручную.</p>
+ </form>
+</section>
+</main>
+<footer><div class="wrap">BATUMI HOME · АЛЕКСЕЙ · <span id="footerText">Подбор квартир в Батуми</span></div></footer>
+<script>
+const properties={
+ alliance:{rate:130,title:'Апартамент 1+1, 50 м² в Alliance Marriott, 7-й этаж',image:'images/alliance-02-living-sea-view.jpeg',one:'50 м² · 1+1',two:'Alliance Marriott'},
+ orbi:{rate:60,title:'Студия 30 м² в Orbi City, башня D2, 40-й этаж',image:'images/IMG_5974.jpeg',one:'30 м² · студия',two:'Orbi City · D2'},
+ cozy:{rate:90,title:'Уютная квартира для короткой поездки',image:'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80',one:'Студия / 1 комната',two:'Для пары'},
+ modern:{rate:130,title:'Современный интерьер для отдыха',image:'images/alliance-02-living-sea-view.jpeg',one:'1–2 комнаты',two:'Для семьи'},
+ spacious:{rate:180,title:'Просторный вариант для компании',image:'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80',one:'2 комнаты',two:'Больше места'}
+};
+const params=new URLSearchParams(location.search), key=params.get('property')||'cozy', property=properties[key]||properties.cozy, rate=Number(params.get('rate'))||property.rate;
+document.getElementById('propertyImage').src=property.image;
+if(key==='orbi'){document.getElementById('propertyArea').textContent='Батуми · Orbi City, блок D2 · 40-й этаж';document.getElementById('notice').textContent='Бронирование подтверждается вручную после проверки доступности. Цена 60 ₾/сутки указана как предложенный ориентир; уточни финальную стоимость перед оплатой.';}
+if(key==='alliance'){document.getElementById('allianceGallery').style.display='flex';document.getElementById('propertyArea').textContent='Батуми · Alliance Marriott · 7-й этаж';document.getElementById('notice').textContent='Фото этого объекта ещё не добавлены. Бронирование подтверждается вручную после проверки доступности и итоговой цены.';}
+document.getElementById('propertyTitle').textContent=property.title;
+document.getElementById('propertyPrice').innerHTML='от '+rate+' ₾ <span class="muted">/ ночь · ориентир</span>';
+document.getElementById('featureOne').textContent=property.one;document.getElementById('featureTwo').textContent=property.two;
+if(key==='orbi'){document.getElementById('propertyDescription').textContent='30 м² на 40-м этаже башни D2. Двуспальная кровать, мини-кухня, холодильник, микроволновка, кондиционер, душ и стиральная машина. Подходит для пары или одного гостя.';}
+if(key==='alliance'){document.getElementById('propertyDescription').textContent='Апартамент 1+1 площадью 50 м² на 7-м этаже комплекса Alliance Marriott. Пространство удобно разделено на зону отдыха и отдельную комнату. Цена-ориентир — 130 ₾ за сутки; наличие и условия нужно подтвердить.';}
+const checkin=document.getElementById('checkin'),checkout=document.getElementById('checkout');
+const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const todayStr=today.toISOString().slice(0,10);checkin.min=todayStr;checkout.min=todayStr;
+function nights(){if(!checkin.value||!checkout.value)return 0;return Math.round((new Date(checkout.value+'T12:00:00')-new Date(checkin.value+'T12:00:00'))/86400000)}
+function updateEstimate(){if(checkin.value){checkout.min=checkin.value;if(checkout.value&&checkout.value<=checkin.value){checkout.value='';}}const n=nights();document.getElementById('estimateValue').textContent=n>0?(n+' ноч. × '+rate+' ₾ = '+(n*rate)+' ₾'):'Выбери даты';}
+checkin.addEventListener('change',updateEstimate);checkout.addEventListener('change',updateEstimate);
+let lang='ru';
+const translations={
+en:{eyebrow:'Booking · Batumi',title:'Choose your dates — we’ll check availability',intro:'Enter your dates and guest count. Your request will open in Telegram; booking is confirmed after availability and terms are checked.',backLink:'← All apartments',sampleTag:'Sample listing',propertyArea:'Batumi · area to be confirmed',notice:'Important: this is currently a sample listing. Submitting the form does not automatically confirm a booking or payment. Alexey will confirm availability, the final price and house rules in Telegram.',formTitle:'Request a booking',formIntro:'Enter your dates and contact details.',checkinLabel:'Check-in date',checkoutLabel:'Check-out date',guestsLabel:'Guests',phoneLabel:'Phone (optional)',wishesLabel:'Requests',estimateLabel:'Estimated price guide',estimateSmall:'Final price depends on dates and property terms.',submitButton:'Send request in Telegram ↗',finePrint:'This is a request, not a confirmed booking. Telegram opens with a message for you to send manually.',footerText:'Apartment search in Batumi',estimateEmpty:'Choose dates',night:'nights',nightShort:'nights'},
+ru:{eyebrow:'Бронирование · Батуми',title:'Выбери даты — проверим доступность квартиры',intro:'Оставь даты и количество гостей. Заявка откроется в Telegram — бронирование подтвердим после проверки календаря и условий.',backLink:'← Все квартиры',sampleTag:'Пример формата',propertyArea:'Батуми · район уточняется',notice:'Важно: сейчас это демонстрационный вариант. Отправка формы не означает автоматическое подтверждение брони или оплату. Алексей подтвердит доступность, точную цену и правила проживания в Telegram.',formTitle:'Запросить бронирование',formIntro:'Укажи даты и контакты для обратной связи.',checkinLabel:'Дата заезда',checkoutLabel:'Дата выезда',guestsLabel:'Гостей',phoneLabel:'Телефон (необязательно)',wishesLabel:'Пожелания',estimateLabel:'Предварительная стоимость по ориентиру',estimateSmall:'Итоговая цена зависит от дат и условий объекта.',submitButton:'Отправить запрос в Telegram ↗',finePrint:'Это запрос, а не подтверждённая бронь. Сообщение откроется в Telegram, его нужно отправить вручную.',footerText:'Подбор квартир в Батуми',estimateEmpty:'Выбери даты',night:'ღამე',nightShort:'ღამე'},
+ka:{eyebrow:'დაჯავშნა · ბათუმი',title:'აირჩიე თარიღები — გადავამოწმებთ ბინის ხელმისაწვდომობას',intro:'მიუთითე თარიღები და სტუმრების რაოდენობა. მოთხოვნა Telegram-ში გაიხსნება; ჯავშანი დადასტურდება ხელმისაწვდომობისა და პირობების შემოწმების შემდეგ.',backLink:'← ყველა ბინა',sampleTag:'სანიმუშო განცხადება',propertyArea:'ბათუმი · უბანი ზუსტდება',notice:'მნიშვნელოვანია: ეს სანიმუშო ვარიანტია. ფორმის გაგზავნა ავტომატურად არ ადასტურებს ჯავშანს ან გადახდას. ალექსეი Telegram-ში დაადასტურებს ხელმისაწვდომობას, საბოლოო ფასსა და საცხოვრებლის წესებს.',formTitle:'ჯავშნის მოთხოვნა',formIntro:'მიუთითე თარიღები და საკონტაქტო ინფორმაცია.',checkinLabel:'შესვლის თარიღი',checkoutLabel:'გასვლის თარიღი',guestsLabel:'სტუმრები',phoneLabel:'ტელეფონი (არასავალდებულო)',wishesLabel:'სურვილები',estimateLabel:'სავარაუდო ღირებულება',estimateSmall:'საბოლოო ფასი დამოკიდებულია თარიღებსა და ობიექტის პირობებზე.',submitButton:'მოთხოვნის გაგზავნა Telegram-ში ↗',finePrint:'ეს არის მოთხოვნა და არა დადასტურებული ჯავშანი. Telegram-ში გახსნილი შეტყობინება ხელით უნდა გაგზავნო.',footerText:'ბინების შერჩევა ბათუმში',estimateEmpty:'აირჩიე თარიღები',night:'ღამე',nightShort:'ღამე'}
+};
+function setLang(next){lang=next;document.documentElement.lang=next;document.getElementById('langButton').textContent=next==='ru'?'EN':next==='en'?'GE':'RU';Object.keys(translations[next]).forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=translations[next][id];});updateEstimate();}
+document.getElementById('langButton').addEventListener('click',()=>setLang(lang==='ru'?'en':lang==='en'?'ka':'ru'));
+document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const n=nights();if(n<1){alert(lang==='ru'?'Дата выезда должна быть позже даты заезда.':lang==='en'?'Check-out must be after check-in.':'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.');return;}
+const msg=lang==='ru'?`Здравствуйте, Алексей! Хочу забронировать квартиру в Батуми.\nВариант: ${property.title}\nЗаезд: ${checkin.value}\nВыезд: ${checkout.value}\nНочей: ${n}\nГостей: ${document.getElementById('guests').value}\nЦена-ориентир: ${rate} ₾/ночь, всего ориентировочно ${n*rate} ₾\nТелефон: ${document.getElementById('phone').value||'не указан'}\nПожелания: ${document.getElementById('wishes').value||'нет'}`:lang==='en'?`Hello Alexey! I’d like to book an apartment in Batumi.\nOption: ${property.title}\nCheck-in: ${checkin.value}\nCheck-out: ${checkout.value}\nNights: ${n}\nGuests: ${document.getElementById('guests').value}\nGuide price: ${rate} GEL/night, estimated total ${n*rate} GEL\nPhone: ${document.getElementById('phone').value||'not provided'}\nRequests: ${document.getElementById('wishes').value||'none'}`:`გამარჯობა, ალექსეი! მსურს ბინის დაჯავშნა ბათუმში.\nვარიანტი: ${property.title}\nშესვლა: ${checkin.value}\nგასვლა: ${checkout.value}\nღამეების რაოდენობა: ${n}\nსტუმრები: ${document.getElementById('guests').value}\nსაორიენტაციო ფასი: ${rate} ₾/ღამე, ჯამში დაახლოებით ${n*rate} ₾\nტელეფონი: ${document.getElementById('phone').value||'მითითებული არ არის'}\nსურვილები: ${document.getElementById('wishes').value||'არ არის'}`;
+location.href='https://t.me/share/url?url=&text='+encodeURIComponent(msg);
+});
+document.getElementById('propertyImage').addEventListener('error',()=>{document.getElementById('propertyImage').style.display='none';});
+</script>
+</body>
+</html>
