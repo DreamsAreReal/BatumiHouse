@@ -8,7 +8,7 @@
 <style>
 :root{--green:#203e33;--ink:#222923;--muted:#6d766e;--line:#e2e5de;--cream:#f7f6f1}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.55}
-a{color:inherit}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+html,body{max-width:100%;overflow-x:hidden}img{max-width:100%}.layout>section{min-width:0}.header>a,.header-right{min-width:0}.header-right{flex-shrink:0}.hero h1{overflow-wrap:anywhere}a{color:inherit}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
 header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:5}
 .header{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:13px;font-weight:850;letter-spacing:.04em;color:var(--green)}.brand small{display:block;font-size:9px;letter-spacing:.18em;color:var(--muted)}
 .header-right{display:flex;gap:10px;align-items:center}.lang,.back{border:1px solid var(--line);border-radius:999px;background:#fff;padding:9px 13px;text-decoration:none;font-size:13px;font-weight:750;cursor:pointer}
@@ -19,7 +19,7 @@ header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0
 form{display:grid;gap:9px}label{font-size:12px;font-weight:800;color:#435348;margin-top:5px}input,select,textarea{font:inherit;font-size:14px;width:100%;border:1px solid #dfe3dc;border-radius:11px;padding:12px;background:#fff;color:var(--ink);min-width:0}input:focus,select:focus,textarea:focus{outline:2px solid #9db9a8;outline-offset:1px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.estimate{border-radius:12px;background:var(--cream);padding:13px 14px;margin:9px 0 2px;font-size:13px}.estimate strong{display:block;font-size:21px;color:var(--green)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;background:var(--green);color:#fff;text-decoration:none;border:0;border-radius:999px;padding:15px 18px;font:inherit;font-weight:800;cursor:pointer;margin-top:7px}.fine{font-size:11px!important;color:var(--muted);margin:8px 0 0!important}.notice{margin-top:18px;padding:15px 17px;background:#fbfaf7;color:#676e65;font-size:12px}
 footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-size:12px}
 @media(max-width:760px){.layout{grid-template-columns:1fr;gap:18px;padding-top:20px}.hero{padding-top:30px}.preview img{height:220px}.form-card{padding:19px}.header{height:64px}.two{grid-template-columns:1fr 1fr}}
-@media(max-width:390px){.wrap{width:calc(100% - 24px)}.brand{font-size:11px}.back,.lang{padding:8px 10px;font-size:12px}.two{grid-template-columns:1fr}}
+@media(max-width:760px){.header{gap:8px}.header-right{gap:6px}.back,.lang{font-size:12px;padding:8px 10px}.brand{font-size:11px}.hero h1{font-size:clamp(27px,8vw,38px)}.hero p{font-size:14px}}@media(max-width:390px){.wrap{width:calc(100% - 24px)}.brand{font-size:11px}.back,.lang{padding:8px 10px;font-size:12px}.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -29,7 +29,7 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 <section>
  <article class="preview">
   <img id="propertyImage" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80" alt="Пример квартиры для посуточной аренды">
-<div id="allianceGallery" style="display:none;display:flex;gap:8px;overflow-x:auto;margin:10px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"></div>
+<div id="allianceGallery" style="display:none;gap:8px;overflow-x:auto;margin:10px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"></div>
   <div class="preview-body"><span class="tag" id="sampleTag">Пример формата</span><div class="price" id="propertyPrice">от 90 ₾ <span class="muted">/ ночь · ориентир</span></div><h2 id="propertyTitle">Уютная квартира для короткой поездки</h2><div class="muted" id="propertyArea">Батуми · район уточняется</div><div class="features"><span id="featureOne">Студия / 1 комната</span><span id="featureTwo">Для пары</span></div><p id="propertyDescription" class="muted" style="margin-top:14px">Удобная студия для отдыха в Батуми.</p></div>
  </article>
  <div class="notice" id="notice">Важно: сейчас это демонстрационный вариант. Отправка формы не означает автоматическое подтверждение брони или оплату. Алексей подтвердит доступность, точную цену и правила проживания в Telegram.</div>
