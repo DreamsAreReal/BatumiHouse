@@ -434,7 +434,7 @@ if(langToggle){
   const photos=(await Promise.all(responses.map(r=>r.json()))).flat();
   if(photos.length!==10)throw new Error('Expected 10 Orbi C photos');
   cards.forEach(card=>{
-   const img=card.querySelector('.card-img img'),count=card.querySelector('[data-orbi-count]');
+   const img=card.querySelector('.card-img img'),count=card.querySelector('[data-orbi-count]')||card.querySelector('.sample-label');
    let index=0;
    const show=i=>{index=(i+photos.length)%photos.length;img.src=photos[index];img.alt='Orbi City, блок C — фото '+(index+1)+' из '+photos.length;if(count)count.textContent=(index+1)+' / '+photos.length;};
    show(0);
