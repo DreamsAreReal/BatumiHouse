@@ -62,6 +62,12 @@ footer{background:#0d3028}
 @media(max-width:850px){.hero{padding:45px 0 52px}.hero-grid{gap:30px}.hero-photo,.hero-photo img{height:370px;min-height:370px}section{padding:68px 0}}
 @media(max-width:560px){header{height:68px}.hero{padding:35px 0 42px}.hero-grid{gap:25px}h1{font-size:clamp(38px,10vw,46px);line-height:1.03}.hero p{font-size:15px;line-height:1.65}.hero-photo,.hero-photo img{height:285px;min-height:285px}.hero-photo{border-width:4px;border-radius:23px}.photo-note{left:12px;bottom:12px;right:12px}.photo-note strong{font-size:14px}.photo-note small{font-size:11px}.floating-tag{right:12px;top:12px;font-size:10px;padding:8px 10px}.trust span{font-size:10px;padding:7px 9px}.trust{gap:7px}section{padding:56px 0}.section-head{gap:12px}.section-head h2{font-size:32px}.filters{gap:8px}.filter{font-size:12px;padding:10px 12px}.grid{gap:16px}.card{border-radius:21px}.card-img{height:220px}.card-body{padding:18px}.price,.daily-price{font-size:27px}.telegram-float{right:12px;bottom:12px}}
 
+
+/* Orbi City block C photo gallery */
+.orbi-nav{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:36px;height:36px;border:1px solid #ffffffc9;border-radius:50%;background:#fffffff0;color:#183e33;font-size:24px;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px #172b2228}
+.orbi-prev{left:10px}.orbi-next{right:10px}
+.orbi-nav:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
+.card-img [data-orbi-count]{z-index:2}
 </style>
 </head>
 <body>
@@ -101,9 +107,9 @@ footer{background:#0d3028}
     <div class="card-img"><img src="images/IMG_5973.jpeg" alt="Пример интерьера уютной квартиры" loading="lazy"><span class="sample-label">Пример формата</span></div>
     <div class="card-body"><div class="price">$300 <small>/ месяц · ориентир</small></div><h3>Уютная квартира для одного или пары</h3><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ 1 спальня</span><span>⌂ Для жизни</span><span>₾ Долгосрок</span></div><a class="btn small tg-link" data-apartment="Квартира около $300" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
    </article>
-   <article class="card" data-price="350">
-    <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Фотографии Orbi City C обновляются" loading="lazy"><span class="sample-label">Фото обновляются</span></div>
-    <div class="card-body"><div class="price">$350 <small>/ месяц · помесячная аренда</small></div><h3>Студия в Orbi City · блок C</h3><div class="location">⌖ Батуми · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>☼ Вид на море</span><span>₾ $350/месяц</span></div><a class="btn small tg-link" data-apartment="Orbi City C · $350 в месяц" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
+   <article class="card" data-orbi-gallery="c" data-price="350">
+    <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Фото квартиры Orbi City, блок C" loading="lazy"><span class="sample-label">1 / 10</span><button type="button" class="orbi-nav orbi-prev" data-orbi-prev aria-label="Предыдущее фото">‹</button><button type="button" class="orbi-nav orbi-next" data-orbi-next aria-label="Следующее фото">›</button></div>
+    <div class="card-body"><div class="price">$350 <small>/ месяц · помесячная аренда</small></div><h3>Студия в Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>☼ Вид на море</span><span>₾ $350/месяц</span></div><a class="btn small tg-link" data-apartment="Orbi City C · $350 в месяц" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Узнать о вариантах ↗</a></div>
    </article>
    <article class="card" data-price="350">
     <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Студия Orbi City D2" loading="lazy"><span class="sample-label">Фото из прежней галереи</span></div>
@@ -168,9 +174,9 @@ footer{background:#0d3028}
     <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Апартамент 1+1 в Alliance Marriott с видом на море" loading="lazy"><span class="sample-label" style="background:#e8f4ed;color:#204036">Реальные фото</span></div>
     <div class="card-body"><div class="daily-price">130 ₾ <small>/ сутки</small></div><h3>Просторный апартамент 1+1 в Alliance Marriott</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · Alliance Marriott · 7-й этаж</div><div class="features"><span>▱ 50 м²</span><span>⌂ 1+1</span><span>☼ Для отдыха и поездок</span></div><p class="listing-desc">Просторный апартамент площадью 50 м² в комплексе Alliance Marriott на 7-м этаже. Формат 1+1 позволяет удобно разделить пространство для отдыха и сна — хороший вариант для пары, небольшой семьи или поездки с друзьями. Стоимость — 130 ₾ за сутки. Напиши, чтобы уточнить свободные даты и окончательные условия проживания.</p><a class="btn small" href="daily-booking.html?property=alliance&amp;rate=130">Проверить даты ↗</a></div>
    </article>
-   <article class="card daily-card">
-    <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Студия Orbi City, блок C (фото обновляются)" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">Фото обновляются</span></div>
-    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок C</h3><div class="location">⌖ Батуми · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Уютная студия с видом на море и город с двуспальной кроватью, мини-кухней, холодильником, микроволновкой, кондиционером и санузлом с душевой кабиной. Подойдёт для пары или соло-путешественника, которому важно комфортное место для отдыха после прогулок по Батуми.</p><a class="btn small" href="daily-booking.html?property=orbi-c&amp;rate=60">Проверить даты ↗</a></div>
+   <article class="card daily-card" data-orbi-gallery="c">
+    <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Фото квартиры Orbi City, блок C" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">1 / 10</span><button type="button" class="orbi-nav orbi-prev" data-orbi-prev aria-label="Предыдущее фото">‹</button><button type="button" class="orbi-nav orbi-next" data-orbi-next aria-label="Следующее фото">›</button></div>
+    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Уютная студия с видом на море и город с двуспальной кроватью, мини-кухней, холодильником, микроволновкой, кондиционером и санузлом с душевой кабиной. Подойдёт для пары или соло-путешественника, которому важно комфортное место для отдыха после прогулок по Батуми.</p><a class="btn small" href="daily-booking.html?property=orbi-c&amp;rate=60">Проверить даты ↗</a></div>
    </article>
    <article class="card daily-card">
     <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Orbi City D2" loading="lazy"><span class="sample-label" style="background:#e6efe9;color:#203e33">Фото квартиры</span></div>
@@ -416,6 +422,27 @@ const langToggle=document.getElementById('langToggle');
 if(langToggle){
  langToggle.addEventListener('click',function(event){event.preventDefault();setLanguage(currentLang==='ru'?'en':currentLang==='en'?'ka':'ru');});
 }
+</script>
+
+<script>
+(async function(){
+ const cards=[...document.querySelectorAll('[data-orbi-gallery="c"]')];
+ if(!cards.length)return;
+ try{
+  const responses=await Promise.all([1,2].map(i=>fetch('images/orbi-c-gallery-'+i+'.json',{cache:'force-cache'})));
+  if(responses.some(r=>!r.ok))throw new Error('Gallery asset request failed');
+  const photos=(await Promise.all(responses.map(r=>r.json()))).flat();
+  if(photos.length!==10)throw new Error('Expected 10 Orbi C photos');
+  cards.forEach(card=>{
+   const img=card.querySelector('.card-img img'),count=card.querySelector('[data-orbi-count]');
+   let index=0;
+   const show=i=>{index=(i+photos.length)%photos.length;img.src=photos[index];img.alt='Orbi City, блок C — фото '+(index+1)+' из '+photos.length;if(count)count.textContent=(index+1)+' / '+photos.length;};
+   show(0);
+   card.querySelector('[data-orbi-prev]')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index-1);});
+   card.querySelector('[data-orbi-next]')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index+1);});
+  });
+ }catch(error){console.error('Не удалось загрузить фото Orbi City, блок C',error);}
+})();
 </script>
 </body>
 </html>
