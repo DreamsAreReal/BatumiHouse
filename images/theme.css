@@ -1,0 +1,92 @@
+/* Batumi Home — navy, porcelain and clear blue. */
+:root{--green:#17334c;--green2:#244b6c;--cream:#f6f5f1;--ink:#1b2c3c;--muted:#657484;--line:#e2e7ec;--sand:#e7e3da;--type-ink:#18334b;--type-muted:#647585;--accent:#356ce8;--navy:#12283e}
+body{background:#f8f9fb;color:var(--ink)}
+header.site-header{display:block;height:auto;position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #ffffff15;backdrop-filter:none;box-shadow:none}
+.site-header .nav{min-height:80px;gap:22px}
+.site-header .brand{color:#fff;font-size:15px;font-weight:650;letter-spacing:.035em}
+.site-header .brand small{color:#9eb1c3;font-size:9px;letter-spacing:.15em;margin-top:4px;font-weight:500}
+.brand-mark{width:42px;height:42px;flex:0 0 auto;background:#356ce8;border:1px solid #7198ed55;border-radius:13px;box-shadow:0 7px 22px #030d1828}
+.brand-mark svg{width:23px;height:23px;display:block}
+.site-header .navlinks{gap:24px;font-size:13px;color:#c8d3de;white-space:nowrap}
+.site-header .navlinks a{padding:10px 0;transition:color .2s}
+.site-header .navlinks a:hover{color:#fff}
+.site-header .lang-toggle,.site-header .lang{background:#ffffff09;color:#e7edf5;border:1px solid #ffffff24;border-radius:12px;padding:10px 12px;font-weight:550}
+.site-header .btn{background:#356ce8;border-color:#356ce8;color:#fff;padding:12px 16px;border-radius:12px;white-space:nowrap}
+.site-header .btn:hover{background:#4c7feb;border-color:#4c7feb}
+.mobile-rent-nav{display:none}
+.home-page .hero{padding:64px 0 70px;background:radial-gradient(ellipse at 12% 20%,#213c55 0%,transparent 58%),#12283e;overflow:hidden}
+.home-page .hero-grid{grid-template-columns:1.04fr 1fr;gap:54px;align-items:center}
+.hero h1{color:#fbfcfe;letter-spacing:-.045em;font-size:clamp(2.5rem,4.2vw,3.75rem);line-height:1.13;max-width:21ch;font-weight:600}
+.hero h1 em{color:#a7c0ff;font-weight:500}
+.hero p{color:#bfcedc;font-size:1rem;line-height:1.8;max-width:47ch}
+.hero .eyebrow{color:#c5d4e5;background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:9px 12px;letter-spacing:.12em;font-weight:550;margin-bottom:24px}
+.hero .dot{background:#8db0ff;width:6px;height:6px}
+.hero-actions{gap:12px}
+.hero-actions .btn{background:#f3f6fb;border-color:#f3f6fb;color:#142d45;border-radius:13px;padding:15px 20px;box-shadow:none}
+.hero-actions .btn:hover{background:#fff;border-color:#fff}
+.hero-actions .btn.light{background:transparent;border-color:#ffffff3b;color:#e7eff8}
+.hero-actions .btn.light:hover{background:#ffffff0a;border-color:#ffffff70}
+.hero .trust{gap:16px;margin-top:28px;color:#aec0d2}
+.hero .trust span{background:none;border:0;border-radius:0;padding:0;font-size:11px;font-weight:450}
+.hero .trust b{color:#9dbbff;font-size:12px}
+.hero-photo{height:440px;min-height:440px;border:1px solid #ffffff30;border-radius:24px 24px 66px 24px;box-shadow:0 24px 64px #040f1c35;isolation:isolate}
+.hero-photo img{height:100%;min-height:100%;width:100%;object-fit:cover;object-position:center}
+.hero-photo:after{content:"";position:absolute;inset:60% 0 0;background:linear-gradient(transparent,#08182899);pointer-events:none;z-index:0}
+.floating-tag{left:20px;right:auto;bottom:20px;top:auto;z-index:1;border-radius:9px;background:#f5f7faf2;color:#233c53;border:1px solid #ffffff80;box-shadow:none;font-size:11px;font-weight:550;padding:9px 12px;max-width:calc(100% - 40px)}
+section{background:#f8f9fb}
+.kicker{color:#6d7f91;font-weight:600;letter-spacing:.12em}
+.section-head p{color:#68798a}
+.btn{background:#17334c;border-color:#17334c;color:#fff;border-radius:13px}
+.btn:hover{background:#244b6c;border-color:#244b6c;box-shadow:0 7px 20px #17334c14}
+.btn:focus-visible,.filter:focus-visible,.lang-toggle:focus-visible,.lang:focus-visible{outline:3px solid #9ab9fa;outline-offset:3px}
+.filter{background:#fff;border-color:#e0e6ee;color:#627487;border-radius:11px}
+.filter:hover{border-color:#b6c7dd;background:#fff}
+.filter.active{background:#17334c;color:#fff;border-color:#17334c;box-shadow:none}
+.card{background:#fff;border-color:#e1e7ef;border-radius:22px;box-shadow:0 4px 14px #162f4703}
+.card:hover{box-shadow:0 16px 40px #162f470b}
+.card-img{background:#edf1f5}
+.card-img:after{background:linear-gradient(transparent,#10273f30)}
+.sample-label{background:#f8fafdf2;border-color:#ffffff80;color:#425a70}
+.price,.daily-price{color:#17334c}
+.price small,.daily-price small,.location,.listing-desc{color:#697b8b}
+.features{border-color:#edf0f4;color:#586d80}
+.features span{background:#f1f4f8;color:#596f82}
+.orbi-nav{background:#f8fafdf2;border-color:#ffffffb3;color:#1d3b57;box-shadow:0 4px 15px #10273f1f}
+.orbi-nav:hover{background:#fff}
+.demo-note,.daily-disclaimer{background:#f0f3f7;border-color:#e4eaf0;color:#6a7b8c;border-radius:12px}
+.daily-section{background:#f1f4f8}
+.request-section{background:#eaf0f6}
+.lead-form{background:#fff;border-color:#dde5ed;border-radius:22px;box-shadow:0 15px 45px #132e4906}
+.lead-form label,label{color:#344c62}
+.lead-form input,.lead-form select,input,select,textarea{border-color:#dce4ed;background:#fff;color:#263c50}
+.lead-form input:focus,.lead-form select:focus,input:focus,select:focus,textarea:focus{outline:2px solid #a8c1f0;outline-offset:1px;border-color:#9eb9e7}
+.why{background:#f8f9fb}
+.why-item{background:#fff;border-color:#e0e7ef;border-radius:20px;box-shadow:none}
+.why-icon{background:#ebf1fa;color:#31597e;border-radius:12px}
+.contact{background:radial-gradient(ellipse at 90% 0%,#23435f,transparent 52%),#132b41;color:#fff}
+.contact .kicker{color:#a8bfd5!important}
+.contact h2{color:#fff}.contact p{color:#b6c9d9}
+.contact .btn{background:#f4f7fb;color:#1a344e;border-color:#f4f7fb;border-radius:13px}
+footer{background:#0d2134;color:#9bb0c3;border-color:#253d53}
+.footer-brand{color:#edf3f9}
+.telegram-float{width:52px;height:52px;display:flex;align-items:center;justify-content:center;padding:0;gap:0;border-radius:50%;background:#356ce8;box-shadow:0 10px 28px #102f6850;border:1px solid #ffffff25;font-size:0}
+.telegram-float span{font-size:22px;line-height:1;transform:rotate(-18deg)}
+.telegram-float:hover{background:#245bd5}
+.booking-page .site-header .header{min-height:80px;height:auto;gap:20px}
+.booking-page .brand{display:flex;align-items:center;gap:11px}
+.booking-page .back{background:transparent;border:1px solid #ffffff28;color:#e4edf7;border-radius:12px;font-size:13px}
+.booking-page .hero{padding:46px 0 50px;background:radial-gradient(ellipse at 10% 0%,#24425d,transparent 70%),#12283e}
+.booking-page .hero h1{font-size:clamp(2.1rem,4vw,3.25rem);max-width:27ch;letter-spacing:-.035em}
+.booking-page .hero p{max-width:70ch}
+.booking-page main{padding-top:32px;padding-bottom:48px}
+.preview,.form-card{border-color:#e1e7ef;background:#fff;border-radius:22px;box-shadow:0 6px 24px #162f4704;overflow:hidden}
+.preview .price,.estimate strong{color:#17334c}
+.preview .features span{background:#f1f4f8}
+.tag{background:#eef3f9;color:#3c5a75}
+.estimate{background:#eef3f9;border:1px solid #e1e9f3;border-radius:12px}
+.notice{background:#edf2f7;border:1px solid #e2e9f0;border-radius:12px;color:#657a8e}
+html[lang="ka"] .hero h1{font-size:clamp(2rem,3.5vw,3.1rem);letter-spacing:0;line-height:1.35}
+@media(max-width:1050px){.site-header .nav{gap:14px}.site-header .navlinks{gap:16px;font-size:12px}.site-header .btn{padding:11px 13px}.home-page .hero-grid{gap:32px}.hero-photo{height:410px;min-height:410px}}
+@media(max-width:850px){html{scroll-padding-top:132px}.site-header .nav{min-height:70px}.site-header .navlinks{display:none}.mobile-rent-nav{display:flex;gap:8px;padding-bottom:12px}.mobile-rent-nav a{flex:1;text-align:center;color:#cedbe9;background:#ffffff07;border:1px solid #ffffff1c;border-radius:9px;padding:8px 10px;font-size:12px;font-weight:500}.mobile-rent-nav a:hover{background:#ffffff14;color:#fff}.home-page .hero{padding:42px 0 46px}.home-page .hero-grid{grid-template-columns:1fr;gap:30px}.hero h1{max-width:24ch}.hero-photo{height:360px;min-height:360px;max-width:100%}.booking-page .site-header .header{min-height:72px}.booking-page .hero{padding:34px 0 38px}}
+@media(max-width:560px){.site-header .nav{min-height:68px;gap:12px}.site-header .brand{font-size:13px;gap:9px}.brand-mark{height:35px;width:35px;border-radius:11px}.brand-mark svg{width:20px;height:20px}.site-header .lang-toggle,.site-header .lang{font-size:12px;padding:9px 10px;border-radius:10px}.site-header .nav>.btn{font-size:0;padding:11px 14px;border-radius:10px}.site-header .nav>.btn:after{font-size:12px}.mobile-rent-nav{padding-bottom:11px}.mobile-rent-nav a{font-size:12px;padding:8px}.home-page .hero{padding:34px 0 38px}.hero h1{font-size:clamp(2.1rem,8.7vw,2.7rem);line-height:1.16;letter-spacing:-.035em;max-width:21ch}.hero p{font-size:15px;line-height:1.75;margin-bottom:24px}.hero .eyebrow{font-size:10px;padding:8px 10px;margin-bottom:21px}.hero-actions{gap:10px}.hero-actions .btn{font-size:14px;padding:14px 16px}.hero .trust{gap:13px;margin-top:22px}.hero .trust span{font-size:10px;padding:0}.hero-photo{height:280px;min-height:280px;border-radius:20px 20px 44px 20px}.floating-tag{left:14px;bottom:14px;font-size:10px;padding:8px 10px;max-width:calc(100% - 28px)}.card-body{padding:20px}.card{border-radius:19px}.telegram-float{width:48px;height:48px;right:14px;bottom:14px;font-size:0;padding:0}.telegram-float span{font-size:21px}.booking-page .site-header .header{min-height:68px;gap:10px}.booking-page .back{padding:9px 10px;font-size:11px}.booking-page .hero h1{font-size:2rem}.booking-page .hero p{font-size:14px}.booking-page .hero{padding:28px 0 32px}.booking-page .brand{gap:8px;font-size:12px}.booking-page .brand-mark{width:31px;height:31px}.booking-page main{padding-top:22px}html[lang="ka"] .hero h1{font-size:1.9rem;line-height:1.35}}
+@media(max-width:360px){.site-header .brand{font-size:11px;gap:7px}.site-header .nav{gap:8px}.site-header .nav>.btn{padding:10px 11px}.hero .trust{gap:9px}.hero .trust span{font-size:9px}.booking-page .brand-mark{display:none}}
