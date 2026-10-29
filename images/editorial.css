@@ -43,6 +43,8 @@ input::placeholder,textarea::placeholder{color:#849087;opacity:1}
 .estimate{font-size:.8125rem;line-height:1.6}.estimate strong{font-size:1.25rem;line-height:1.5;font-weight:650;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .preview h2{font-size:1.5rem;line-height:1.35;letter-spacing:-.025em;margin:12px 0 9px}.preview .muted{font-size:.875rem;line-height:1.75}.preview .price .muted{font-size:.75rem}
 .tag{font-size:.6875rem;font-weight:600;letter-spacing:.01em;text-transform:none}
+.form-card .fine{font-size:.75rem;line-height:1.7}
+@media(max-width:560px){.brand small{display:none}.brand{min-width:0}.nav>.lang-toggle,.nav>.btn{flex-shrink:0}.hero h1{font-size:clamp(2.2rem,9.4vw,2.65rem)}}
 .telegram-float{font-size:.8125rem;font-weight:600;letter-spacing:0}.footer-inner,footer{font-size:.75rem;line-height:1.6}
 :lang(ka) h1,:lang(ka) h2,:lang(ka) h3{letter-spacing:0;line-height:1.35;font-weight:600}:lang(ka) .kicker,:lang(ka) .eyebrow,:lang(ka) .brand small{letter-spacing:0;text-transform:none}
 @media(max-width:850px){.section-head{gap:14px}.hero-grid{gap:32px}.nav{gap:16px}.hero h1{max-width:19ch}.request-grid{gap:26px}}
