@@ -70,6 +70,22 @@ footer{background:#0d3028}
 .card-img [data-orbi-count]{z-index:2}
 .photo-viewer[hidden]{display:none}.photo-viewer{position:fixed;inset:0;z-index:9999;background:rgba(8,13,11,.94);display:flex;align-items:center;justify-content:center;padding:72px 56px 92px;color:#fff}.photo-viewer img{display:block;max-width:min(92vw,1200px);max-height:calc(100vh - 170px);width:auto;height:auto;object-fit:contain;transform:scale(var(--photo-zoom,1));transform-origin:center;touch-action:none;user-select:none;-webkit-user-drag:none}.photo-viewer button{position:absolute;border:0;background:rgba(255,255,255,.16);color:white;border-radius:999px;width:46px;height:46px;font-size:25px;cursor:pointer;display:grid;place-items:center}.photo-viewer .pv-close{top:16px;right:16px}.photo-viewer .pv-prev{left:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-next{right:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-tools{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center}.photo-viewer .pv-tools button{position:static;transform:none}.photo-viewer .pv-count{min-width:58px;text-align:center;font-size:14px}.photo-viewer .pv-help{position:absolute;bottom:29px;right:20px;color:rgba(255,255,255,.75);font-size:12px}.card-img img,.mini-gallery img,.preview img,.about-photo img,.hero-photo img{cursor:zoom-in}@media(max-width:600px){.photo-viewer{padding:60px 12px 90px}.photo-viewer img{max-width:96vw;max-height:calc(100vh - 160px)}.photo-viewer .pv-prev{left:8px}.photo-viewer .pv-next{right:8px}.photo-viewer .pv-help{display:none}}
 .stay-options{margin:12px 0;padding:15px 16px;border:1px solid #dce4ed;border-radius:14px;min-width:0}.stay-options[hidden]{display:none}.stay-options legend{font-weight:750;font-size:14px;padding:0 5px}.stay-options p{margin:0 0 8px;font-size:14px}.stay-options label{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:14px;font-weight:500;cursor:pointer}.stay-options input[type=checkbox]{width:20px;height:20px;min-width:20px;margin:0;padding:0;accent-color:#203e33}.stay-options .stay-help{font-size:12px;color:#6d766e;line-height:1.5}
+
+/* Unified short-stay listing cards */
+.daily-section .grid{align-items:stretch}
+.daily-section .daily-card{display:flex;flex-direction:column;border-radius:20px;box-shadow:0 5px 22px rgba(24,55,41,.05)}
+.daily-section .daily-card .card-img{height:auto;aspect-ratio:16/10;flex:0 0 auto}
+.daily-section .daily-card .card-img img{width:100%;height:100%;object-fit:cover}
+.daily-section .daily-card .card-body{display:flex;flex-direction:column;flex:1;gap:0;padding:20px}
+.daily-section .daily-card h3{min-height:2.8em;line-height:1.4;margin:9px 0}
+.daily-section .daily-card .location{min-height:2.5em;line-height:1.4}
+.daily-section .daily-card .features{flex-wrap:wrap;gap:8px 12px;min-height:62px}
+.daily-section .daily-card .listing-desc{line-height:1.55;flex:1}
+.daily-section .daily-card .mini-gallery{scrollbar-width:thin}
+.daily-section .daily-card .mini-gallery img{width:78px!important;height:60px!important;object-fit:cover;border-radius:9px!important;flex:0 0 auto}
+.daily-section .daily-card .monthly-offer{margin-top:13px}
+.daily-section .daily-card .sample-label{background:#f7faf8!important;color:#245044!important;border:1px solid #e2ede7}
+@media(max-width:560px){.daily-section .daily-card h3,.daily-section .daily-card .location,.daily-section .daily-card .features{min-height:0}.daily-section .daily-card .card-body{padding:17px}}
 </style>
 <link rel="stylesheet" href="images/editorial.css?v=20261029-2">
 <link rel="stylesheet" href="images/theme.css?v=20261029-4">
