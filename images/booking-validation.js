@@ -1,6 +1,10 @@
 (() => {
   'use strict';
   const messages = {
+    requiredStart: {ru:'Выберите дату заезда.',en:'Choose a check-in date.',ka:'აირჩიეთ შესვლის თარიღი.'},
+    requiredEnd: {ru:'Выберите дату выезда.',en:'Choose a check-out date.',ka:'აირჩიეთ გასვლის თარიღი.'},
+    requiredContact: {ru:'Укажите телефон или Telegram, чтобы мы могли вам ответить.',en:'Enter a phone number or Telegram so we can reply.',ka:'მიუთითეთ ტელეფონი ან Telegram, რომ გიპასუხოთ.'},
+    summary: {ru:'Заявка не отправлена. Заполните или исправьте отмеченные поля:',en:'Request not sent. Complete or correct the highlighted fields:',ka:'მოთხოვნა არ გაგზავნილა. შეავსეთ ან შეასწორეთ მონიშნული ველები:'},
     past: {ru:'Выберите сегодня или будущую дату заезда.',en:'Choose today or a future check-in date.',ka:'აირჩიეთ დღევანდელი ან მომავალი შესვლის თარიღი.'},
     end: {ru:'Дата выезда должна быть позже даты заезда.',en:'Check-out must be after check-in.',ka:'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.'},
     guests: {ru:'Укажите количество гостей: целое число от 1.',en:'Enter the number of guests: a whole number of at least 1.',ka:'მიუთითეთ სტუმრების რაოდენობა: მთელი რიცხვი, მინიმუმ 1.'},
@@ -72,7 +76,14 @@
     return {update,fail(message){error.textContent=message;error.hidden=false;button.setAttribute('aria-invalid','true');},focus(){button.focus();},clear(){error.hidden=true;button.removeAttribute('aria-invalid');}};
   }
   function setup({form,checkin,checkout,guests,contactType,contact}) {
-    let startPicker,endPicker;
+    let startPicker,endPicker,attempted=false;
+    form.noValidate=true;
+    const summary=document.createElement('div');summary.className='booking-error-summary';summary.setAttribute('role','alert');summary.hidden=true;form.prepend(summary);
+    const fieldErrors=new Map();
+    for(const field of [guests,contact]) {
+      const error=document.createElement('p');error.className='booking-date-error';error.id=field.id+'Error';error.hidden=true;error.setAttribute('aria-live','polite');field.after(error);fieldErrors.set(field,error);
+      field.setAttribute('aria-describedby',[field.getAttribute('aria-describedby'),error.id].filter(Boolean).join(' '));
+    }
     const message = key => messages[key][window.BatumiI18n?.language||'ru'];
     function refresh() {
       const minimum=today();
@@ -93,6 +104,7 @@
         ? /^(?:(?:https?:\/\/)?t\.me\/|@)?[A-Za-z][A-Za-z0-9_]{4,31}$/.test(value)
         : /^\+?[\d\s().-]+$/.test(value) && value.replace(/\D/g,'').length>=7 && value.replace(/\D/g,'').length<=15;
       contact.setCustomValidity(!valid ? message(contactType.value) : '');
+      if(attempted)renderErrors();
     }
     function configureContact() {
       const telegram=contactType.value==='telegram';
@@ -102,11 +114,25 @@
       contact.placeholder=telegram?'@username':'+995 555 123 456';
       refresh();
     }
+    function renderErrors(focus=false) {
+      const errors=[];
+      const startError=!checkin.value?message('requiredStart'):checkin.value<today()?message('past'):'';
+      const endError=checkout?(!checkout.value?message('requiredEnd'):checkout.value<checkout.min?message('end'):''):'';
+      for(const [picker,error] of [[startPicker,startError],[endPicker,endError]]) {
+        if(!picker)continue;
+        if(error){picker.fail(error);errors.push({text:error,focus:()=>picker.focus()});}else picker.clear();
+      }
+      for(const field of [guests,contact]) {
+        const error=field===guests?(!field.value.trim()||!field.validity.valid?message('guests'):''):(!field.value.trim()?message('requiredContact'):!field.validity.valid?message(contactType.value):'');
+        const note=fieldErrors.get(field);note.textContent=error;note.hidden=!error;
+        if(error){field.setAttribute('aria-invalid','true');errors.push({text:error,focus:()=>field.focus()});}else field.removeAttribute('aria-invalid');
+      }
+      summary.replaceChildren();summary.hidden=!errors.length;
+      if(errors.length){const title=document.createElement('strong');title.textContent=message('summary');const list=document.createElement('ul');errors.forEach(error=>{const item=document.createElement('li');item.textContent=error.text;list.append(item);});summary.append(title,list);if(focus){summary.scrollIntoView({block:'center',behavior:'smooth'});errors[0].focus();}}
+      return !errors.length;
+    }
     function validate() {
-      refresh();
-      if(!checkin.value){startPicker.fail(message('past'));startPicker.focus();return false;}
-      if(checkout&&!checkout.value){endPicker.fail(message('end'));endPicker.focus();return false;}
-      return form.reportValidity();
+      attempted=true;refresh();return renderErrors(true);
     }
     // Refresh before native form validation, including after a midnight rollover.
     form.addEventListener('click',event=>{if(event.target.closest('[type="submit"]'))refresh();},true);
