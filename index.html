@@ -71,17 +71,17 @@ footer{background:#0d3028}
 .photo-viewer[hidden]{display:none}.photo-viewer{position:fixed;inset:0;z-index:9999;background:rgba(8,13,11,.94);display:flex;align-items:center;justify-content:center;padding:72px 56px 92px;color:#fff}.photo-viewer img{display:block;max-width:min(92vw,1200px);max-height:calc(100vh - 170px);width:auto;height:auto;object-fit:contain;transform:scale(var(--photo-zoom,1));transform-origin:center;touch-action:none;user-select:none;-webkit-user-drag:none}.photo-viewer button{position:absolute;border:0;background:rgba(255,255,255,.16);color:white;border-radius:999px;width:46px;height:46px;font-size:25px;cursor:pointer;display:grid;place-items:center}.photo-viewer .pv-close{top:16px;right:16px}.photo-viewer .pv-prev{left:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-next{right:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-tools{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center}.photo-viewer .pv-tools button{position:static;transform:none}.photo-viewer .pv-count{min-width:58px;text-align:center;font-size:14px}.photo-viewer .pv-help{position:absolute;bottom:29px;right:20px;color:rgba(255,255,255,.75);font-size:12px}.card-img img,.mini-gallery img,.preview img,.about-photo img,.hero-photo img{cursor:zoom-in}@media(max-width:600px){.photo-viewer{padding:60px 12px 90px}.photo-viewer img{max-width:96vw;max-height:calc(100vh - 160px)}.photo-viewer .pv-prev{left:8px}.photo-viewer .pv-next{right:8px}.photo-viewer .pv-help{display:none}}
 </style>
 <link rel="stylesheet" href="images/editorial.css?v=20261029-2">
-<link rel="stylesheet" href="images/theme.css?v=20261029-2">
+<link rel="stylesheet" href="images/theme.css?v=20261029-3">
 </head>
 <body class="home-page">
 <header class="site-header">
  <div class="wrap nav">
   <a class="brand" href="#top" aria-label="На главную"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-7h5v7"/></svg></span><span>BATUMI HOME<small>BATUMI · GEORGIA</small></span></a>
-  <nav class="navlinks"><a href="#apartments">Квартиры на месяц</a><a href="#daily">Посуточно</a><a href="#request">Оставить заявку</a><a href="#how">Как работаю</a></nav>
+  <nav class="navlinks"><a href="#apartments">Длительная аренда</a><a href="#daily">Посуточно</a><a href="#request">Оставить заявку</a><a href="#how">Как работаю</a></nav>
   <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language" title="Switch language">🌐 <span id="langLabel">EN</span></button>
   <a class="btn small" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Написать в Telegram ↗</a>
  </div>
- <nav class="wrap mobile-rent-nav"><a href="#apartments">Квартиры на месяц</a><a href="#daily">Посуточно</a></nav>
+ <nav class="wrap mobile-rent-nav"><a href="#apartments">Длительная аренда</a><a href="#daily">Посуточно</a></nav>
 </header>
 <main id="top">
 <section class="hero">
@@ -89,7 +89,7 @@ footer{background:#0d3028}
   <div>
    <div class="eyebrow"><span class="dot"></span> Недвижимость · Батуми</div>
    <h1>Аренда в Батуми.<br><em>Для жизни и отдыха.</em></h1>
-   <p>Квартиры на месяц и посуточно. Подберу варианты по бюджету, району и вашим планам.</p>
+   <p>Квартиры для длительной и посуточной аренды. Подберу варианты по бюджету, району и вашим планам.</p>
    <div class="hero-actions"><a class="btn" href="#request">Подобрать квартиру <span>↗</span></a><a class="btn light" href="#apartments">Посмотреть варианты ↓</a></div>
    <div class="trust"><span><b>✓</b> Подбор под бюджет</span><span><b>✓</b> Общение напрямую</span><span><b>✓</b> Батуми и районы</span></div>
   </div>
@@ -101,7 +101,7 @@ footer{background:#0d3028}
 </section>
 <section id="apartments">
  <div class="wrap">
-  <div class="section-head"><div><div class="kicker">Подборка</div><h2>Квартиры на месяц</h2></div><p>Выберите бюджет и подходящий вариант. Уточним доступность и условия перед просмотром.</p></div>
+  <div class="section-head"><div><div class="kicker">Подборка</div><h2>Длительная аренда</h2></div><p>Выберите бюджет и подходящий вариант. Уточним доступность и условия перед просмотром.</p></div>
   <div class="filters" role="group" aria-label="Фильтр по цене">
    <button class="filter active" data-filter="all">Все варианты</button><button class="filter" data-filter="300-400">$300–400</button><button class="filter" data-filter="400-500">$400–500</button><button class="filter" data-filter="500-600">$500–600</button><button class="filter" data-filter="600-700">$600–700</button><button class="filter" data-filter="700-800">$700–800</button><button class="filter" data-filter="800-1000">$800–1,000</button><button class="filter" data-filter="1000+">$1,000+</button>
   </div>
@@ -116,7 +116,7 @@ footer{background:#0d3028}
    </article>
    <article class="card" data-price="400">
     <div class="card-img"><img src="images/rental400-01-main.jpeg" alt="Студия для долгосрочной аренды в Батуми" loading="lazy"><span class="sample-label" style="background:#edf2f8;color:#38536e">Реальные фото</span></div>
-    <div class="card-body"><div class="price">$400 <small>/ месяц</small></div><h3>Современная студия</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/rental400-03-bedroom.jpeg" alt="Спальная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-02-bathroom.jpeg" alt="Ванная комната студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-06-kitchen.jpeg" alt="Кухонная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-05-interior.jpeg" alt="Интерьер квартиры" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-09-kitchen-angle.jpeg" alt="Кухня и спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ Студия</span><span>✦ Современный интерьер</span><span>₾ Долгосрок</span></div><p class="listing-desc">Современная студия с кухонной и спальной зонами. Район, доступность и условия уточним перед просмотром.</p><a class="btn small tg-link" data-apartment="Долгосрочная аренда, студия, $400" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
+    <div class="card-body"><div class="price">$400 <small>/ месяц</small></div><h3>Современная студия</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/rental400-03-bedroom.jpeg" alt="Спальная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-02-bathroom.jpeg" alt="Ванная комната студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-06-kitchen.jpeg" alt="Кухонная зона студии" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-05-interior.jpeg" alt="Интерьер квартиры" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental400-09-kitchen-angle.jpeg" alt="Кухня и спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · район уточняется</div><div class="features"><span>▱ Студия</span><span>✦ Современный интерьер</span><span>₾ Долгосрок</span></div><p class="listing-desc">Современная студия с кухонной и спальной зонами. Район, доступность и условия уточним перед просмотром.</p><a class="btn small tg-link" data-apartment="Длительная аренда, студия, $400" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
    </article>
    <article class="card" data-price="400">
     <div class="card-img"><img src="images/marina-club-01-studio.jpeg" alt="Студия с двуспальной кроватью и балконом" loading="lazy"><span class="sample-label" style="background:#edf2f8;color:#38536e">Реальные фото · 10</span></div>
@@ -171,7 +171,7 @@ footer{background:#0d3028}
      <div class="location">⌖ Батуми · жилой комплекс Bellioner</div>
      <div class="features"><span>▱ Планировка 1+1</span><span>⌂ 56 м² · 27-й этаж</span><span>🌆 Вид на Аллею Героев и стадион</span></div>
      <p class="listing-desc">Светлая квартира 1+1 на 27-м этаже. Из окон — вид на Аллею Героев и стадион. Для долгосрочной аренды.</p>
-     <a class="btn small tg-link" data-apartment="Долгосрочная аренда, Bellioner, 1+1, 56 м², 27-й этаж, $500" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a>
+     <a class="btn small tg-link" data-apartment="Длительная аренда, Bellioner, 1+1, 56 м², 27-й этаж, $500" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a>
     </div>
    </article>
    <article class="card" data-price="600">
@@ -180,11 +180,11 @@ footer{background:#0d3028}
     <div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/rental600-03-bedroom.jpeg" alt="Спальня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental600-01-bathroom.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental600-02-balcony.jpeg" alt="Балкон" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental600-08-kitchen.jpeg" alt="Кухня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/rental600-09-living-room.jpeg" alt="Гостиная" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div>
     <div class="location">⌖ Батуми · ул. Инасаридзе, 8 · Новый Бульвар, рядом с Grand Mall</div><div class="features"><span>▱ Планировка 2+1</span><span>⌂ 60 м² · 13-й этаж</span><span>♨ Центральное отопление</span><span>♧ Балкон и вид</span></div>
     <p class="listing-desc">Квартира 2+1 на 13-м этаже, рядом с Grand Mall. Балкон, центральное отопление, духовка и микроволновая печь.</p>
-    <a class="btn small tg-link" data-apartment="Долгосрочная аренда, квартира 2+1, 60 м², $600, ул. Инасаридзе 8, рядом с Grand Mall" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
+    <a class="btn small tg-link" data-apartment="Длительная аренда, квартира 2+1, 60 м², $600, ул. Инасаридзе 8, рядом с Grand Mall" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
    </article>
    <article class="card" data-price="700">
     <div class="card-img"><img src="images/IMG_6134.jpeg" alt="Гостиная и кухня квартиры для долгосрочной аренды в Батуми" loading="lazy"><span class="sample-label" style="background:#edf2f8;color:#38536e">Реальные фото</span></div>
-    <div class="card-body"><div class="price">$700 <small>/ месяц</small></div><h3>Квартира 2+1 · 75 м²</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/IMG_6135.jpeg" alt="Кухня и обеденная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6134.jpeg" alt="Гостиная" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6130.jpeg" alt="Спальня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6139.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6132.jpeg" alt="Кухонная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · ул. Григория Элиава, 32Д</div><div class="features"><span>▱ Планировка 2+1</span><span>⌂ 75 м²</span><span>♧ 2 санузла</span><span>✦ Хороший ремонт</span></div><p class="listing-desc">Просторная квартира с отдельными спальнями, гостиной и кухней. Два санузла и хороший ремонт. Для долгосрочной аренды.</p><a class="btn small tg-link" data-apartment="Долгосрочная аренда, квартира 2+1, 75 м², $700, ул. Григория Элиава 32Д" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
+    <div class="card-body"><div class="price">$700 <small>/ месяц</small></div><h3>Квартира 2+1 · 75 м²</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/IMG_6135.jpeg" alt="Кухня и обеденная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6134.jpeg" alt="Гостиная" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6130.jpeg" alt="Спальня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6139.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/IMG_6132.jpeg" alt="Кухонная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · ул. Григория Элиава, 32Д</div><div class="features"><span>▱ Планировка 2+1</span><span>⌂ 75 м²</span><span>♧ 2 санузла</span><span>✦ Хороший ремонт</span></div><p class="listing-desc">Просторная квартира с отдельными спальнями, гостиной и кухней. Два санузла и хороший ремонт. Для долгосрочной аренды.</p><a class="btn small tg-link" data-apartment="Длительная аренда, квартира 2+1, 75 м², $700, ул. Григория Элиава 32Д" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
    </article>
    <article class="card" data-price="800">
     <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Пример просторной квартиры повышенного класса" loading="lazy"><span class="sample-label">Пример формата</span></div>
@@ -212,19 +212,23 @@ footer{background:#0d3028}
      <div class="features"><span>▱ 40 м²</span><span>⌂ 4-й этаж</span><span>♧ Балкон</span><span>☼ Вид на море</span></div>
      <p class="listing-desc">Светлая квартира на Новом бульваре, рядом с морем. Балкон с видом на море. Свободные даты подтверждаются перед бронированием.</p>
      <a class="btn small" href="daily-booking.html?property=marina-club&amp;rate=70">Проверить даты ↗</a>
+     <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=marina-club&amp;rate=70&amp;rental=monthly">Оставить заявку ↗</a></div>
     </div>
    </article>
    <article class="card daily-card">
     <div class="card-img"><img src="images/alliance-02-living-sea-view.jpeg" alt="Апартамент 1+1 в Alliance Marriott с видом на море" loading="lazy"><span class="sample-label" style="background:#e8f4ed;color:#204036">Реальные фото</span></div>
-    <div class="card-body"><div class="daily-price">130 ₾ <small>/ сутки</small></div><h3>Просторный апартамент 1+1 в Alliance Marriott</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · Alliance Marriott · 7-й этаж</div><div class="features"><span>▱ 50 м²</span><span>⌂ 1+1</span><span>☼ Для отдыха и поездок</span></div><p class="listing-desc">Апартамент 1+1 на 7-м этаже: отдельные зоны для сна и отдыха. Подойдёт для пары, небольшой семьи или поездки с друзьями.</p><a class="btn small" href="daily-booking.html?property=alliance&amp;rate=130">Проверить даты ↗</a></div>
+    <div class="card-body"><div class="daily-price">130 ₾ <small>/ сутки</small></div><h3>Просторный апартамент 1+1 в Alliance Marriott</h3><div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальная зона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная комната" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:86px;height:64px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:86px;height:64px;object-fit:cover;border-radius:8px"></div><div class="location">⌖ Батуми · Alliance Marriott · 7-й этаж</div><div class="features"><span>▱ 50 м²</span><span>⌂ 1+1</span><span>☼ Для отдыха и поездок</span></div><p class="listing-desc">Апартамент 1+1 на 7-м этаже: отдельные зоны для сна и отдыха. Подойдёт для пары, небольшой семьи или поездки с друзьями.</p><a class="btn small" href="daily-booking.html?property=alliance&amp;rate=130">Проверить даты ↗</a>
+     <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=alliance&amp;rate=130&amp;rental=monthly">Оставить заявку ↗</a></div></div>
    </article>
    <article class="card daily-card" data-orbi-gallery="c">
     <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Фото квартиры Orbi City, блок C" loading="lazy"><span class="sample-label" data-orbi-count style="background:#edf2f8;color:#38536e">1 / 10</span><button type="button" class="orbi-nav orbi-prev" data-orbi-prev aria-label="Предыдущее фото">‹</button><button type="button" class="orbi-nav orbi-next" data-orbi-next aria-label="Следующее фото">›</button></div>
-    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-c&amp;rate=60">Проверить даты ↗</a></div>
+    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-c&amp;rate=60">Проверить даты ↗</a>
+     <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=orbi-c&amp;rate=60&amp;rental=monthly">Оставить заявку ↗</a></div></div>
    </article>
    <article class="card daily-card">
     <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Orbi City D2" loading="lazy"><span class="sample-label" style="background:#edf2f8;color:#38536e">Фото квартиры</span></div>
-    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок D2</h3><div class="location">⌖ Батуми · Orbi City, блок D2</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-d2&amp;rate=60">Проверить даты ↗</a></div>
+    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок D2</h3><div class="location">⌖ Батуми · Orbi City, блок D2</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-d2&amp;rate=60">Проверить даты ↗</a>
+     <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=orbi-d2&amp;rate=60&amp;rental=monthly">Оставить заявку ↗</a></div></div>
    </article>
 
    
@@ -242,12 +246,12 @@ footer{background:#0d3028}
    <div class="kicker">Индивидуальный подбор</div>
    <h2>Найдём квартиру под ваши планы</h2>
    <p class="request-intro">Укажите бюджет, даты и пожелания. Подготовим сообщение для Алексея в Telegram.</p>
-   <div class="request-points"><span>✓ Долгосрочная аренда</span><span>✓ Посуточная аренда</span><span>✓ Бюджет и даты сразу в заявке</span></div>
+   <div class="request-points"><span>✓ Длительная аренда</span><span>✓ Посуточная аренда</span><span>✓ Бюджет и даты сразу в заявке</span></div>
   </div>
   <form id="leadForm" class="lead-form">
    <label for="rentType">Тип аренды</label>
    <select id="rentType" name="rentType" required>
-    <option value="Долгосрочная аренда">Долгосрочная аренда</option>
+    <option value="Длительная аренда">Длительная аренда</option>
     <option value="Посуточная аренда">Посуточная аренда</option>
    </select>
    <label for="budget">Бюджет</label>
@@ -361,7 +365,8 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-3"></script>
+<script src="images/localization.js?v=20261029-4"></script>
 </body>
 </html>
+
 

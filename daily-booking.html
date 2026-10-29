@@ -23,7 +23,7 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 .photo-viewer[hidden]{display:none}.photo-viewer{position:fixed;inset:0;z-index:9999;background:rgba(8,13,11,.94);display:flex;align-items:center;justify-content:center;padding:72px 56px 92px;color:#fff}.photo-viewer img{display:block;max-width:min(92vw,1200px);max-height:calc(100vh - 170px);width:auto;height:auto;object-fit:contain;transform:scale(var(--photo-zoom,1));transform-origin:center;touch-action:none;user-select:none;-webkit-user-drag:none}.photo-viewer button{position:absolute;border:0;background:rgba(255,255,255,.16);color:white;border-radius:999px;width:46px;height:46px;font-size:25px;cursor:pointer;display:grid;place-items:center}.photo-viewer .pv-close{top:16px;right:16px}.photo-viewer .pv-prev{left:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-next{right:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-tools{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center}.photo-viewer .pv-tools button{position:static;transform:none}.photo-viewer .pv-count{min-width:58px;text-align:center;font-size:14px}.photo-viewer .pv-help{position:absolute;bottom:29px;right:20px;color:rgba(255,255,255,.75);font-size:12px}.preview img{cursor:zoom-in}@media(max-width:600px){.photo-viewer{padding:60px 12px 90px}.photo-viewer img{max-width:96vw;max-height:calc(100vh - 160px)}.photo-viewer .pv-prev{left:8px}.photo-viewer .pv-next{right:8px}.photo-viewer .pv-help{display:none}}
 </style>
 <link rel="stylesheet" href="images/editorial.css?v=20261029-2">
-<link rel="stylesheet" href="images/theme.css?v=20261029-2">
+<link rel="stylesheet" href="images/theme.css?v=20261029-3">
 </head>
 <body class="booking-page">
 <header class="site-header"><div class="wrap header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-7h5v7"/></svg></span><span>BATUMI HOME<small>BATUMI · GEORGIA</small></span></a><div class="header-right"><a class="back" href="index.html#daily" id="backLink">← Все квартиры</a><button class="lang" type="button" id="langButton">EN</button></div></div></header>
@@ -41,12 +41,14 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 <section class="form-card">
  <h2 id="formTitle">Запрос на бронирование</h2><p id="formIntro">Даты, гости и ваши пожелания.</p>
  <form id="bookingForm">
+  <label for="rentalType">Тип аренды</label><select id="rentalType" name="rentalType"><option value="daily">Посуточная аренда</option><option value="monthly">Аренда на месяц</option></select>
+  <p id="monthlyNote" class="fine" hidden>Месячную стоимость и доступность подтвердим после заявки.</p>
   <label for="checkin" id="checkinLabel">Дата заезда</label><input id="checkin" type="date" required>
   <label for="checkout" id="checkoutLabel">Дата выезда</label><input id="checkout" type="date" required>
   <div class="two"><div><label for="guests" id="guestsLabel">Гостей</label><select id="guests"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option><option value="5+">5+</option></select></div><div><label for="phone" id="phoneLabel">Телефон (необязательно)</label><input id="phone" type="tel" placeholder="+995 ..."></div></div>
   <label for="wishes" id="wishesLabel">Пожелания</label><textarea id="wishes" rows="3" placeholder="Например, парковка или детская кроватка"></textarea>
-  <div class="estimate"><span id="estimateLabel">Ориентировочная стоимость</span><strong id="estimateValue">Выберите даты</strong><span class="muted" id="estimateSmall">Окончательную стоимость подтвердим перед бронированием.</span></div>
-  <button class="btn" type="submit" id="submitButton">Подготовить запрос в Telegram ↗</button>
+  <div class="estimate"><span id="estimateLabel">Ориентировочная стоимость</span><strong id="estimateValue" aria-live="polite">Выберите даты</strong><span class="muted" id="estimateSmall">Окончательную стоимость подтвердим перед бронированием.</span></div>
+  <button class="btn" type="submit" id="submitButton">Оставить заявку в Telegram ↗</button>
   <p class="fine" id="finePrint">Сообщение откроется в Telegram. Отправьте его, чтобы уточнить доступность. Бронирование подтверждается отдельно.</p>
  </form>
 </section>
@@ -79,20 +81,56 @@ if(key==='marina-club'){document.getElementById('propertyDescription').textConte
 const checkin=document.getElementById('checkin'),checkout=document.getElementById('checkout');
 const today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());const todayStr=today.toISOString().slice(0,10);checkin.min=todayStr;checkout.min=todayStr;
 function nights(){if(!checkin.value||!checkout.value)return 0;return Math.round((new Date(checkout.value+'T12:00:00')-new Date(checkin.value+'T12:00:00'))/86400000)}
+function addCalendarMonth(value){
+ const [year,month,day]=value.split('-').map(Number);
+ const last=new Date(Date.UTC(year,month+1,0)).getUTCDate();
+ return new Date(Date.UTC(year,month,Math.min(day,last))).toISOString().slice(0,10);
+}
 function updateEstimate(){
- if(checkin.value){checkout.min=checkin.value;if(checkout.value&&checkout.value<=checkin.value)checkout.value='';}
- const n=nights(), language=window.BatumiI18n?.language||'ru';
+ const monthly=document.getElementById('rentalType').value==='monthly';
+ if(checkin.value){
+  checkout.min=checkin.value;
+  if(checkout.value&&checkout.value<=checkin.value)checkout.value='';
+  if(monthly&&!checkout.value)checkout.value=addCalendarMonth(checkin.value);
+ }
+ const n=nights(),language=window.BatumiI18n?.language||'ru';
  const nightsLabel={ru:'ноч.',en:n===1?'night':'nights',ka:'ღამე'}[language];
  const empty={ru:'Выберите даты',en:'Choose dates',ka:'აირჩიეთ თარიღები'}[language];
- document.getElementById('estimateValue').textContent=n>0?`${n} ${nightsLabel} × ${rate} ₾ = ${n*rate} ₾`:empty;
+ const monthlyPrice={ru:'Стоимость по запросу',en:'Price on request',ka:'ფასი მოთხოვნით'}[language];
+ document.getElementById('estimateValue').textContent=monthly?monthlyPrice:n>0?`${n} ${nightsLabel} × ${rate} ₾ = ${n*rate} ₾`:empty;
+}
+function updateRentalMode(){
+ const monthly=document.getElementById('rentalType').value==='monthly';
+ const n=nights();
+ if(monthly&&checkin.value&&n<28)checkout.value=addCalendarMonth(checkin.value);
+ document.getElementById('monthlyNote').hidden=!monthly;
+ document.getElementById('propertyPrice').innerHTML=monthly?'Стоимость по запросу <span class="muted">/ месяц</span>':rate+' ₾ <span class="muted">/ сутки</span>';
+ updateEstimate();
+}
+function makeRentalRequest(data){
+ const monthly=data.rentalType==='monthly';
+ const texts={
+  ru:{hello:monthly?'Здравствуйте, Алексей! Интересует аренда квартиры на месяц в Батуми.':'Здравствуйте, Алексей! Хочу забронировать квартиру в Батуми.',type:'Тип аренды',monthly:'Аренда на месяц',daily:'Посуточная аренда',property:'Апартамент',checkin:'Заезд',checkout:'Выезд',nights:'Ночей',guests:'Гостей',price:monthly?'Месячная стоимость: прошу уточнить':`Цена-ориентир: ${data.rate} ₾/сутки, всего ориентировочно ${data.nights*data.rate} ₾`,phone:'Телефон',wishes:'Пожелания',empty:'не указано'},
+  en:{hello:monthly?'Hello Alexey! I am interested in renting an apartment for a month in Batumi.':'Hello Alexey! I would like to book an apartment in Batumi.',type:'Rental type',monthly:'Monthly rental',daily:'Daily rental',property:'Apartment',checkin:'Check-in',checkout:'Check-out',nights:'Nights',guests:'Guests',price:monthly?'Monthly price: please confirm':`Guide price: ${data.rate} GEL/day, estimated total ${data.nights*data.rate} GEL`,phone:'Phone',wishes:'Requests',empty:'not provided'},
+  ka:{hello:monthly?'გამარჯობა, ალექსეი! მაინტერესებს ბინის ერთი თვით ქირაობა ბათუმში.':'გამარჯობა, ალექსეი! მსურს ბინის დაჯავშნა ბათუმში.',type:'ქირის ტიპი',monthly:'ერთი თვით ქირაობა',daily:'დღიური ქირა',property:'აპარტამენტი',checkin:'შესვლა',checkout:'გასვლა',nights:'ღამეების რაოდენობა',guests:'სტუმრები',price:monthly?'ერთი თვის ფასი: გთხოვთ, დამიზუსტოთ':`საორიენტაციო ფასი: ${data.rate} ₾/დღე, ჯამში დაახლოებით ${data.nights*data.rate} ₾`,phone:'ტელეფონი',wishes:'სურვილები',empty:'მითითებული არ არის'}
+ }[data.language]||null;
+ if(!texts)throw new Error('Unsupported language');
+ return [texts.hello,`${texts.type}: ${monthly?texts.monthly:texts.daily}`,`${texts.property}: ${data.title}`,`${texts.checkin}: ${data.checkin}`,`${texts.checkout}: ${data.checkout}`,`${texts.nights}: ${data.nights}`,`${texts.guests}: ${data.guests}`,texts.price,`${texts.phone}: ${data.phone||texts.empty}`,`${texts.wishes}: ${data.wishes||texts.empty}`].join('\n');
 }
 checkin.addEventListener('change',updateEstimate);checkout.addEventListener('change',updateEstimate);
+const rentalType=document.getElementById('rentalType');
+rentalType.value=params.get('rental')==='monthly'?'monthly':'daily';
+rentalType.addEventListener('change',updateRentalMode);
+updateRentalMode();
 let lang='ru';
 document.addEventListener('batumi:language',event=>{lang=event.detail;updateEstimate();});
-document.getElementById('bookingForm').addEventListener('submit',e=>{e.preventDefault();const n=nights();if(n<1){alert(lang==='ru'?'Дата выезда должна быть позже даты заезда.':lang==='en'?'Check-out must be after check-in.':'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.');return;}
-const msg=lang==='ru'?`Здравствуйте, Алексей! Хочу забронировать квартиру в Батуми.\nВариант: ${window.BatumiI18n?.t(property.title)||property.title}\nЗаезд: ${checkin.value}\nВыезд: ${checkout.value}\nНочей: ${n}\nГостей: ${document.getElementById('guests').value}\nЦена-ориентир: ${rate} ₾/ночь, всего ориентировочно ${n*rate} ₾\nТелефон: ${document.getElementById('phone').value||'не указан'}\nПожелания: ${document.getElementById('wishes').value||'нет'}`:lang==='en'?`Hello Alexey! I’d like to book an apartment in Batumi.\nOption: ${window.BatumiI18n?.t(property.title)||property.title}\nCheck-in: ${checkin.value}\nCheck-out: ${checkout.value}\nNights: ${n}\nGuests: ${document.getElementById('guests').value}\nGuide price: ${rate} GEL/night, estimated total ${n*rate} GEL\nPhone: ${document.getElementById('phone').value||'not provided'}\nRequests: ${document.getElementById('wishes').value||'none'}`:`გამარჯობა, ალექსეი! მსურს ბინის დაჯავშნა ბათუმში.\nვარიანტი: ${window.BatumiI18n?.t(property.title)||property.title}\nშესვლა: ${checkin.value}\nგასვლა: ${checkout.value}\nღამეების რაოდენობა: ${n}\nსტუმრები: ${document.getElementById('guests').value}\nსაორიენტაციო ფასი: ${rate} ₾/ღამე, ჯამში დაახლოებით ${n*rate} ₾\nტელეფონი: ${document.getElementById('phone').value||'მითითებული არ არის'}\nსურვილები: ${document.getElementById('wishes').value||'არ არის'}`;
-location.href='https://t.me/share/url?url=&text='+encodeURIComponent(msg);
+document.getElementById('bookingForm').addEventListener('submit',e=>{
+ e.preventDefault();const n=nights();
+ if(n<1){alert(lang==='ru'?'Дата выезда должна быть позже даты заезда.':lang==='en'?'Check-out must be after check-in.':'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.');return;}
+ const message=makeRentalRequest({language:lang,rentalType:rentalType.value,title:window.BatumiI18n?.t(property.title)||property.title,checkin:checkin.value,checkout:checkout.value,nights:n,guests:document.getElementById('guests').value,phone:document.getElementById('phone').value,wishes:document.getElementById('wishes').value,rate});
+ location.href='https://t.me/share/url?url=&text='+encodeURIComponent(message);
 });
+
 document.getElementById('propertyImage').addEventListener('error',()=>{document.getElementById('propertyImage').style.display='none';});
 </script>
 <div id="photoViewer" class="photo-viewer" role="dialog" aria-modal="true" aria-label="Просмотр фотографий" hidden><button type="button" class="pv-close" aria-label="Закрыть фото">×</button><button type="button" class="pv-prev" aria-label="Предыдущее фото">‹</button><img class="pv-image" alt=""><button type="button" class="pv-next" aria-label="Следующее фото">›</button><div class="pv-tools"><button type="button" class="pv-minus" aria-label="Уменьшить">−</button><span class="pv-count"></span><button type="button" class="pv-plus" aria-label="Увеличить">+</button><button type="button" class="pv-reset" aria-label="Сбросить масштаб">⟲</button></div><div class="pv-help">Можно приблизить кнопками или жестом</div></div>
@@ -112,7 +150,8 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-3"></script>
+<script src="images/localization.js?v=20261029-4"></script>
 </body>
 </html>
+
 
