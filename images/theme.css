@@ -3,7 +3,7 @@
 body{background:#f8f9fb;color:var(--ink)}
 header.site-header{display:block;height:auto;position:sticky;top:0;z-index:20;background:var(--navy);border-bottom:1px solid #ffffff15;backdrop-filter:none;box-shadow:none}
 .site-header .nav{min-height:80px;gap:22px}
-.site-header .brand{color:#fff;font-size:15px;font-weight:650;letter-spacing:.035em}
+.site-header .brand{text-decoration:none;color:#fff;font-size:15px;font-weight:650;letter-spacing:.035em}
 .site-header .brand small{color:#9eb1c3;font-size:9px;letter-spacing:.15em;margin-top:4px;font-weight:500}
 .brand-mark{width:42px;height:42px;flex:0 0 auto;background:#356ce8;border:1px solid #7198ed55;border-radius:13px;box-shadow:0 7px 22px #030d1828}
 .brand-mark svg{width:23px;height:23px;display:block}
@@ -19,7 +19,7 @@ header.site-header{display:block;height:auto;position:sticky;top:0;z-index:20;ba
 .hero h1{color:#fbfcfe;letter-spacing:-.045em;font-size:clamp(2.5rem,4.2vw,3.75rem);line-height:1.13;max-width:21ch;font-weight:600}
 .hero h1 em{color:#a7c0ff;font-weight:500}
 .hero p{color:#bfcedc;font-size:1rem;line-height:1.8;max-width:47ch}
-.hero .eyebrow{color:#c5d4e5;background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:9px 12px;letter-spacing:.12em;font-weight:550;margin-bottom:24px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#c5d4e5;background:#ffffff08;border:1px solid #ffffff15;border-radius:8px;padding:9px 12px;letter-spacing:.12em;font-weight:550;margin-bottom:24px}
 .hero .dot{background:#8db0ff;width:6px;height:6px}
 .hero-actions{gap:12px}
 .hero-actions .btn{background:#f3f6fb;border-color:#f3f6fb;color:#142d45;border-radius:13px;padding:15px 20px;box-shadow:none}
