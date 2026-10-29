@@ -33,7 +33,13 @@ const dictionaries = {"en":{"Недвижимость · Батуми":"Real est
     if (/^[\d+–\s]+м²$/.test(value)) return value.replace('м²', target === 'en' ? 'm²' : 'მ²');
     return text;
   };
-  const sourceOf = value => reverse.get(normalize(value)) || value;
+  const sourceOf = value => {
+    const exact = reverse.get(normalize(value));
+    if (exact) return exact;
+    const photo = normalize(value).match(/^(.*?) — (?:photo (\d+) of (\d+)|ფოტო (\d+) \/ (\d+))$/);
+    if (photo) return photo[1].replace(', Block ', ', блок ').replace(', ბლოკი ', ', блок ') + ` — фото ${photo[2] || photo[4]} из ${photo[3] || photo[5]}`;
+    return value;
+  };
   const excluded = node => node.parentElement?.closest('script,style,noscript,textarea,[data-no-i18n]');
   function apply(root = document.body) {
     observer.disconnect();
