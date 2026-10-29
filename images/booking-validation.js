@@ -35,7 +35,7 @@
     const text=(ru,en,ka)=>({ru,en,ka}[lang()]);
     function update() {
       button.textContent=input.value?new Intl.DateTimeFormat(locale(),{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(new Date(input.value+'T12:00:00Z')):text('Выберите дату','Choose a date','აირჩიეთ თარიღი');
-      if(!panel.hidden)render();
+
     }
     function close() {panel.hidden=true;button.setAttribute('aria-expanded','false');}
     function render() {
