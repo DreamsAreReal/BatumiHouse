@@ -106,6 +106,13 @@ footer{background:#0d3028}
    <button class="filter active" data-filter="all">Все варианты</button><button class="filter" data-filter="300-400">$300–400</button><button class="filter" data-filter="400-500">$400–500</button><button class="filter" data-filter="500-600">$500–600</button><button class="filter" data-filter="600-700">$600–700</button><button class="filter" data-filter="700-800">$700–800</button><button class="filter" data-filter="800-1000">$800–1,000</button><button class="filter" data-filter="1000+">$1,000+</button>
   </div>
   <div class="grid" id="cards">
+<article class="card" id="sunrise-32" data-price="750">
+<div class="card-img"><img src="images/sunrise-7069.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy"><span class="sample-label">Реальные фото · 7</span></div>
+<div class="card-body"><div class="price">$750 <small>/ месяц</small></div><h3>Sunrise · квартира 1+1 · 50 м²</h3>
+<div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/sunrise-7068.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/sunrise-7067.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/sunrise-7064.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/sunrise-7065.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/sunrise-7066.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/sunrise-7063.webp" alt="Sunrise · квартира 1+1 · 50 м²" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"></div>
+<div class="location">⌖ Батуми · ул. Шартава, 32 · Аллея героев</div>
+<div class="features"><span>▱ Планировка 1+1</span><span>⌂ 50 м²</span><span>♨ Центральное отопление</span><span>Рабочее место</span><span>Животные по согласованию</span></div>
+<p class="listing-desc">Современная квартира с отдельной светлой спальней, центральным отоплением и рабочим местом. На кухне — духовка и посудомоечная машина. Проживание с животными — по согласованию.</p><a class="btn" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div></article>
    <article class="card" data-orbi-gallery="c" data-price="350">
     <div class="card-img"><img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%23e8eee7%22/%3E%3Ctext x=%22300%22 y=%22200%22 font-family=%22Arial%22 font-size=%2228%22 text-anchor=%22middle%22 fill=%22%23203e33%22%3EOrbi City C%3C/text%3E%3C/svg%3E" alt="Фото квартиры Orbi City, блок C" loading="lazy"><span class="sample-label" data-orbi-count>1 / 10</span><button type="button" class="orbi-nav orbi-prev" data-orbi-prev aria-label="Предыдущее фото">‹</button><button type="button" class="orbi-nav orbi-next" data-orbi-next aria-label="Следующее фото">›</button></div>
     <div class="card-body"><div class="price">$350 <small>/ месяц</small></div><h3>Студия в Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>☼ Вид на море</span><span>Помесячно</span></div><a class="btn small tg-link" data-apartment="Orbi City C · $350 в месяц" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div>
@@ -356,7 +363,7 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-5"></script>
+<script src="images/localization.js?v=20261029-6"></script>
 </body>
 </html>
 
