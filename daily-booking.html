@@ -26,35 +26,38 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 <link rel="stylesheet" href="images/editorial.css?v=20261029-2">
 <link rel="stylesheet" href="images/theme.css?v=20261029-4">
 <link rel="stylesheet" href="images/booking-calendar.css?v=20261029-3">
+<link rel="stylesheet" href="images/booking-page.css?v=20261029-1">
 </head>
 <body class="booking-page">
 <header class="site-header"><div class="wrap header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-7h5v7"/></svg></span><span>BATUMI HOME<small>BATUMI · GEORGIA</small></span></a><div class="header-right"><a class="back" href="index.html#daily" id="backLink">← Все квартиры</a><button class="lang" type="button" id="langButton">EN</button></div></div></header>
-<section class="hero"><div class="wrap"><div class="eyebrow" id="eyebrow">Бронирование · Батуми</div><h1 id="title">Выберите даты поездки</h1><p id="intro">Укажите даты и количество гостей. Проверим доступность квартиры и подтвердим условия в Telegram.</p></div></section>
+<nav class="wrap booking-breadcrumb" aria-label="Навигация"><a href="index.html#daily">Посуточная аренда</a><span aria-hidden="true"> / </span><span>Апартамент</span></nav>
 <main class="wrap layout">
 <section>
  <article class="preview">
   <img id="propertyImage" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1000&q=80" alt="Пример квартиры для посуточной аренды">
 <div id="allianceGallery" style="display:none;gap:8px;overflow-x:auto;margin:10px 0"><img src="images/alliance-01-bedroom.jpeg" alt="Спальня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-03-bathroom.jpeg" alt="Ванная" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-05-balcony-view.jpeg" alt="Вид с балкона" style="width:100px;height:75px;object-fit:cover;border-radius:8px"><img src="images/alliance-08-kitchen.jpeg" alt="Кухня" style="width:100px;height:75px;object-fit:cover;border-radius:8px"></div>
   <div id="orbiCGallery" style="display:none;gap:8px;overflow-x:auto;margin:10px 0"></div>
-  <div class="preview-body"><span class="tag" id="sampleTag">Пример формата</span><div class="price" id="propertyPrice">от 90 ₾ <span class="muted">/ сутки</span></div><h2 id="propertyTitle">Уютная квартира для короткой поездки</h2><div class="muted" id="propertyArea">Батуми · район уточняется</div><div class="features"><span id="featureOne">Студия / 1 комната</span><span id="featureTwo">Для пары</span></div><p id="propertyDescription" class="muted" style="margin-top:14px">Удобная студия для отдыха в Батуми.</p></div>
+  <div class="preview-body"><span class="tag" id="sampleTag">Пример формата</span><div class="price" id="propertyPrice">от 90 ₾ <span class="muted">/ сутки</span></div><h1 id="propertyTitle">Уютная квартира для короткой поездки</h1><div class="muted" id="propertyArea">Батуми · район уточняется</div><div class="features"><span id="featureOne">Студия / 1 комната</span><span id="featureTwo">Для пары</span></div><p id="propertyDescription" class="muted" style="margin-top:14px">Удобная студия для отдыха в Батуми.</p></div>
  </article>
- <div class="notice" id="notice">Важно: сейчас это демонстрационный вариант. Отправка формы не означает автоматическое подтверждение брони или оплату. Алексей подтвердит доступность, точную цену и правила проживания в Telegram.</div>
+ <div class="notice" id="notice">Бронирование подтверждается после ответа Алексея.</div>
 </section>
 <section class="form-card">
- <h2 id="formTitle">Запрос на бронирование</h2><p id="formIntro">Даты, гости и ваши пожелания.</p>
+ <div class="booking-form-heading"><span class="booking-kicker">ВАШЕ ПРОЖИВАНИЕ</span><h2 id="formTitle">Детали поездки</h2><p id="formIntro">Даты, гости и контакт для связи.</p></div>
  <form id="bookingForm">
-  <label for="rentalType">Тип аренды</label><select id="rentalType" name="rentalType"><option value="daily">Посуточная аренда</option><option value="monthly">Аренда на месяц</option></select>
+<section class="booking-section"><h3><span>01</span> Даты и гости</h3>  <div class="booking-field"><label for="rentalType">Тип аренды</label><select id="rentalType" name="rentalType"><option value="daily">Посуточная аренда</option><option value="monthly">Аренда на месяц</option></select></div>
   <p id="monthlyNote" class="fine" hidden>Месячную стоимость и доступность подтвердим после заявки.</p>
-  <label for="checkin" id="checkinLabel">Дата заезда</label><input id="checkin" type="date" required>
-  <label for="checkout" id="checkoutLabel">Дата выезда</label><input id="checkout" type="date" required>
-  <label for="guests">Количество гостей</label><input id="guests" name="guests" type="number" min="1" step="1" required inputmode="numeric" placeholder="Например, 2">
-  <label for="contactType">Как с вами связаться?</label><select id="contactType" name="contactType"><option value="phone">Телефон</option><option value="telegram">Telegram</option></select>
-  <label for="contact">Телефон или Telegram — обязательно</label><input id="contact" name="contact" type="tel" required maxlength="100" autocomplete="tel" placeholder="+995 555 123 456" aria-describedby="contactHelp">
-  <p class="fine form-note" id="contactHelp">Укажите один контакт, чтобы Алексей мог вам ответить.</p>
+  <div class="booking-field"><label for="checkin" id="checkinLabel">Дата заезда</label><input id="checkin" type="date" required></div>
+  <div class="booking-field"><label for="checkout" id="checkoutLabel">Дата выезда</label><input id="checkout" type="date" required></div>
+  <div class="booking-field"><label for="guests">Количество гостей</label><input id="guests" name="guests" type="number" min="1" step="1" required inputmode="numeric" placeholder="Например, 2"></div>
+</section>
+<section class="booking-section"><h3><span>02</span> Контакт для связи</h3>  <div class="booking-field"><label for="contactType">Как с вами связаться?</label><select id="contactType" name="contactType"><option value="phone">Телефон</option><option value="telegram">Telegram</option></select></div>
+  <div class="booking-field"><label for="contact">Ваш контакт</label><input id="contact" name="contact" type="tel" required maxlength="100" autocomplete="tel" placeholder="+995 555 123 456" aria-describedby="contactHelp"></div>
+  <p class="fine form-note" id="contactHelp">Нужен для ответа на вашу заявку.</p>
+</section>
   <fieldset class="stay-options" id="stayOptions"><legend>Заезд и выезд</legend><p>Заезд с 15:00 · Выезд до 12:00</p><p class="stay-help">По времени Батуми</p><label><input type="checkbox" id="earlyCheckin" name="earlyCheckin"> <span>Нужен ранний заезд</span></label><label><input type="checkbox" id="lateCheckout" name="lateCheckout"> <span>Нужен поздний выезд</span></label><p class="stay-help">Ранний заезд и поздний выезд — по согласованию. Возможность подтвердим отдельно.</p></fieldset>
-  <label for="wishes" id="wishesLabel">Пожелания</label><textarea id="wishes" rows="3" placeholder="Например, парковка или детская кроватка"></textarea>
+  <label for="wishes" id="wishesLabel">Пожелания (необязательно)</label><textarea id="wishes" rows="3" placeholder="Например, парковка или детская кроватка"></textarea>
   <div class="estimate"><span id="estimateLabel">Ориентировочная стоимость</span><strong id="estimateValue" aria-live="polite">Выберите даты</strong><span class="muted" id="estimateSmall">Окончательную стоимость подтвердим перед бронированием.</span></div>
-  <button class="btn" type="submit" id="submitButton">Оставить заявку в Telegram ↗</button>
+  <button class="btn" type="submit" id="submitButton">Продолжить в Telegram ↗</button>
   <p class="fine" id="finePrint">Сообщение откроется в Telegram. Отправьте его, чтобы уточнить доступность. Бронирование подтверждается отдельно.</p>
  </form>
 </section>
@@ -74,12 +77,13 @@ const properties={
 };
 const params=new URLSearchParams(location.search), key=params.get('property')||'cozy', property=properties[key]||properties.cozy, rate=Number(params.get('rate'))||property.rate;
 if(property.image)document.getElementById('propertyImage').src=property.image;
-if(key==='orbi'||key==='orbi-d2'||key==='orbi-c'){document.getElementById('propertyArea').textContent=key==='orbi-c'?'Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C':'Батуми · Orbi City, блок D2';document.getElementById('notice').textContent='Проверим доступность и подтвердим бронирование вручную. Цена — ориентир; итоговую стоимость уточните перед оплатой.';}
+if(key==='orbi'||key==='orbi-d2'||key==='orbi-c'){document.getElementById('propertyArea').textContent=key==='orbi-c'?'Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C':'Батуми · Orbi City, блок D2';document.getElementById('notice').textContent='Бронирование подтверждается после ответа Алексея.';}
 if(key==='orbi-c'){document.getElementById('sampleTag').textContent='Реальные фото';(async()=>{try{const responses=await Promise.all([1,2].map(i=>fetch('images/orbi-c-gallery-'+i+'.json',{cache:'force-cache'})));if(responses.some(r=>!r.ok))throw new Error('Gallery asset request failed');const photos=(await Promise.all(responses.map(r=>r.json()))).flat();if(photos.length!==10)throw new Error('Expected 10 Orbi C photos');const main=document.getElementById('propertyImage'),gallery=document.getElementById('orbiCGallery');main.__photoViewerItems=photos.map((src,n)=>({src,alt:'Orbi City, блок C — фото '+(n+1)+' из '+photos.length}));main.src=photos[0];main.alt='Orbi City, блок C — фото квартиры';gallery.style.display='flex';photos.forEach((src,index)=>{const thumb=document.createElement('img');thumb.src=src;thumb.alt='Фото '+(index+1)+' из '+photos.length;thumb.loading='lazy';thumb.style='width:92px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;flex:0 0 auto';thumb.addEventListener('click',()=>{main.src=src;});gallery.appendChild(thumb);});}catch(error){console.error('Не удалось загрузить фото Orbi City, блок C',error);}})();}
-if(key==='alliance'){document.getElementById('allianceGallery').style.display='flex';document.getElementById('propertyArea').textContent='Батуми · Alliance Marriott · 7-й этаж';document.getElementById('notice').textContent='Фото этого объекта ещё не добавлены. Бронирование подтверждается вручную после проверки доступности и итоговой цены.';}
-if(key==='marina-club'){document.getElementById('propertyImage').alt='Квартира Marina Club Towers — студия и балкон';document.getElementById('sampleTag').textContent='Реальные фото · 10';document.getElementById('propertyArea').textContent='Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар · 4-й этаж';document.getElementById('notice').textContent='Проверим свободные даты и подтвердим условия. Ориентировочная стоимость — 70 ₾ за сутки.';document.getElementById('propertyDescription').textContent='Светлая квартира 40 м² в Marina Club Towers с балконом и видом на море, рядом с морем на Новом бульваре. Цена — 70 ₾ за сутки; уточните свободные даты.';document.getElementById('orbiCGallery').style.display='flex';const photos=["images/marina-club-01-studio.jpeg","images/marina-club-02-studio-kitchen.jpeg","images/marina-club-03-balcony-sea.jpeg","images/marina-club-04-sea-view.jpeg","images/marina-club-05-entrance.jpeg","images/marina-club-06-hallway.jpeg","images/marina-club-07-bathroom-vanity.jpeg","images/marina-club-08-bathroom.jpeg","images/marina-club-09-shower.jpeg","images/marina-club-10-building.jpeg"];const gallery=document.getElementById('orbiCGallery');photos.forEach((src,index)=>{const thumb=document.createElement('img');thumb.src=src;thumb.alt='Marina Club Towers — фото '+(index+1)+' из '+photos.length;thumb.loading='lazy';thumb.style='width:92px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;flex:0 0 auto';thumb.addEventListener('click',()=>{document.getElementById('propertyImage').src=src;});gallery.appendChild(thumb);});document.getElementById('propertyImage').__photoViewerItems=photos.map((src,n)=>({src,alt:'Marina Club Towers — фото '+(n+1)+' из '+photos.length}));}
+if(key==='alliance'){document.getElementById('allianceGallery').style.display='flex';document.getElementById('propertyArea').textContent='Батуми · Alliance Marriott · 7-й этаж';document.getElementById('notice').textContent='Бронирование подтверждается после ответа Алексея.';}
+if(key==='marina-club'){document.getElementById('propertyImage').alt='Квартира Marina Club Towers — студия и балкон';document.getElementById('sampleTag').textContent='Реальные фото · 10';document.getElementById('propertyArea').textContent='Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар · 4-й этаж';document.getElementById('notice').textContent='Бронирование подтверждается после ответа Алексея.';document.getElementById('propertyDescription').textContent='Светлая квартира 40 м² в Marina Club Towers с балконом и видом на море, рядом с морем на Новом бульваре. Цена — 70 ₾ за сутки; уточните свободные даты.';document.getElementById('orbiCGallery').style.display='flex';const photos=["images/marina-club-01-studio.jpeg","images/marina-club-02-studio-kitchen.jpeg","images/marina-club-03-balcony-sea.jpeg","images/marina-club-04-sea-view.jpeg","images/marina-club-05-entrance.jpeg","images/marina-club-06-hallway.jpeg","images/marina-club-07-bathroom-vanity.jpeg","images/marina-club-08-bathroom.jpeg","images/marina-club-09-shower.jpeg","images/marina-club-10-building.jpeg"];const gallery=document.getElementById('orbiCGallery');photos.forEach((src,index)=>{const thumb=document.createElement('img');thumb.src=src;thumb.alt='Marina Club Towers — фото '+(index+1)+' из '+photos.length;thumb.loading='lazy';thumb.style='width:92px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;flex:0 0 auto';thumb.addEventListener('click',()=>{document.getElementById('propertyImage').src=src;});gallery.appendChild(thumb);});document.getElementById('propertyImage').__photoViewerItems=photos.map((src,n)=>({src,alt:'Marina Club Towers — фото '+(n+1)+' из '+photos.length}));}
 if(['alliance','orbi','orbi-d2'].includes(key))document.getElementById('sampleTag').textContent='Реальные фото';
-document.getElementById('propertyTitle').textContent=property.title;
+if(key==='orbi'||key==='orbi-d2'){const photos=["images/IMG_5974.jpeg", "images/IMG_5973.jpeg", "images/IMG_5971.jpeg", "images/IMG_5977.jpeg", "images/IMG_5978(1).jpeg", "images/IMG_5965.jpeg", "images/IMG_5966.jpeg", "images/IMG_5968.jpeg", "images/IMG_5970.jpeg"];const gallery=document.getElementById('orbiCGallery');gallery.style.display='flex';const main=document.getElementById('propertyImage');main.__photoViewerItems=photos.map((src,n)=>({src,alt:'Orbi City D2 — '+(n+1)}));for(const [index,src] of photos.entries()){const img=document.createElement('img');img.src=src;img.alt='Orbi City D2 — '+(index+1);img.loading='lazy';gallery.append(img);}}
+document.getElementById('propertyTitle').textContent=property.title;document.getElementById('propertyImage').alt=property.title;
 document.getElementById('propertyPrice').innerHTML=rate+' ₾ <span class="muted">/ сутки</span>';
 document.getElementById('featureOne').textContent=property.one;document.getElementById('featureTwo').textContent=property.two;
 if(key==='orbi'||key==='orbi-d2'||key==='orbi-c'){document.getElementById('propertyDescription').textContent='Студия в Orbi City, блок '+(key==='orbi-c'?'C':'D2')+'. Двуспальная кровать, мини-кухня, холодильник, микроволновка, кондиционер, душ и стиральная машина. Подходит для пары или одного гостя.';}
@@ -114,7 +118,7 @@ function updateRentalMode(){
  document.getElementById('monthlyNote').hidden=!monthly;
  document.getElementById('stayOptions').hidden=monthly;
  document.getElementById('propertyDescription').textContent=monthly?rentalCopy.description.replace(/\s*Цена(?:-ориентир)?\s*—[\s\S]*$/,'').trim():rentalCopy.description;
- document.getElementById('notice').textContent=monthly?'Месячную стоимость и доступность подтвердим после заявки.':rentalCopy.notice;
+ document.getElementById('notice').textContent='Бронирование подтверждается после ответа Алексея.';
  document.getElementById('propertyPrice').innerHTML=monthly?'Стоимость по запросу <span class="muted">/ месяц</span>':rate+' ₾ <span class="muted">/ сутки</span>';
  updateEstimate();
 }
@@ -164,7 +168,7 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-booking2"></script>
+<script src="images/localization.js?v=20261029-stay-design"></script>
 </body>
 </html>
 
