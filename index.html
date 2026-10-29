@@ -69,6 +69,7 @@ footer{background:#0d3028}
 .orbi-nav:hover{background:#fff;transform:translateY(-50%) scale(1.05)}
 .card-img [data-orbi-count]{z-index:2}
 .photo-viewer[hidden]{display:none}.photo-viewer{position:fixed;inset:0;z-index:9999;background:rgba(8,13,11,.94);display:flex;align-items:center;justify-content:center;padding:72px 56px 92px;color:#fff}.photo-viewer img{display:block;max-width:min(92vw,1200px);max-height:calc(100vh - 170px);width:auto;height:auto;object-fit:contain;transform:scale(var(--photo-zoom,1));transform-origin:center;touch-action:none;user-select:none;-webkit-user-drag:none}.photo-viewer button{position:absolute;border:0;background:rgba(255,255,255,.16);color:white;border-radius:999px;width:46px;height:46px;font-size:25px;cursor:pointer;display:grid;place-items:center}.photo-viewer .pv-close{top:16px;right:16px}.photo-viewer .pv-prev{left:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-next{right:14px;top:50%;transform:translateY(-50%)}.photo-viewer .pv-tools{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;align-items:center}.photo-viewer .pv-tools button{position:static;transform:none}.photo-viewer .pv-count{min-width:58px;text-align:center;font-size:14px}.photo-viewer .pv-help{position:absolute;bottom:29px;right:20px;color:rgba(255,255,255,.75);font-size:12px}.card-img img,.mini-gallery img,.preview img,.about-photo img,.hero-photo img{cursor:zoom-in}@media(max-width:600px){.photo-viewer{padding:60px 12px 90px}.photo-viewer img{max-width:96vw;max-height:calc(100vh - 160px)}.photo-viewer .pv-prev{left:8px}.photo-viewer .pv-next{right:8px}.photo-viewer .pv-help{display:none}}
+.stay-options{margin:12px 0;padding:15px 16px;border:1px solid #dce4ed;border-radius:14px;min-width:0}.stay-options[hidden]{display:none}.stay-options legend{font-weight:750;font-size:14px;padding:0 5px}.stay-options p{margin:0 0 8px;font-size:14px}.stay-options label{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:14px;font-weight:500;cursor:pointer}.stay-options input[type=checkbox]{width:20px;height:20px;min-width:20px;margin:0;padding:0;accent-color:#203e33}.stay-options .stay-help{font-size:12px;color:#6d766e;line-height:1.5}
 </style>
 <link rel="stylesheet" href="images/editorial.css?v=20261029-2">
 <link rel="stylesheet" href="images/theme.css?v=20261029-4">
@@ -296,9 +297,14 @@ footer{background:#0d3028}
     <option value="Обсудим">Другой / обсудим</option>
    </select>
    <div class="form-two">
-    <div><label for="moveDate">Дата заезда</label><input id="moveDate" name="moveDate" type="date"></div>
+    <div><label for="moveDate">Дата заезда</label><input id="moveDate" name="moveDate" type="date" required></div>
     <div><label for="duration">Срок / ночей</label><input id="duration" name="duration" type="text" placeholder="Например, 6 месяцев или 5 ночей"></div>
    </div>
+   <label for="leadGuests">Количество гостей</label><input id="leadGuests" name="guests" type="number" min="1" step="1" required inputmode="numeric" placeholder="Например, 2">
+  <label for="leadContactType">Как с вами связаться?</label><select id="leadContactType" name="contactType"><option value="phone">Телефон</option><option value="telegram">Telegram</option></select>
+  <label for="leadContact">Телефон или Telegram — обязательно</label><input id="leadContact" name="contact" type="tel" required maxlength="100" autocomplete="tel" placeholder="+995 555 123 456" aria-describedby="leadContactHelp">
+  <p class="fine form-note" id="leadContactHelp">Укажите один контакт, чтобы Алексей мог вам ответить.</p>
+  <fieldset class="stay-options" id="leadStayOptions"><legend>Заезд и выезд</legend><p>Заезд с 15:00 · Выезд до 12:00</p><p class="stay-help">По времени Батуми</p><label><input type="checkbox" id="leadEarlyCheckin" name="earlyCheckin"> <span>Нужен ранний заезд</span></label><label><input type="checkbox" id="leadLateCheckout" name="lateCheckout"> <span>Нужен поздний выезд</span></label><p class="stay-help">Ранний заезд и поздний выезд — по согласованию. Возможность подтвердим отдельно.</p></fieldset>
    <label for="area">Район или пожелания</label>
    <input id="area" name="area" type="text" placeholder="Например, рядом с морем, 1 спальня">
    <button class="btn form-submit" type="submit">Подготовить заявку ↗</button>
@@ -313,19 +319,24 @@ footer{background:#0d3028}
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">BATUMI HOME · АЛЕКСЕЙ</div><div>Подбор квартир в аренду · Батуми, Грузия</div><div>© <span id="year"></span></div></div></footer>
 <a class="telegram-float" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener" aria-label="Написать в Telegram"><span>➤</span> Написать в Telegram</a>
+<script src="images/booking-validation.js?v=20261029-1"></script>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 const filters=document.querySelectorAll('.filter');
 filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('#apartments .card').forEach(card=>{const p=Number(card.dataset.price);card.style.display=(f==='all'||(f==='300-400'&&p>=300&&p<=400)||(f==='400-500'&&p>400&&p<=500)||(f==='500-600'&&p>500&&p<=600)||(f==='600-700'&&p>600&&p<=700)||(f==='700-800'&&p>700&&p<=800)||(f==='800-1000'&&p>800&&p<=1000)||(f==='1000+'&&p>1000))?'':'none';});}));
 const leadForm=document.getElementById('leadForm');
-if(leadForm){leadForm.addEventListener('submit',function(e){
- e.preventDefault();
+if(leadForm){const leadRentType=document.getElementById('rentType');const showStayOptions=()=>{document.getElementById('leadStayOptions').hidden=leadRentType.value!=='Посуточная аренда';};leadRentType.addEventListener('change',showStayOptions);showStayOptions();const leadValidation=BatumiBooking.setup({form:leadForm,checkin:document.getElementById('moveDate'),guests:document.getElementById('leadGuests'),contactType:document.getElementById('leadContactType'),contact:document.getElementById('leadContact')});leadForm.addEventListener('submit',function(e){
+ e.preventDefault();if(!leadValidation.validate())return;
  const i18n=window.BatumiI18n, lang=i18n?.language||'ru', t=text=>i18n?.t(text)||text;
  const val=id=>document.getElementById(id).value.trim();
  const labels={ru:['Здравствуйте, Алексей! Ищу квартиру в Батуми.','Тип аренды','Бюджет','Дата заезда','Срок / ночей','Район и пожелания','не указано'],en:['Hello Alexey! I am looking for an apartment in Batumi.','Rental type','Budget','Move-in date','Duration / nights','Area and preferences','not provided'],ka:['გამარჯობა, ალექსეი! ვეძებ ბინას ბათუმში.','ქირის ტიპი','ბიუჯეტი','შესვლის თარიღი','ვადა / ღამეების რაოდენობა','უბანი და სურვილები','მითითებული არ არის']}[lang];
  const fields=[t(val('rentType')),t(val('budget')),val('moveDate'),val('duration'),val('area')];
- const message=[labels[0],...fields.map((value,index)=>labels[index+1]+': '+(value||labels[6]))].join('\n');
- window.open('https://t.me/share/url?url=&text='+encodeURIComponent(message),'_blank','noopener');
+ const guestLabel={ru:'Количество гостей',en:'Number of guests',ka:'სტუმრების რაოდენობა'}[lang];
+ const contactLabel=val('leadContactType')==='telegram'?'Telegram':t('Телефон');
+ const daily=document.getElementById('rentType').value==='Посуточная аренда';
+ const stay=daily?[t('Стандартный заезд: с 15:00; выезд: до 12:00.'),...(document.getElementById('leadEarlyCheckin').checked?[t('Запрос: ранний заезд (по согласованию).')]:[]),...(document.getElementById('leadLateCheckout').checked?[t('Запрос: поздний выезд (по согласованию).')]:[])]:[];
+ const message=[labels[0],...stay,guestLabel+': '+val('leadGuests'),contactLabel+': '+val('leadContact'),...fields.map((value,index)=>labels[index+1]+': '+(value||labels[6]))].join('\n');
+ location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(message);
 });}
 document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forEach(img=>{img.addEventListener('error',()=>{img.style.display='none';});});
 
@@ -389,7 +400,7 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-todogauri"></script>
+<script src="images/localization.js?v=20261029-booking2"></script>
 </body>
 </html>
 
