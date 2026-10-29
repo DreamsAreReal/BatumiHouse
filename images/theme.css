@@ -101,3 +101,45 @@ html[lang="ka"] .hero h1{font-size:clamp(2rem,3.5vw,3.1rem);letter-spacing:0;lin
 .monthly-offer .btn{margin-top:10px;width:100%;background:#edf3fb;border-color:#d9e5f5;color:#244b6c}
 .monthly-offer .btn:hover{background:#e1ebfa;border-color:#c9daf1}
 #monthlyNote{margin:0 0 5px;color:#5c7184}
+
+/* Colour rhythm: coastal blue, midnight and warm stone. */
+.home-page{background:#dce8f2}
+.home-page #apartments{background:radial-gradient(ellipse at 100% 0%,#c8dce9 0%,transparent 55%),#dce8f2;border-top:1px solid #ffffff24}
+.home-page #apartments .kicker{color:#42627b}
+.home-page #apartments .section-head h2{color:#18384f}
+.home-page #apartments .section-head p{color:#486278}
+.home-page .filters{gap:9px}
+.home-page #apartments .filter{background:#edf4f9;border-color:#b8cddc;color:#34556e}
+.home-page #apartments .filter:hover{background:#f7fbff;border-color:#739bb9}
+.home-page #apartments .filter.active{background:#234c69;border-color:#234c69;color:#fff;box-shadow:0 4px 12px #254d6b18}
+.home-page .card{background:#f8f7f3;border-color:#ffffff80;box-shadow:0 8px 28px #15374e0c}
+.home-page .card:hover{box-shadow:0 14px 36px #15374e18}
+.home-page .card-body{background:#f8f7f3}
+.home-page .features span{background:#e8edf0;color:#415d70}
+.home-page .features{border-color:#dce3e6}
+.home-page #apartments .demo-note{background:#cbdde9;border-color:#b8cddd;color:#3d5b72}
+.home-page .daily-section{background:radial-gradient(ellipse at 0% 0%,#294f68 0%,transparent 58%),#172f45;border-top:1px solid #59718455}
+.home-page .daily-section .kicker{color:#99bbdd}
+.home-page .daily-section .section-head h2{color:#f0f5fb}
+.home-page .daily-section .section-head p{color:#c0d0de}
+.home-page .daily-section .card{border-color:#e8eef330;box-shadow:0 10px 30px #07192726}
+.home-page .daily-section .daily-disclaimer{background:#ffffff0b;border:1px solid #ffffff20;color:#c2d3e2}
+.home-page .monthly-offer{border-color:#d7e0e6}
+.home-page .monthly-offer .btn{background:#e1eaf2;border-color:#c6d6e4;color:#234b68}
+.home-page .monthly-offer .btn:hover{background:#d5e2ee}
+.home-page .request-section{background:radial-gradient(ellipse at 0% 100%,#d8d0c0 0%,transparent 60%),#e9e2d4}
+.home-page .request-section .kicker{color:#685f50}
+.home-page .request-intro,.home-page .request-points{color:#565d60}
+.home-page .lead-form{background:#f9f7f1;border-color:#fff9;box-shadow:0 16px 44px #48402e0c}
+.home-page .lead-form input,.home-page .lead-form select{background:#fffcf7;border-color:#cdc9bf}
+.home-page .form-note{color:#666a69}
+.home-page .hero-photo img{object-position:center 58%}
+.home-page .hero-photo{border-radius:24px 24px 60px 24px}
+.home-page .contact{border-top:1px solid #ffffff1a}
+@media(max-width:560px){
+ .home-page #apartments,.home-page .daily-section,.home-page .request-section{padding-top:52px;padding-bottom:52px}
+ .home-page .hero-photo img{object-position:center 60%}
+ .home-page .hero-photo{border-radius:20px 20px 42px 20px}
+ .home-page .card{box-shadow:0 7px 22px #15374e12}
+ .home-page .lead-form{padding:22px 18px}
+}
