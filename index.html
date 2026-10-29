@@ -106,6 +106,15 @@ footer{background:#0d3028}
    <button class="filter active" data-filter="all">Все варианты</button><button class="filter" data-filter="300-400">$300–400</button><button class="filter" data-filter="400-500">$400–500</button><button class="filter" data-filter="500-600">$500–600</button><button class="filter" data-filter="600-700">$600–700</button><button class="filter" data-filter="700-800">$700–800</button><button class="filter" data-filter="800-1000">$800–1,000</button><button class="filter" data-filter="1000+">$1,000+</button>
   </div>
   <div class="grid" id="cards">
+<article class="card" id="todogauri-house" data-price="2600">
+<div class="card-img"><img src="images/todogauri-house-7119.webp" alt="Трёхэтажный дом в Тодогаури" loading="lazy" width="960" height="1280"><span class="sample-label">Реальные фото · 10</span></div>
+<div class="card-body"><div class="price">$2,600 <small>/ месяц</small></div><h3>Дом с бассейном · Тодогаури · 410 м²</h3>
+<div class="mini-gallery" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/todogauri-house-7118.webp" alt="Собственный двор с бассейном" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7117.webp" alt="Большая терраса с видом" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7110.webp" alt="Кухня и обеденная зона" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7111.webp" alt="Обеденная зона и гостиная" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7112.webp" alt="Светлая гостиная" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7113.webp" alt="Спальня с панорамными окнами" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7114.webp" alt="Ванна у панорамных окон" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7115.webp" alt="Светлая спальня с выходом на балкон" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/todogauri-house-7116.webp" alt="Спальня с двуспальной кроватью" loading="lazy" width="960" height="1280" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"></div>
+<div class="location">⌖ Батуми · район Тодогаури</div>
+<div class="features"><span>Дом 410 м²</span><span>Двор 300 м²</span><span>3 этажа · 3 спальни</span><span>Собственный бассейн</span><span>Большая терраса</span><span>Панорамные окна</span></div>
+<p class="listing-desc">Трёхэтажный дом со стильным ремонтом, тремя светлыми спальнями и панорамными окнами. Площадь дома — 410 м², собственного двора — 300 м². Во дворе — бассейн. Качественная бытовая техника, ванна и большая терраса для отдыха с чудесным видом.</p><p class="listing-desc"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>
+<a class="btn small tg-link" data-apartment="Дом в Тодогаури, 410 м², двор 300 м², 3 спальни, бассейн, $2600/месяц на год" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Уточнить условия ↗</a></div></article>
+
 <article class="card" id="royal-residence-5" data-price="700">
 <div class="card-img"><img src="images/royal-residence-5-7100.webp" alt="Royal Residence — гостиная с диваном и телевизором" loading="lazy" width="962" height="1280"><span class="sample-label">Реальные фото · 10</span></div>
 <div class="card-body"><div class="price">$700 <small>/ месяц</small></div><h3>Royal Residence · квартира 1+1 · 45 м²</h3>
@@ -380,7 +389,7 @@ picture.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;
 const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX;pointers.delete(e.pointerId);if(pointers.size===0&&zoom===1&&Math.abs(dx)>65)move(dx<0?1:-1);};picture.addEventListener('pointerup',release);picture.addEventListener('pointercancel',e=>pointers.delete(e.pointerId));
 })();
 </script>
-<script src="images/localization.js?v=20261029-royal"></script>
+<script src="images/localization.js?v=20261029-todogauri"></script>
 </body>
 </html>
 
