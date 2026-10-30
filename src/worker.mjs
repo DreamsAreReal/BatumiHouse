@@ -28,7 +28,7 @@ async function notifyTelegram(env,data){
  if(!env.TELEGRAM_BOT_TOKEN||!env.TELEGRAM_CHAT_ID)return false;
  const safe=v=>String(v||'').slice(0,300);
  const lines=['🏠 Новая заявка Batumi Home','ID: '+safe(data.id),'Источник: '+safe(data.source),'Объект: '+safe(data.property),'Аренда: '+safe(data.rental),'Заезд: '+safe(data.checkin),'Выезд: '+safe(data.checkout),'Гостей: '+safe(data.guests),'Контакт: '+safe(data.contactType)+' '+safe(data.contact)];
- const response=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:lines.join('\\n'),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+ const response=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:lines.join('\n'),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
  if(!response.ok)throw Error('Telegram notification failed: HTTP '+response.status);
  return true;
 }
@@ -47,10 +47,10 @@ export default {
    if(!data)return json({error:'Check dates, guests and contact'},422);
    const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(JSON.stringify(data)));
    const fingerprint=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
-   await env.LEADS.prepare('INSERT INTO leads (id,source,property,rental,checkin,checkout,guests,contact_type,contact,budget,duration,wishes,early_checkin,late_checkout,fingerprint) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO NOTHING').bind(data.id,data.source,data.property,data.rental,data.checkin,data.checkout,data.guests,data.contactType,data.contact,data.budget,data.duration,data.wishes,Number(data.earlyCheckin),Number(data.lateCheckout),fingerprint).run();
+   const inserted=await env.LEADS.prepare('INSERT INTO leads (id,source,property,rental,checkin,checkout,guests,contact_type,contact,budget,duration,wishes,early_checkin,late_checkout,fingerprint) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO NOTHING').bind(data.id,data.source,data.property,data.rental,data.checkin,data.checkout,data.guests,data.contactType,data.contact,data.budget,data.duration,data.wishes,Number(data.earlyCheckin),Number(data.lateCheckout),fingerprint).run();
    const saved=await env.LEADS.prepare('SELECT fingerprint FROM leads WHERE id = ?').bind(data.id).first();
    if(saved?.fingerprint!==fingerprint)return json({error:'Request identifier conflict'},409);
-   if(env.TELEGRAM_BOT_TOKEN&&env.TELEGRAM_CHAT_ID){ctx.waitUntil(notifyTelegram(env,data).catch(()=>console.error('Telegram notification failed')));}
+   if(inserted.meta?.changes===1&&env.TELEGRAM_BOT_TOKEN&&env.TELEGRAM_CHAT_ID){ctx.waitUntil(notifyTelegram(env,data).catch(()=>console.error('Telegram notification failed')));}
    return json({ok:true,id:data.id},201);
   }catch{console.error('Lead submission unavailable');return json({error:'Temporarily unavailable'},503);}
  },
