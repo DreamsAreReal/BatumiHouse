@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#071D30">
 <title>Бронирование посуточной квартиры в Батуми — Alexey Realtor</title>
 <style>
 :root{--green:#203e33;--ink:#222923;--muted:#6d766e;--line:#e2e5de;--cream:#f7f6f1}
@@ -30,9 +30,10 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"c5c9ac9359364a608262216ee8f4bb48"}'></script>
 <link rel="stylesheet" href="images/review-fixes.css?v=20261030-1">
 <link rel="stylesheet" href="images/approved-design.css?v=20261030-1">
+<link rel="stylesheet" href="/images/bh3.css?v=3">
 </head>
 <body class="booking-page">
-<header class="site-header"><div class="wrap header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-7h5v7"/></svg></span><span>BATUMI HOUSE<small>BATUMI · GEORGIA</small></span></a><div class="header-right"><a class="back" href="index.html#daily" id="backLink">← Все квартиры</a><button class="lang" type="button" id="langButton">EN</button></div></div></header>
+<header class="site-header"><div class="wrap header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-7h5v7"/></svg></span><span>Batumi House<small>НЕДВИЖИМОСТЬ В БАТУМИ</small></span></a><div class="header-right"><a class="back" href="index.html#daily" id="backLink">← Все квартиры</a><button class="lang" type="button" id="langButton">EN</button></div></div></header>
 <nav class="wrap booking-breadcrumb" aria-label="Навигация"><a href="index.html#daily">Посуточная аренда</a><span aria-hidden="true"> / </span><span>Апартамент</span></nav>
 <main class="wrap layout">
 <section>
@@ -80,7 +81,7 @@ const properties={
  'marina-club':{rate:70,title:'Квартира у моря · Marina Club Towers, 40 м²',image:'images/marina-club-01-studio.jpeg',one:'40 м² · студия',two:'Marina Club Towers'},
  spacious:{rate:180,title:'Просторный вариант для компании',image:'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=80',one:'2 комнаты',two:'Больше места'}
 };
-const params=new URLSearchParams(location.search), key=params.get('property')||'cozy', property=properties[key]||properties.cozy, rate=Number(params.get('rate'))||property.rate;
+const params=new URLSearchParams(location.search), key=['alliance','marina-club','orbi','orbi-c','orbi-d2'].includes(params.get('property'))?params.get('property'):'orbi-d2', property=properties[key], rate=Number(params.get('rate'))||property.rate;
 if(property.image)document.getElementById('propertyImage').src=property.image;
 if(key==='orbi'||key==='orbi-d2'||key==='orbi-c'){document.getElementById('propertyArea').textContent=key==='orbi-c'?'Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C':'Батуми · Orbi City, блок D2';document.getElementById('notice').textContent='Бронирование подтверждается после ответа Алексея.';}
 if(key==='orbi-c'){document.getElementById('sampleTag').textContent='Фото';(async()=>{try{const responses=await Promise.all([1,2].map(i=>fetch('images/orbi-c-gallery-'+i+'.json',{cache:'force-cache'})));if(responses.some(r=>!r.ok))throw new Error('Gallery asset request failed');const photos=(await Promise.all(responses.map(r=>r.json()))).flat();if(photos.length!==10)throw new Error('Expected 10 Orbi C photos');const main=document.getElementById('propertyImage'),gallery=document.getElementById('orbiCGallery');main.__photoViewerItems=photos.map((src,n)=>({src,alt:'Orbi City, блок C — фото '+(n+1)+' из '+photos.length}));main.src=photos[0];main.alt='Orbi City, блок C — фото квартиры';gallery.style.display='flex';photos.forEach((src,index)=>{const thumb=document.createElement('img');thumb.src=src;thumb.alt='Фото '+(index+1)+' из '+photos.length;thumb.loading='lazy';thumb.style='width:92px;height:70px;object-fit:cover;border-radius:8px;cursor:pointer;flex:0 0 auto';thumb.addEventListener('click',()=>{main.src=src;});gallery.appendChild(thumb);});}catch(error){console.error('Не удалось загрузить фото Orbi City, блок C',error);}})();}
@@ -177,6 +178,7 @@ const release=e=>{if(!pointers.has(e.pointerId))return;const dx=e.clientX-swipeX
 })();
 </script>
 <script src="images/localization.js?v=20261030-review"></script>
+<script src="/images/bh3.js?v=3"></script>
 </body>
 </html>
 

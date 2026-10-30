@@ -1,0 +1,8 @@
+import http from 'node:http';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+execFileSync('python3',['scripts/build-v3.py','--preview'],{stdio:'inherit'});
+const root=path.resolve('dist'),args=process.argv.slice(2),port=Number(args[args.indexOf('--port')+1])||4173;
+const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.webp':'image/webp','.jpeg':'image/jpeg','.jpg':'image/jpeg','.png':'image/png'};
+http.createServer(async(req,res)=>{try{let name=decodeURIComponent(new URL(req.url,'http://terminal.local').pathname);if(name.startsWith('/api/')){res.writeHead(503,{'Content-Type':'application/json'});return res.end('{"error":"Local preview: submissions are disabled"}');}let file=path.resolve(root,'.'+name);if(!file.startsWith(root+path.sep)&&file!==root)throw Error('path');let stat;try{stat=await fs.stat(file);}catch{file+='.html';stat=await fs.stat(file);}if(stat.isDirectory())file=path.join(file,'index.html');res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store'});let data=await fs.readFile(file);if(path.extname(file)==='.html')data=Buffer.from(data.toString().replace('</head>',"<script>if(!crypto.randomUUID)crypto.randomUUID=()=>{const a=crypto.getRandomValues(new Uint8Array(16));a[6]=(a[6]&15)|64;a[8]=(a[8]&63)|128;return [...a].map((v,i)=>([4,6,8,10].includes(i)?'-':'')+v.toString(16).padStart(2,'0')).join('')};</script></head>"));res.end(data);}catch{res.writeHead(404);res.end('Not found');}}).listen(port,'0.0.0.0',()=>console.log(`Preview listening on ${port}`));

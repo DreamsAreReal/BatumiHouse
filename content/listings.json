@@ -1,0 +1,1527 @@
+[
+  {
+    "id": "batumi-view-8",
+    "type": "long",
+    "title": "Batumi View · квартира 2+1 · 50 м²",
+    "price": "$900 / месяц",
+    "priceValue": 900,
+    "currency": "$",
+    "rooms": "3",
+    "area": "50",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Леха и Марии Качинских, 8 · Новый Бульвар",
+    "features": [
+      "▱ Планировка 2+1",
+      "⌂ 50 м² · 3/13 этаж",
+      "Две спальни",
+      "Современный ремонт",
+      "Гигиенический душ",
+      "Застеклённая душевая",
+      "Прямо у моря"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Квартира 2+1 с двумя светлыми спальнями на 3-м этаже 13-этажного комплекса Batumi View. Современный ремонт, гигиенический душ и застеклённая душевая. Отличная локация прямо у моря, на Новом Бульваре.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/batumi-view8-01.webp",
+        "alt": "Batumi View — балкон с видом на море"
+      },
+      {
+        "src": "images/batumi-view8-02.webp",
+        "alt": "Batumi View — гостиная и кухня"
+      },
+      {
+        "src": "images/batumi-view8-03.webp",
+        "alt": "Batumi View — гостиная"
+      },
+      {
+        "src": "images/batumi-view8-04.webp",
+        "alt": "Batumi View — первая спальня"
+      },
+      {
+        "src": "images/batumi-view8-05.webp",
+        "alt": "Batumi View — вторая спальня"
+      },
+      {
+        "src": "images/batumi-view8-06.webp",
+        "alt": "Batumi View — спальня и кухонная зона"
+      },
+      {
+        "src": "images/batumi-view8-07.webp",
+        "alt": "Batumi View — ванная с застеклённым душем"
+      },
+      {
+        "src": "images/batumi-view8-08.webp",
+        "alt": "Batumi View — вид с балкона на город"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Batumi View, 2+1, 50 м², 3/13 этаж, ул. Леха и Марии Качинских 8, $900 в месяц",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $900 / месяц Batumi View · квартира 2+1 · 50 м² ⌖ Батуми · ул. Леха и Марии Качинских, 8 · Новый Бульвар ▱ Планировка 2+1 ⌂ 50 м² · 3/13 этаж Две спальни Современный ремонт Гигиенический душ Застеклённая душевая Прямо у моря Квартира 2+1 с двумя светлыми спальнями на 3-м этаже 13-этажного комплекса Batumi View. Современный ремонт, гигиенический душ и застеклённая душевая. Отличная локация прямо у моря, на Новом Бульваре. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "todogauri-house",
+    "type": "long",
+    "title": "Дом с бассейном · Тодогаури · 410 м²",
+    "price": "$2,600 / месяц",
+    "priceValue": 2600,
+    "currency": "$",
+    "rooms": "",
+    "area": "410",
+    "kind": "house",
+    "location": "⌖ Батуми · район Тодогаури",
+    "features": [
+      "Дом 410 м²",
+      "Двор 300 м²",
+      "3 этажа · 3 спальни",
+      "Собственный бассейн",
+      "Большая терраса",
+      "Панорамные окна"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Трёхэтажный дом со стильным ремонтом, тремя светлыми спальнями и панорамными окнами. Площадь дома — 410 м², собственного двора — 300 м². Во дворе — бассейн. Качественная бытовая техника, ванна и большая терраса для отдыха с чудесным видом.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/todogauri-house-7119.webp",
+        "alt": "Трёхэтажный дом в Тодогаури"
+      },
+      {
+        "src": "images/todogauri-house-7118.webp",
+        "alt": "Собственный двор с бассейном"
+      },
+      {
+        "src": "images/todogauri-house-7117.webp",
+        "alt": "Большая терраса с видом"
+      },
+      {
+        "src": "images/todogauri-house-7110.webp",
+        "alt": "Кухня и обеденная зона"
+      },
+      {
+        "src": "images/todogauri-house-7111.webp",
+        "alt": "Обеденная зона и гостиная"
+      },
+      {
+        "src": "images/todogauri-house-7112.webp",
+        "alt": "Светлая гостиная"
+      },
+      {
+        "src": "images/todogauri-house-7113.webp",
+        "alt": "Спальня с панорамными окнами"
+      },
+      {
+        "src": "images/todogauri-house-7114.webp",
+        "alt": "Ванна у панорамных окон"
+      },
+      {
+        "src": "images/todogauri-house-7115.webp",
+        "alt": "Светлая спальня с выходом на балкон"
+      },
+      {
+        "src": "images/todogauri-house-7116.webp",
+        "alt": "Спальня с двуспальной кроватью"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Дом в Тодогаури, 410 м², двор 300 м², 3 спальни, бассейн, $2600/месяц на год",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $2,600 / месяц Дом с бассейном · Тодогаури · 410 м² ⌖ Батуми · район Тодогаури Дом 410 м² Двор 300 м² 3 этажа · 3 спальни Собственный бассейн Большая терраса Панорамные окна Трёхэтажный дом со стильным ремонтом, тремя светлыми спальнями и панорамными окнами. Площадь дома — 410 м², собственного двора — 300 м². Во дворе — бассейн. Качественная бытовая техника, ванна и большая терраса для отдыха с чудесным видом. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "royal-residence-5",
+    "type": "long",
+    "title": "Royal Residence · квартира 1+1 · 45 м²",
+    "price": "$700 / месяц",
+    "priceValue": 700,
+    "currency": "$",
+    "rooms": "2",
+    "area": "45",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Реджеб Ниджарадзе, 5",
+    "features": [
+      "⌂ 45 м² · 11/20 этаж",
+      "Отдельная спальня",
+      "♨ Центральное отопление",
+      "Посудомоечная машина",
+      "Новый Бульвар · рядом море"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Современная квартира с отдельной светлой спальней и гостиной с диваном и телевизором. На кухне — большой холодильник, духовка и посудомоечная машина. Центральное отопление. Комплекс Royal Residence на Новом Бульваре, близко к морю.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/royal-residence-5-7100.webp",
+        "alt": "Royal Residence — гостиная с диваном и телевизором"
+      },
+      {
+        "src": "images/royal-residence-5-7101.webp",
+        "alt": "Royal Residence — гостиная и кухня"
+      },
+      {
+        "src": "images/royal-residence-5-7102.webp",
+        "alt": "Royal Residence — кухня с барной стойкой"
+      },
+      {
+        "src": "images/royal-residence-5-7103.webp",
+        "alt": "Royal Residence — кухонная зона"
+      },
+      {
+        "src": "images/royal-residence-5-7104.webp",
+        "alt": "Royal Residence — кухня с духовкой и большим холодильником"
+      },
+      {
+        "src": "images/royal-residence-5-7105.webp",
+        "alt": "Royal Residence — отдельная светлая спальня"
+      },
+      {
+        "src": "images/royal-residence-5-7106.webp",
+        "alt": "Royal Residence — спальня с двуспальной кроватью"
+      },
+      {
+        "src": "images/royal-residence-5-7107.webp",
+        "alt": "Royal Residence — вход в ванную комнату"
+      },
+      {
+        "src": "images/royal-residence-5-7108.webp",
+        "alt": "Royal Residence — ванная комната"
+      },
+      {
+        "src": "images/royal-residence-5-7109.webp",
+        "alt": "Royal Residence — душевая"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Royal Residence, 1+1, 45 м², $700/месяц на год, ул. Реджеб Ниджарадзе 5",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $700 / месяц Royal Residence · квартира 1+1 · 45 м² ⌖ Батуми · ул. Реджеб Ниджарадзе, 5 ⌂ 45 м² · 11/20 этаж Отдельная спальня ♨ Центральное отопление Посудомоечная машина Новый Бульвар · рядом море Современная квартира с отдельной светлой спальней и гостиной с диваном и телевизором. На кухне — большой холодильник, духовка и посудомоечная машина. Центральное отопление. Комплекс Royal Residence на Новом Бульваре, близко к морю. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "sherif-khimshiashvili-4",
+    "type": "long",
+    "title": "Трёхкомнатная квартира · 85 м²",
+    "price": "$1,350 / месяц",
+    "priceValue": 1350,
+    "currency": "$",
+    "rooms": "3",
+    "area": "85",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Шерифа Химшиашвили, 4",
+    "features": [
+      "⌂ 85 м² · 12/13 этаж",
+      "2 спальни",
+      "♨ Центральное отопление",
+      "2 балкона",
+      "Маленькие животные"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Квартира с двумя спальнями и двумя балконами. Центральное отопление, посудомоечная машина и духовка. Можно с маленькими животными.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/sherif-4-7081.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7082.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7083.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7084.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7085.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7086.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7087.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7088.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7089.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      },
+      {
+        "src": "images/sherif-4-7090.webp",
+        "alt": "Трёхкомнатная квартира · 85 м²"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn"
+      ],
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $1,350 / месяц Трёхкомнатная квартира · 85 м² ⌖ Батуми · ул. Шерифа Химшиашвили, 4 ⌂ 85 м² · 12/13 этаж 2 спальни ♨ Центральное отопление 2 балкона Маленькие животные Квартира с двумя спальнями и двумя балконами. Центральное отопление, посудомоечная машина и духовка. Можно с маленькими животными. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "tbel-abuseridze-21",
+    "type": "long",
+    "title": "Квартира с отдельной спальней · 59 м²",
+    "price": "$950 / месяц",
+    "priceValue": 950,
+    "currency": "$",
+    "rooms": "2",
+    "area": "59",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Тбел Абусеридзе, 21",
+    "features": [
+      "⌂ 59 м² · 9/28 этаж",
+      "Отдельная спальня",
+      "♨ Центральное отопление",
+      "♧ Балкон",
+      "Новый ремонт"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Квартира с новым ремонтом, отдельной светлой спальней и уютной гостиной с диваном. Всё необходимое для проживания, центральное отопление и балкон. Рядом стадион, в паре кварталов — Аллея героев.</p>",
+      "<p class=\"listing-desc\"><strong>Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/tbel-21-7070.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7073.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7072.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7071.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7075.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7074.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7076.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7077.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7078.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      },
+      {
+        "src": "images/tbel-21-7079.webp",
+        "alt": "Квартира с отдельной спальней · 59 м²"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn"
+      ],
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $950 / месяц Квартира с отдельной спальней · 59 м² ⌖ Батуми · ул. Тбел Абусеридзе, 21 ⌂ 59 м² · 9/28 этаж Отдельная спальня ♨ Центральное отопление ♧ Балкон Новый ремонт Квартира с новым ремонтом, отдельной светлой спальней и уютной гостиной с диваном. Всё необходимое для проживания, центральное отопление и балкон. Рядом стадион, в паре кварталов — Аллея героев. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "sunrise-32",
+    "type": "long",
+    "title": "Sunrise · квартира 1+1 · 50 м²",
+    "price": "$750 / месяц",
+    "priceValue": 750,
+    "currency": "$",
+    "rooms": "2",
+    "area": "50",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Шартава, 32 · Аллея героев",
+    "features": [
+      "▱ Планировка 1+1",
+      "⌂ 50 м²",
+      "♨ Центральное отопление",
+      "Рабочее место",
+      "Животные по согласованию"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Современная квартира с отдельной светлой спальней, центральным отоплением и рабочим местом. На кухне — духовка и посудомоечная машина. Проживание с животными — по согласованию.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/sunrise-7069.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7068.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7067.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7064.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7065.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7066.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      },
+      {
+        "src": "images/sunrise-7063.webp",
+        "alt": "Sunrise · квартира 1+1 · 50 м²"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn"
+      ],
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $750 / месяц Sunrise · квартира 1+1 · 50 м² ⌖ Батуми · ул. Шартава, 32 · Аллея героев ▱ Планировка 1+1 ⌂ 50 м² ♨ Центральное отопление Рабочее место Животные по согласованию Современная квартира с отдельной светлой спальней, центральным отоплением и рабочим местом. На кухне — духовка и посудомоечная машина. Проживание с животными — по согласованию. Уточнить условия ↗"
+  },
+  {
+    "id": "orbi-city-c-long",
+    "type": "long",
+    "title": "Студия в Orbi City · блок C",
+    "price": "$350 / месяц",
+    "priceValue": 350,
+    "currency": "$",
+    "rooms": "0",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C",
+    "features": [
+      "▱ Студия",
+      "☼ Вид на море",
+      "Помесячно"
+    ],
+    "description": [],
+    "photos": [
+      {
+        "src": "images/orbi-c-v3-01.webp",
+        "alt": "Orbi City C — фото 1"
+      },
+      {
+        "src": "images/orbi-c-v3-02.webp",
+        "alt": "Orbi City C — фото 2"
+      },
+      {
+        "src": "images/orbi-c-v3-03.webp",
+        "alt": "Orbi City C — фото 3"
+      },
+      {
+        "src": "images/orbi-c-v3-04.webp",
+        "alt": "Orbi City C — фото 4"
+      },
+      {
+        "src": "images/orbi-c-v3-05.webp",
+        "alt": "Orbi City C — фото 5"
+      },
+      {
+        "src": "images/orbi-c-v3-06.webp",
+        "alt": "Orbi City C — фото 6"
+      },
+      {
+        "src": "images/orbi-c-v3-07.webp",
+        "alt": "Orbi City C — фото 7"
+      },
+      {
+        "src": "images/orbi-c-v3-08.webp",
+        "alt": "Orbi City C — фото 8"
+      },
+      {
+        "src": "images/orbi-c-v3-09.webp",
+        "alt": "Orbi City C — фото 9"
+      },
+      {
+        "src": "images/orbi-c-v3-10.webp",
+        "alt": "Orbi City C — фото 10"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Orbi City C · $350 в месяц",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "c",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото ‹ › $350 / месяц Студия в Orbi City · блок C ⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C ▱ Студия ☼ Вид на море Помесячно Уточнить условия ↗"
+  },
+  {
+    "id": "orbi-city-d2-long",
+    "type": "long",
+    "title": "Студия в Orbi City · блок D2",
+    "price": "$350 / месяц",
+    "priceValue": 350,
+    "currency": "$",
+    "rooms": "0",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · Orbi City, блок D2",
+    "features": [
+      "▱ Студия",
+      "☼ Балкон",
+      "Помесячно"
+    ],
+    "description": [],
+    "photos": [
+      {
+        "src": "images/IMG_5974.jpeg",
+        "alt": "Orbi City, блок D2 — фото 1 из 9"
+      },
+      {
+        "src": "images/IMG_5973.jpeg",
+        "alt": "Orbi City D2 — двуспальная кровать и выход на балкон"
+      },
+      {
+        "src": "images/IMG_5971.jpeg",
+        "alt": "Orbi City D2 — кухонная зона и студия"
+      },
+      {
+        "src": "images/IMG_5977.jpeg",
+        "alt": "Orbi City D2 — телевизор, холодильник и кухня"
+      },
+      {
+        "src": "images/IMG_5978(1).jpeg",
+        "alt": "Orbi City D2 — интерьер студии"
+      },
+      {
+        "src": "images/IMG_5965.jpeg",
+        "alt": "Orbi City D2 — прихожая и вход в студию"
+      },
+      {
+        "src": "images/IMG_5966.jpeg",
+        "alt": "Orbi City D2 — санузел с душем и стиральной машиной"
+      },
+      {
+        "src": "images/IMG_5968.jpeg",
+        "alt": "Orbi City D2 — душевая кабина"
+      },
+      {
+        "src": "images/IMG_5970.jpeg",
+        "alt": "Orbi City D2 — раковина, зеркало и стиральная машина"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Orbi City D2 · $350 в месяц",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото ‹ › $350 / месяц Студия в Orbi City · блок D2 ⌖ Батуми · Orbi City, блок D2 ▱ Студия ☼ Балкон Помесячно Уточнить условия ↗"
+  },
+  {
+    "id": "modern-studio-400",
+    "type": "long",
+    "title": "Современная студия",
+    "price": "$400 / месяц",
+    "priceValue": 400,
+    "currency": "$",
+    "rooms": "0",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · район уточняется",
+    "features": [
+      "▱ Студия",
+      "✦ Современный интерьер",
+      "₾ Долгосрок"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Современная студия с кухонной и спальной зонами. Район, доступность и условия уточним перед просмотром.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/rental400-01-main.jpeg",
+        "alt": "Студия для долгосрочной аренды в Батуми"
+      },
+      {
+        "src": "images/rental400-03-bedroom.jpeg",
+        "alt": "Спальная зона студии"
+      },
+      {
+        "src": "images/rental400-02-bathroom.jpeg",
+        "alt": "Ванная комната студии"
+      },
+      {
+        "src": "images/rental400-06-kitchen.jpeg",
+        "alt": "Кухонная зона студии"
+      },
+      {
+        "src": "images/rental400-05-interior.jpeg",
+        "alt": "Интерьер квартиры"
+      },
+      {
+        "src": "images/rental400-09-kitchen-angle.jpeg",
+        "alt": "Кухня и спальная зона"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Длительная аренда, студия, $400",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $400 / месяц Современная студия ⌖ Батуми · район уточняется ▱ Студия ✦ Современный интерьер ₾ Долгосрок Современная студия с кухонной и спальной зонами. Район, доступность и условия уточним перед просмотром. Уточнить условия ↗"
+  },
+  {
+    "id": "marina-club-long",
+    "type": "long",
+    "title": "Квартира 40 м² · Marina Club Towers",
+    "price": "$400 / месяц · до мая",
+    "priceValue": 400,
+    "currency": "$",
+    "rooms": "",
+    "area": "40",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар",
+    "features": [
+      "⌂ 40 м² · 4-й этаж",
+      "♧ Балкон",
+      "☼ Вид на море",
+      "🌊 Рядом с морем"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Светлая квартира с балконом и видом на море. Новый бульвар, рядом с морем. Аренда до мая.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/marina-club-01-studio.jpeg",
+        "alt": "Студия с двуспальной кроватью и балконом"
+      },
+      {
+        "src": "images/marina-club-02-studio-kitchen.jpeg",
+        "alt": "Спальная и кухонная зоны"
+      },
+      {
+        "src": "images/marina-club-03-balcony-sea.jpeg",
+        "alt": "Балкон с видом на море"
+      },
+      {
+        "src": "images/marina-club-04-sea-view.jpeg",
+        "alt": "Вид на море и набережную"
+      },
+      {
+        "src": "images/marina-club-05-entrance.jpeg",
+        "alt": "Вход в Marina Club"
+      },
+      {
+        "src": "images/marina-club-06-hallway.jpeg",
+        "alt": "Коридор квартиры"
+      },
+      {
+        "src": "images/marina-club-07-bathroom-vanity.jpeg",
+        "alt": "Раковина и зеркало в ванной"
+      },
+      {
+        "src": "images/marina-club-08-bathroom.jpeg",
+        "alt": "Санузел"
+      },
+      {
+        "src": "images/marina-club-09-shower.jpeg",
+        "alt": "Душевая и раковина"
+      },
+      {
+        "src": "images/marina-club-10-building.jpeg",
+        "alt": "Здание и улица рядом"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Marina Club Towers · 40 м² · $400 до мая",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $400 / месяц · до мая Квартира 40 м² · Marina Club Towers ⌖ Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар ⌂ 40 м² · 4-й этаж ♧ Балкон ☼ Вид на море 🌊 Рядом с морем Светлая квартира с балконом и видом на море. Новый бульвар, рядом с морем. Аренда до мая. Уточнить условия ↗"
+  },
+  {
+    "id": "ketevan-tsamebuli-38",
+    "type": "long",
+    "title": "Квартира 48 м² · Кетеван Цамебули, 38",
+    "price": "$500 / месяц",
+    "priceValue": 500,
+    "currency": "$",
+    "rooms": "",
+    "area": "48",
+    "kind": "apartment",
+    "location": "⌖ Батуми · рядом с BAU Clinic",
+    "features": [
+      "⌂ 48 м² · 6-й этаж",
+      "♧ Балкон",
+      "❄ Кондиционер",
+      "🍽 Духовка и микроволновая печь",
+      "🔥 Газ подключается"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Солнечная квартира с балконом, духовкой, микроволновой печью и кондиционером. Газ подведён, подключение в процессе.</p>",
+      "<p class=\"listing-desc\" style=\"margin-top:10px;text-align:center\">📲 <a href=\"tel:+995557989955\">557 989 955</a> · Георгий</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/ketevan-38-01-living-room.jpeg",
+        "alt": "Гостиная квартиры, Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-02-living-room-angle.jpeg",
+        "alt": "Гостиная, вид на спальню квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-03-living-dining.jpeg",
+        "alt": "Гостиная и обеденная зона квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-04-kitchen-living.jpeg",
+        "alt": "Кухонная и обеденная зона квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-05-kitchen.jpeg",
+        "alt": "Кухня с газовой плитой квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-06-bedroom.jpeg",
+        "alt": "Спальня квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-07-bedroom-wide.jpeg",
+        "alt": "Спальня и шкафы квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-08-bedroom-ac.jpeg",
+        "alt": "Спальня с кондиционером квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-09-entry.jpeg",
+        "alt": "Прихожая квартиры на Кетеван Цамебули, 38"
+      },
+      {
+        "src": "images/ketevan-38-10-bathroom.jpeg",
+        "alt": "Ванная комната с душевой кабиной квартиры на Кетеван Цамебули, 38"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small"
+      ],
+      "href": "https://t.me/Chkhaiii",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Написать Георгию ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $500 / месяц Квартира 48 м² · Кетеван Цамебули, 38 ⌖ Батуми · рядом с BAU Clinic ⌂ 48 м² · 6-й этаж ♧ Балкон ❄ Кондиционер 🍽 Духовка и микроволновая печь 🔥 Газ подключается Солнечная квартира с балконом, духовкой, микроволновой печью и кондиционером. Газ подведён, подключение в процессе. Написать Георгию ↗ 📲 557 989 955 · Георгий"
+  },
+  {
+    "id": "one-bedroom-500",
+    "type": "long",
+    "title": "Квартира с отдельной спальней · 2 комнаты",
+    "price": "$500 / месяц",
+    "priceValue": 500,
+    "currency": "$",
+    "rooms": "2",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · район уточняется",
+    "features": [
+      "▱ 2 комнаты",
+      "❄ Кондиционер",
+      "⌂ Отдельная спальня",
+      "₾ Долгосрок"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Отдельная спальня, гостиная, кухня и ванная с душем. В гостиной — кондиционер. Район и условия аренды уточняются.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/real500-01-living-room.jpeg",
+        "alt": "Гостиная и диван"
+      },
+      {
+        "src": "images/real500-02-kitchen.jpeg",
+        "alt": "Кухня и обеденная зона"
+      },
+      {
+        "src": "images/real500-03-bedroom.jpeg",
+        "alt": "Спальня"
+      },
+      {
+        "src": "images/real500-04-wardrobe.jpeg",
+        "alt": "Шкаф и рабочая зона"
+      },
+      {
+        "src": "images/real500-05-bathroom.jpeg",
+        "alt": "Ванная комната"
+      },
+      {
+        "src": "images/real500-06-duplicate.jpeg",
+        "alt": "Дополнительное фото квартиры"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Квартира с отдельной спальней · 2 комнаты · $500 в месяц",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $500 / месяц Квартира с отдельной спальней · 2 комнаты ⌖ Батуми · район уточняется ▱ 2 комнаты ❄ Кондиционер ⌂ Отдельная спальня ₾ Долгосрок Отдельная спальня, гостиная, кухня и ванная с душем. В гостиной — кондиционер. Район и условия аренды уточняются. Уточнить условия ↗"
+  },
+  {
+    "id": "komunna-tower-10",
+    "type": "long",
+    "title": "Komunna Tower · квартира 1+1 · 34 м²",
+    "price": "$500 / месяц",
+    "priceValue": 500,
+    "currency": "$",
+    "rooms": "2",
+    "area": "34",
+    "kind": "apartment",
+    "location": "⌖ Батуми · третий тупик Ангиса, 10",
+    "features": [
+      "▱ Планировка 1+1",
+      "⌂ 34 м² · 10/28 этаж",
+      "♨ Центральное отопление",
+      "❄ Кондиционер",
+      "Душевая кабина"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Квартира 1+1 площадью 34 м² на 10-м этаже 28-этажного комплекса Komunna Tower. Центральное отопление, кондиционер и душевая кабина.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/komunna10-01.webp",
+        "alt": "Komunna Tower — кухня и гостиная"
+      },
+      {
+        "src": "images/komunna10-02.webp",
+        "alt": "Komunna Tower — обеденная зона"
+      },
+      {
+        "src": "images/komunna10-03.webp",
+        "alt": "Komunna Tower — гостиная"
+      },
+      {
+        "src": "images/komunna10-04.webp",
+        "alt": "Komunna Tower — спальня"
+      },
+      {
+        "src": "images/komunna10-05.webp",
+        "alt": "Komunna Tower — спальня и шкаф"
+      },
+      {
+        "src": "images/komunna10-06.webp",
+        "alt": "Komunna Tower — ванная комната с душевой кабиной"
+      },
+      {
+        "src": "images/komunna10-07.webp",
+        "alt": "Komunna Tower — санузел"
+      },
+      {
+        "src": "images/komunna10-08.webp",
+        "alt": "Komunna Tower — окно и вид"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Komunna Tower, 1+1, 34 м², 10/28 этаж, третий тупик Ангиса 10, $500 в месяц",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $500 / месяц Komunna Tower · квартира 1+1 · 34 м² ⌖ Батуми · третий тупик Ангиса, 10 ▱ Планировка 1+1 ⌂ 34 м² · 10/28 этаж ♨ Центральное отопление ❄ Кондиционер Душевая кабина Квартира 1+1 площадью 34 м² на 10-м этаже 28-этажного комплекса Komunna Tower. Центральное отопление, кондиционер и душевая кабина. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "tadzari-18",
+    "type": "long",
+    "title": "Квартира 1+1 · Тадзари, 18 · 45 м²",
+    "price": "$600 / месяц",
+    "priceValue": 600,
+    "currency": "$",
+    "rooms": "2",
+    "area": "45",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Тадзари, 18",
+    "features": [
+      "▱ Планировка 1+1",
+      "⌂ 45 м² · 6/17 этаж",
+      "❄ Кондиционер",
+      "♨ Центральное отопление",
+      "Посудомоечная машина",
+      "♧ Балкон"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Квартира 1+1 площадью 45 м² на 6-м этаже 17-этажного дома. Укомплектована мебелью и техникой: кондиционер, центральное отопление и посудомоечная машина. Есть балкон. Доступна с 1 ноября.</p>",
+      "<p class=\"listing-desc\"><strong>Аренда на год. Оплата за первый и последний месяц.</strong></p>"
+    ],
+    "photos": [
+      {
+        "src": "images/tadzari18-01.webp",
+        "alt": "Тадзари, 18 — гостиная"
+      },
+      {
+        "src": "images/tadzari18-02.webp",
+        "alt": "Тадзари, 18 — кухня с посудомоечной машиной"
+      },
+      {
+        "src": "images/tadzari18-03.webp",
+        "alt": "Тадзари, 18 — гостиная и кухня"
+      },
+      {
+        "src": "images/tadzari18-04.webp",
+        "alt": "Тадзари, 18 — отдельная спальня"
+      },
+      {
+        "src": "images/tadzari18-05.webp",
+        "alt": "Тадзари, 18 — балкон"
+      },
+      {
+        "src": "images/tadzari18-06.webp",
+        "alt": "Тадзари, 18 — прихожая"
+      },
+      {
+        "src": "images/tadzari18-07.webp",
+        "alt": "Тадзари, 18 — душевая"
+      },
+      {
+        "src": "images/tadzari18-08.webp",
+        "alt": "Тадзари, 18 — раковина и зеркало"
+      },
+      {
+        "src": "images/tadzari18-09.webp",
+        "alt": "Тадзари, 18 — санузел"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Квартира 1+1, Тадзари 18, 45 м², $600 в месяц, доступна с 1 ноября",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $600 / месяц Квартира 1+1 · Тадзари, 18 · 45 м² ⌖ Батуми · ул. Тадзари, 18 ▱ Планировка 1+1 ⌂ 45 м² · 6/17 этаж ❄ Кондиционер ♨ Центральное отопление Посудомоечная машина ♧ Балкон Квартира 1+1 площадью 45 м² на 6-м этаже 17-этажного дома. Укомплектована мебелью и техникой: кондиционер, центральное отопление и посудомоечная машина. Есть балкон. Доступна с 1 ноября. Аренда на год. Оплата за первый и последний месяц. Уточнить условия ↗"
+  },
+  {
+    "id": "eliava-32d",
+    "type": "long",
+    "title": "Квартира 2+1 · 75 м²",
+    "price": "$700 / месяц",
+    "priceValue": 700,
+    "currency": "$",
+    "rooms": "3",
+    "area": "75",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Григория Элиава, 32Д",
+    "features": [
+      "▱ Планировка 2+1",
+      "⌂ 75 м²",
+      "♧ 2 санузла",
+      "✦ Хороший ремонт"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Просторная квартира с отдельными спальнями, гостиной и кухней. Два санузла и хороший ремонт. Для долгосрочной аренды.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/IMG_6134.jpeg",
+        "alt": "Гостиная и кухня квартиры для долгосрочной аренды в Батуми"
+      },
+      {
+        "src": "images/IMG_6135.jpeg",
+        "alt": "Кухня и обеденная зона"
+      },
+      {
+        "src": "images/IMG_6134.jpeg",
+        "alt": "Гостиная"
+      },
+      {
+        "src": "images/IMG_6130.jpeg",
+        "alt": "Спальня"
+      },
+      {
+        "src": "images/IMG_6139.jpeg",
+        "alt": "Ванная комната"
+      },
+      {
+        "src": "images/IMG_6132.jpeg",
+        "alt": "Кухонная зона"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Длительная аренда, квартира 2+1, 75 м², $700, ул. Григория Элиава 32Д",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $700 / месяц Квартира 2+1 · 75 м² ⌖ Батуми · ул. Григория Элиава, 32Д ▱ Планировка 2+1 ⌂ 75 м² ♧ 2 санузла ✦ Хороший ремонт Просторная квартира с отдельными спальнями, гостиной и кухней. Два санузла и хороший ремонт. Для долгосрочной аренды. Уточнить условия ↗"
+  },
+  {
+    "id": "premium-apartment-800",
+    "type": "long",
+    "title": "Просторная квартира повышенного класса",
+    "price": "$800 / месяц · ориентир",
+    "priceValue": 800,
+    "currency": "$",
+    "rooms": "",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · район уточняется",
+    "features": [
+      "▱ 2–3 комнаты",
+      "✦ Просторная",
+      "₾ Долгосрок"
+    ],
+    "description": [],
+    "photos": [
+      {
+        "src": "images/alliance-02-living-sea-view.jpeg",
+        "alt": "Пример просторной квартиры повышенного класса"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "Квартира около $800",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Иллюстрация",
+    "originalText": "Иллюстрация $800 / месяц · ориентир Просторная квартира повышенного класса ⌖ Батуми · район уточняется ▱ 2–3 комнаты ✦ Просторная ₾ Долгосрок Уточнить условия ↗"
+  },
+  {
+    "id": "angisa-21",
+    "type": "long",
+    "title": "Квартира 65 м² · свежий ремонт",
+    "price": "$550 / месяц",
+    "priceValue": 550,
+    "currency": "$",
+    "rooms": "",
+    "area": "65",
+    "kind": "apartment",
+    "location": "⌖ Батуми · 1-й переулок Ангиса, 21",
+    "features": [],
+    "description": [
+      "<p class=\"listing-desc\">Свежий ремонт, мебель, техника и два больших шкафа. Отопление кондиционером; газ пока не подключён. Возможен торг до $500.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/IMG_6576(1).jpeg",
+        "alt": "Квартира 65 м² · свежий ремонт"
+      },
+      {
+        "src": "images/IMG_6577(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6578(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6579(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6580(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6581(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6582(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6583.jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6584(1).jpeg",
+        "alt": "Фото квартиры"
+      },
+      {
+        "src": "images/IMG_6585(1).jpeg",
+        "alt": "Фото квартиры"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small",
+        "tg-link"
+      ],
+      "data-apartment": "1-й переулок Ангиса, 21, $550",
+      "href": "https://t.me/alexeyrieltor97",
+      "target": "_blank",
+      "rel": [
+        "noopener"
+      ]
+    },
+    "ctaText": "Уточнить условия ↗",
+    "photoGallery": "",
+    "monthlyHtml": "",
+    "imageLabel": "Фото",
+    "originalText": "Фото $550 / месяц Квартира 65 м² · свежий ремонт ⌖ Батуми · 1-й переулок Ангиса, 21 Свежий ремонт, мебель, техника и два больших шкафа. Отопление кондиционером; газ пока не подключён. Возможен торг до $500. Уточнить условия ↗"
+  },
+  {
+    "id": "daily-marina-club",
+    "type": "daily",
+    "title": "Квартира у моря · Marina Club Towers",
+    "price": "70 ₾ / сутки",
+    "priceValue": 70,
+    "currency": "₾",
+    "rooms": "",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар",
+    "features": [
+      "▱ 40 м²",
+      "⌂ 4-й этаж",
+      "♧ Балкон",
+      "☼ Вид на море"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Светлая квартира на Новом бульваре, рядом с морем. Балкон с видом на море. Свободные даты подтверждаются перед бронированием.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/marina-club-01-studio.jpeg",
+        "alt": "Студия с двуспальной кроватью и балконом"
+      },
+      {
+        "src": "images/marina-club-02-studio-kitchen.jpeg",
+        "alt": "Спальная и кухонная зоны"
+      },
+      {
+        "src": "images/marina-club-03-balcony-sea.jpeg",
+        "alt": "Балкон с видом на море"
+      },
+      {
+        "src": "images/marina-club-04-sea-view.jpeg",
+        "alt": "Вид на море и набережную"
+      },
+      {
+        "src": "images/marina-club-05-entrance.jpeg",
+        "alt": "Вход в Marina Club"
+      },
+      {
+        "src": "images/marina-club-06-hallway.jpeg",
+        "alt": "Коридор квартиры"
+      },
+      {
+        "src": "images/marina-club-07-bathroom-vanity.jpeg",
+        "alt": "Раковина и зеркало в ванной"
+      },
+      {
+        "src": "images/marina-club-08-bathroom.jpeg",
+        "alt": "Санузел"
+      },
+      {
+        "src": "images/marina-club-09-shower.jpeg",
+        "alt": "Душевая и раковина"
+      },
+      {
+        "src": "images/marina-club-10-building.jpeg",
+        "alt": "Здание и улица рядом"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small"
+      ],
+      "href": "daily-booking.html?property=marina-club&rate=70"
+    },
+    "ctaText": "Забронировать посуточно ↗",
+    "photoGallery": "",
+    "monthlyHtml": "<div class=\"monthly-offer\"><div class=\"monthly-offer-heading\"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class=\"btn light monthly-request\" href=\"daily-booking.html?property=marina-club&amp;rate=70&amp;rental=monthly\">Запросить аренду на месяц ↗</a></div>",
+    "imageLabel": "Фото",
+    "originalText": "Фото 70 ₾ / сутки Квартира у моря · Marina Club Towers ⌖ Батуми · ул. Леха и Марии Качинских, 19 · Новый бульвар ▱ 40 м² ⌂ 4-й этаж ♧ Балкон ☼ Вид на море Светлая квартира на Новом бульваре, рядом с морем. Балкон с видом на море. Свободные даты подтверждаются перед бронированием. Забронировать посуточно ↗ Аренда на месяц Стоимость по запросу Запросить аренду на месяц ↗"
+  },
+  {
+    "id": "daily-alliance",
+    "type": "daily",
+    "title": "Просторный апартамент 1+1 в Alliance Marriott",
+    "price": "130 ₾ / сутки",
+    "priceValue": 130,
+    "currency": "₾",
+    "rooms": "",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · Alliance Marriott · 7-й этаж",
+    "features": [
+      "▱ 50 м²",
+      "⌂ 1+1",
+      "☼ Для отдыха и поездок"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Апартамент 1+1 на 7-м этаже: отдельные зоны для сна и отдыха. Подойдёт для пары, небольшой семьи или поездки с друзьями.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/alliance-02-living-sea-view.jpeg",
+        "alt": "Апартамент 1+1 в Alliance Marriott с видом на море"
+      },
+      {
+        "src": "images/alliance-01-bedroom.jpeg",
+        "alt": "Спальная зона"
+      },
+      {
+        "src": "images/alliance-03-bathroom.jpeg",
+        "alt": "Ванная комната"
+      },
+      {
+        "src": "images/alliance-05-balcony-view.jpeg",
+        "alt": "Вид с балкона"
+      },
+      {
+        "src": "images/alliance-08-kitchen.jpeg",
+        "alt": "Кухня"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small"
+      ],
+      "href": "daily-booking.html?property=alliance&rate=130"
+    },
+    "ctaText": "Забронировать посуточно ↗",
+    "photoGallery": "",
+    "monthlyHtml": "<div class=\"monthly-offer\"><div class=\"monthly-offer-heading\"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class=\"btn light monthly-request\" href=\"daily-booking.html?property=alliance&amp;rate=130&amp;rental=monthly\">Запросить аренду на месяц ↗</a></div>",
+    "imageLabel": "Фото",
+    "originalText": "Фото 130 ₾ / сутки Просторный апартамент 1+1 в Alliance Marriott ⌖ Батуми · Alliance Marriott · 7-й этаж ▱ 50 м² ⌂ 1+1 ☼ Для отдыха и поездок Апартамент 1+1 на 7-м этаже: отдельные зоны для сна и отдыха. Подойдёт для пары, небольшой семьи или поездки с друзьями. Забронировать посуточно ↗ Аренда на месяц Стоимость по запросу Запросить аренду на месяц ↗"
+  },
+  {
+    "id": "daily-orbi-c",
+    "type": "daily",
+    "title": "Студия Orbi City · блок C",
+    "price": "60 ₾ / сутки",
+    "priceValue": 60,
+    "currency": "₾",
+    "rooms": "",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C",
+    "features": [
+      "▱ Студия",
+      "⌂ Двуспальная кровать",
+      "♨ Душ и стиральная машина"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/orbi-c-v3-01.webp",
+        "alt": "Orbi City C — фото 1"
+      },
+      {
+        "src": "images/orbi-c-v3-02.webp",
+        "alt": "Orbi City C — фото 2"
+      },
+      {
+        "src": "images/orbi-c-v3-03.webp",
+        "alt": "Orbi City C — фото 3"
+      },
+      {
+        "src": "images/orbi-c-v3-04.webp",
+        "alt": "Orbi City C — фото 4"
+      },
+      {
+        "src": "images/orbi-c-v3-05.webp",
+        "alt": "Orbi City C — фото 5"
+      },
+      {
+        "src": "images/orbi-c-v3-06.webp",
+        "alt": "Orbi City C — фото 6"
+      },
+      {
+        "src": "images/orbi-c-v3-07.webp",
+        "alt": "Orbi City C — фото 7"
+      },
+      {
+        "src": "images/orbi-c-v3-08.webp",
+        "alt": "Orbi City C — фото 8"
+      },
+      {
+        "src": "images/orbi-c-v3-09.webp",
+        "alt": "Orbi City C — фото 9"
+      },
+      {
+        "src": "images/orbi-c-v3-10.webp",
+        "alt": "Orbi City C — фото 10"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small"
+      ],
+      "href": "daily-booking.html?property=orbi-c&rate=60"
+    },
+    "ctaText": "Забронировать посуточно ↗",
+    "photoGallery": "c",
+    "monthlyHtml": "<div class=\"monthly-offer\"><div class=\"monthly-offer-heading\"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class=\"btn light monthly-request\" href=\"daily-booking.html?property=orbi-c&amp;rate=60&amp;rental=monthly\">Запросить аренду на месяц ↗</a></div>",
+    "imageLabel": "Фото",
+    "originalText": "Фото ‹ › 60 ₾ / сутки Студия Orbi City · блок C ⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C ▱ Студия ⌂ Двуспальная кровать ♨ Душ и стиральная машина Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина. Забронировать посуточно ↗ Аренда на месяц Стоимость по запросу Запросить аренду на месяц ↗"
+  },
+  {
+    "id": "daily-orbi-d2",
+    "type": "daily",
+    "title": "Студия Orbi City · блок D2",
+    "price": "60 ₾ / сутки",
+    "priceValue": 60,
+    "currency": "₾",
+    "rooms": "",
+    "area": "",
+    "kind": "apartment",
+    "location": "⌖ Батуми · Orbi City, блок D2",
+    "features": [
+      "▱ Студия",
+      "⌂ Двуспальная кровать",
+      "♨ Душ и стиральная машина"
+    ],
+    "description": [
+      "<p class=\"listing-desc\">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p>"
+    ],
+    "photos": [
+      {
+        "src": "images/IMG_5974.jpeg",
+        "alt": "Orbi City, блок D2 — фото 1 из 9"
+      },
+      {
+        "src": "images/IMG_5973.jpeg",
+        "alt": "Orbi City D2 — двуспальная кровать и выход на балкон"
+      },
+      {
+        "src": "images/IMG_5971.jpeg",
+        "alt": "Orbi City D2 — кухонная зона и студия"
+      },
+      {
+        "src": "images/IMG_5977.jpeg",
+        "alt": "Orbi City D2 — телевизор, холодильник и кухня"
+      },
+      {
+        "src": "images/IMG_5978(1).jpeg",
+        "alt": "Orbi City D2 — интерьер студии"
+      },
+      {
+        "src": "images/IMG_5965.jpeg",
+        "alt": "Orbi City D2 — прихожая и вход в студию"
+      },
+      {
+        "src": "images/IMG_5966.jpeg",
+        "alt": "Orbi City D2 — санузел с душем и стиральной машиной"
+      },
+      {
+        "src": "images/IMG_5968.jpeg",
+        "alt": "Orbi City D2 — душевая кабина"
+      },
+      {
+        "src": "images/IMG_5970.jpeg",
+        "alt": "Orbi City D2 — раковина, зеркало и стиральная машина"
+      }
+    ],
+    "cta": {
+      "class": [
+        "btn",
+        "small"
+      ],
+      "href": "daily-booking.html?property=orbi-d2&rate=60"
+    },
+    "ctaText": "Забронировать посуточно ↗",
+    "photoGallery": "",
+    "monthlyHtml": "<div class=\"monthly-offer\"><div class=\"monthly-offer-heading\"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class=\"btn light monthly-request\" href=\"daily-booking.html?property=orbi-d2&amp;rate=60&amp;rental=monthly\">Запросить аренду на месяц ↗</a></div>",
+    "imageLabel": "Фото",
+    "originalText": "Фото ‹ › 60 ₾ / сутки Студия Orbi City · блок D2 ⌖ Батуми · Orbi City, блок D2 ▱ Студия ⌂ Двуспальная кровать ♨ Душ и стиральная машина Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина. Забронировать посуточно ↗ Аренда на месяц Стоимость по запросу Запросить аренду на месяц ↗"
+  }
+]

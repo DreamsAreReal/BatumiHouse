@@ -1,0 +1,27 @@
+<form class="lead-form" id="leadForm">
+<label for="rentType">Тип аренды</label>
+<select id="rentType" name="rentType" required="">
+<option value="Длительная аренда">Длительная аренда</option>
+<option value="Посуточная аренда">Посуточная аренда</option>
+</select>
+<label for="budget">Бюджет</label>
+<select id="budget" name="budget" required="">
+<option value="$300–400">$300–400</option>
+<option value="$400–500">$400–500</option>
+<option value="$500–600">$500–600</option>
+<option value="$800–1,000">$800–1,000</option>
+<option value="Обсудим">Другой / обсудим</option>
+</select>
+<div class="form-two">
+<div><label for="moveDate">Дата заезда</label><input id="moveDate" name="moveDate" required="" type="date"/></div>
+<div><label for="duration">Срок / ночей</label><input id="duration" name="duration" placeholder="Например, 6 месяцев или 5 ночей" type="text"/></div>
+</div>
+<label for="leadGuests">Количество гостей</label><input id="leadGuests" inputmode="numeric" min="1" name="guests" placeholder="Например, 2" required="" step="1" type="number"/>
+<label for="leadContactType">Как с вами связаться?</label><select id="leadContactType" name="contactType"><option value="phone">Телефон</option><option value="telegram">Telegram</option></select>
+<label for="leadContact">Телефон или Telegram — обязательно</label><input aria-describedby="leadContactHelp" autocomplete="tel" id="leadContact" maxlength="100" name="contact" placeholder="+995 555 123 456" required="" type="tel"/>
+<p class="fine form-note" id="leadContactHelp">Укажите один контакт, чтобы Алексей мог вам ответить.</p>
+<fieldset class="stay-options" id="leadStayOptions"><legend>Заезд и выезд</legend><p>Заезд с 15:00 · Выезд до 12:00</p><p class="stay-help">По времени Батуми</p><label><input id="leadEarlyCheckin" name="earlyCheckin" type="checkbox"/> <span>Нужен ранний заезд</span></label><label><input id="leadLateCheckout" name="lateCheckout" type="checkbox"/> <span>Нужен поздний выезд</span></label><p class="stay-help">Ранний заезд и поздний выезд — по согласованию. Возможность подтвердим отдельно.</p></fieldset>
+<label for="area">Район или пожелания</label>
+<input id="area" name="area" placeholder="Например, рядом с морем, 1 спальня" type="text"/>
+<button class="btn form-submit" type="submit">Отправить заявку</button>
+</form>

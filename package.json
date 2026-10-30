@@ -1,0 +1,1 @@
+{"name":"batumihouse","private":true,"scripts":{"dev":"node scripts/preview.mjs","build":"python3 scripts/build-v3.py","test":"node tests/leads.test.mjs && node tests/admin.test.mjs && node tests/marketing-attribution.test.cjs"}}
