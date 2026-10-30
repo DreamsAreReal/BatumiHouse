@@ -27,7 +27,8 @@
     var query=root.location?root.location.search:'';
     var ref=root.document?root.document.referrer:'';
     var q=new URLSearchParams(query||'');
-    var fresh=q.has('utm_source')||q.has('source')||!!ref;
+    var externalRef=false;try{externalRef=!!ref&&new URL(ref).origin!==(root.location&&root.location.origin);}catch(e){}
+    var fresh=q.has('utm_source')||q.has('source')||externalRef;
     var selected=fresh?classify(query,ref):ALLOWED.includes(saved)?saved:classify(query,ref);
     if(storage){try{storage.setItem(STORE,selected);}catch(e){}}
     return selected;
