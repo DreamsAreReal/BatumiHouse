@@ -355,7 +355,7 @@ if(leadForm){const leadRentType=document.getElementById('rentType');const showSt
  const stay=daily?[t('Стандартный заезд: с 15:00; выезд: до 12:00.'),...(document.getElementById('leadEarlyCheckin').checked?[t('Запрос: ранний заезд (по согласованию).')]:[]),...(document.getElementById('leadLateCheckout').checked?[t('Запрос: поздний выезд (по согласованию).')]:[])]:[];
  const message=[labels[0],...stay,guestLabel+': '+val('leadGuests'),contactLabel+': '+val('leadContact'),...fields.map((value,index)=>labels[index+1]+': '+(value||labels[6]))].join('\n');
  window.BatumiAttribution?.track('lead_form_ready',{rental:daily?'daily':'long'});
- const trackedMessage=message+'\\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
+ const trackedMessage=message+'\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
  window.BatumiAttribution?.track('telegram_handoff',{rental:daily?'daily':'long'});
  location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(trackedMessage);
 });}
