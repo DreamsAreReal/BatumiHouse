@@ -63,7 +63,7 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
 </section>
 </main>
 <footer><div class="wrap">BATUMI HOME · АЛЕКСЕЙ · <span id="footerText">Подбор квартир в Батуми</span></div></footer>
-<script src="images/booking-validation.js?v=20261029-3"></script>
+<script src="images/booking-validation.js?v=20261030-1"></script>
 <script>
 const properties={
  alliance:{rate:130,title:'Апартамент 1+1, 50 м² в Alliance Marriott, 7-й этаж',image:'images/alliance-02-living-sea-view.jpeg',one:'50 м² · 1+1',two:'Alliance Marriott'},
@@ -90,7 +90,7 @@ if(key==='orbi'||key==='orbi-d2'||key==='orbi-c'){document.getElementById('prope
 if(key==='alliance'){document.getElementById('propertyDescription').textContent='Апартамент 1+1 площадью 50 м² на 7-м этаже комплекса Alliance Marriott. Пространство удобно разделено на зону отдыха и отдельную комнату. Цена-ориентир — 130 ₾ за сутки; наличие и условия нужно подтвердить.';}
 if(key==='marina-club'){document.getElementById('propertyDescription').textContent='Светлая квартира 40 м² в Marina Club Towers с балконом и видом на море, рядом с морем на Новом бульваре. Цена — 70 ₾ за сутки; уточните свободные даты.';}
 const checkin=document.getElementById('checkin'),checkout=document.getElementById('checkout');
-const bookingValidation=BatumiBooking.setup({form:document.getElementById('bookingForm'),checkin,checkout,guests:document.getElementById('guests'),contactType:document.getElementById('contactType'),contact:document.getElementById('contact')});
+const bookingValidation=BatumiBooking.setup({form:document.getElementById('bookingForm'),checkin,checkout,guests:document.getElementById('guests'),contactType:document.getElementById('contactType'),contact:document.getElementById('contact'),checkoutMinimum:date=>document.getElementById('rentalType').value==='monthly'?addCalendarMonth(date):BatumiBooking.addDays(date,1)});
 function nights(){if(!checkin.value||!checkout.value)return 0;return Math.round((new Date(checkout.value+'T12:00:00')-new Date(checkin.value+'T12:00:00'))/86400000)}
 function addCalendarMonth(value){
  const [year,month,day]=value.split('-').map(Number);
@@ -100,7 +100,7 @@ function addCalendarMonth(value){
 function updateEstimate(){
  const monthly=document.getElementById('rentalType').value==='monthly';
  if(checkin.value){
-  checkout.min=BatumiBooking.addDays(checkin.value,1);
+  checkout.min=monthly?addCalendarMonth(checkin.value):BatumiBooking.addDays(checkin.value,1);
   if(checkout.value&&checkout.value<=checkin.value)checkout.value='';
   if(monthly&&!checkout.value)checkout.value=addCalendarMonth(checkin.value);
  }

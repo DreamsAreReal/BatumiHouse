@@ -6,6 +6,7 @@
     requiredContact: {ru:'Укажите телефон или Telegram, чтобы мы могли вам ответить.',en:'Enter a phone number or Telegram so we can reply.',ka:'მიუთითეთ ტელეფონი ან Telegram, რომ გიპასუხოთ.'},
     summary: {ru:'Заявка не отправлена. Заполните или исправьте отмеченные поля:',en:'Request not sent. Complete or correct the highlighted fields:',ka:'მოთხოვნა არ გაგზავნილა. შეავსეთ ან შეასწორეთ მონიშნული ველები:'},
     past: {ru:'Выберите сегодня или будущую дату заезда.',en:'Choose today or a future check-in date.',ka:'აირჩიეთ დღევანდელი ან მომავალი შესვლის თარიღი.'},
+    monthly: {ru:'Для аренды на месяц выберите выезд не раньше чем через один календарный месяц.',en:'For monthly rental, check-out must be at least one calendar month after check-in.',ka:'ერთი თვით ქირაობისას გასვლა შესვლიდან მინიმუმ ერთი კალენდარული თვის შემდეგ უნდა იყოს.'},
     end: {ru:'Дата выезда должна быть позже даты заезда.',en:'Check-out must be after check-in.',ka:'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.'},
     guests: {ru:'Укажите количество гостей: целое число от 1.',en:'Enter the number of guests: a whole number of at least 1.',ka:'მიუთითეთ სტუმრების რაოდენობა: მთელი რიცხვი, მინიმუმ 1.'},
     phone: {ru:'Введите телефон с кодом страны, например +995 555 123 456.',en:'Enter a phone number with country code, e.g. +995 555 123 456.',ka:'შეიყვანეთ ტელეფონი ქვეყნის კოდით, მაგალითად +995 555 123 456.'},
@@ -70,12 +71,12 @@
     }
     button.addEventListener('click',()=>{refresh();if(!panel.hidden){close();return;}month=(input.value||input.min||today()).slice(0,7);panel.hidden=false;button.setAttribute('aria-expanded','true');render();});
     panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();close();button.focus();}});
-    document.addEventListener('click',event=>{if(!panel.contains(event.target)&&event.target!==button)close();});
+    document.addEventListener('click',event=>{const path=event.composedPath();if(!path.includes(panel)&&!path.includes(button))close();});
     document.addEventListener('batumi:language',update);input.addEventListener('change',update);
     update();
     return {update,fail(message){error.textContent=message;error.hidden=false;button.setAttribute('aria-invalid','true');},focus(){button.focus();},clear(){error.hidden=true;button.removeAttribute('aria-invalid');}};
   }
-  function setup({form,checkin,checkout,guests,contactType,contact}) {
+  function setup({form,checkin,checkout,guests,contactType,contact,checkoutMinimum=date=>addDays(date,1)}) {
     let startPicker,endPicker,attempted=false;
     form.noValidate=true;
     const summary=document.createElement('div');summary.className='booking-error-summary';summary.setAttribute('role','alert');summary.hidden=true;form.prepend(summary);
@@ -85,6 +86,7 @@
       field.setAttribute('aria-describedby',[field.getAttribute('aria-describedby'),error.id].filter(Boolean).join(' '));
     }
     const message = key => messages[key][window.BatumiI18n?.language||'ru'];
+    const endMessage=()=>message(checkout&&checkout.min>addDays(checkin.value||today(),1)?'monthly':'end');
     function refresh() {
       const minimum=today();
       checkin.min=minimum;
@@ -92,10 +94,10 @@
       startPicker?.update();
       checkin.setCustomValidity(checkin.value && checkin.value<minimum ? message('past') : '');
       if(checkout) {
-        checkout.min=addDays(checkin.value && checkin.value>=minimum ? checkin.value : minimum,1);
-        if(checkout.value&&checkout.value<checkout.min){checkout.value='';endPicker?.fail(message('end'));}
+        checkout.min=checkoutMinimum(checkin.value && checkin.value>=minimum ? checkin.value : minimum);
+        if(checkout.value&&checkout.value<checkout.min){checkout.value='';endPicker?.fail(endMessage());}
         endPicker?.update();
-        checkout.setCustomValidity(checkout.value && checkout.value<checkout.min ? message('end') : '');
+        checkout.setCustomValidity(checkout.value && checkout.value<checkout.min ? endMessage() : '');
       }
       const count=Number(guests.value);
       guests.setCustomValidity(guests.value && (!Number.isSafeInteger(count)||count<1) ? message('guests') : '');
@@ -117,7 +119,7 @@
     function renderErrors(focus=false) {
       const errors=[];
       const startError=!checkin.value?message('requiredStart'):checkin.value<today()?message('past'):'';
-      const endError=checkout?(!checkout.value?message('requiredEnd'):checkout.value<checkout.min?message('end'):''):'';
+      const endError=checkout?(!checkout.value?message('requiredEnd'):checkout.value<checkout.min?endMessage():''):'';
       for(const [picker,error] of [[startPicker,startError],[endPicker,endError]]) {
         if(!picker)continue;
         if(error){picker.fail(error);errors.push({text:error,focus:()=>picker.focus()});}else picker.clear();
