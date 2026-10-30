@@ -23,8 +23,17 @@ async function readLimited(request){
  try{for(;;){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>12000){await reader.cancel();throw new Error('size');}chunks.push(value);}}finally{reader.releaseLock();}
  const all=new Uint8Array(size);let offset=0;for(const chunk of chunks){all.set(chunk,offset);offset+=chunk.length;}return JSON.parse(new TextDecoder().decode(all));
 }
+
+async function notifyTelegram(env,data){
+ if(!env.TELEGRAM_BOT_TOKEN||!env.TELEGRAM_CHAT_ID)return false;
+ const safe=v=>String(v||'').slice(0,300);
+ const lines=['🏠 Новая заявка Batumi Home','ID: '+safe(data.id),'Источник: '+safe(data.source),'Объект: '+safe(data.property),'Аренда: '+safe(data.rental),'Заезд: '+safe(data.checkin),'Выезд: '+safe(data.checkout),'Гостей: '+safe(data.guests),'Контакт: '+safe(data.contactType)+' '+safe(data.contact)];
+ const response=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:lines.join('\\n'),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+ if(!response.ok)throw Error('Telegram notification failed: HTTP '+response.status);
+ return true;
+}
 export default {
- async fetch(request,env){
+ async fetch(request,env,ctx){
   const url=new URL(request.url);
   if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);
   // No public read/list/export route. Records are available only through the Cloudflare account.
@@ -41,6 +50,7 @@ export default {
    await env.LEADS.prepare('INSERT INTO leads (id,source,property,rental,checkin,checkout,guests,contact_type,contact,budget,duration,wishes,early_checkin,late_checkout,fingerprint) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO NOTHING').bind(data.id,data.source,data.property,data.rental,data.checkin,data.checkout,data.guests,data.contactType,data.contact,data.budget,data.duration,data.wishes,Number(data.earlyCheckin),Number(data.lateCheckout),fingerprint).run();
    const saved=await env.LEADS.prepare('SELECT fingerprint FROM leads WHERE id = ?').bind(data.id).first();
    if(saved?.fingerprint!==fingerprint)return json({error:'Request identifier conflict'},409);
+   if(env.TELEGRAM_BOT_TOKEN&&env.TELEGRAM_CHAT_ID){ctx.waitUntil(notifyTelegram(env,data).catch(()=>console.error('Telegram notification failed')));}
    return json({ok:true,id:data.id},201);
   }catch{console.error('Lead submission unavailable');return json({error:'Temporarily unavailable'},503);}
  },
