@@ -28,7 +28,7 @@ async function notifyTelegram(env,data){
  if(!env.TELEGRAM_BOT_TOKEN||!env.TELEGRAM_CHAT_ID)return false;
  const safe=v=>String(v||'').slice(0,300);
  const lines=['🏠 Новая заявка Batumi Home','ID: '+safe(data.id),'Источник: '+safe(data.source),'Объект: '+safe(data.property),'Аренда: '+safe(data.rental),'Заезд: '+safe(data.checkin),'Выезд: '+safe(data.checkout),'Гостей: '+safe(data.guests),'Контакт: '+safe(data.contactType)+' '+safe(data.contact)];
- const response=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:lines.join('\n'),disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+ const response=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:lines.join('\n'),disable_web_page_preview:true,reply_markup:{inline_keyboard:[[{text:'🏠 Открыть Batumi House',url:'https://batumihouse.alexxstalkerxx.workers.dev/'}]]}}),signal:AbortSignal.timeout(8000)});
  if(!response.ok)throw Error('Telegram notification failed: HTTP '+response.status);
  return true;
 }
