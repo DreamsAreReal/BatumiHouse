@@ -86,3 +86,9 @@ without another approval round after checks.
 - Minor icon/logo differences use licensed assets rather than tracing a bitmap.
 
 final result: passed
+
+## Mobile navigation and favorites correction — 2026-10-30
+
+- Open menu now replaces the hamburger with a visible close icon and translated accessible label; closes on in-page navigation, bottom navigation, outside click and Escape. Scrollable height is bounded on short screens.
+- Favorites has its own heading, list, empty state, catalog return links and browser-storage explanation. Saved results ignore room, location and budget filters; no misleading rental-section empty states. Removing a saved card retains keyboard focus.
+- Browser QA at 390 px: open/close state and visible X, navigation with menu open, empty → add → saved list → detail with persistent heart → list; API/admin/marketing tests passed. Existing 21 offers and backend were not changed.
