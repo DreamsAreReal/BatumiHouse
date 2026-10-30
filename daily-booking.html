@@ -148,7 +148,7 @@ document.getElementById('bookingForm').addEventListener('submit',e=>{
  if(n<1){alert(lang==='ru'?'Дата выезда должна быть позже даты заезда.':lang==='en'?'Check-out must be after check-in.':'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.');return;}
  const message=makeRentalRequest({language:lang,rentalType:rentalType.value,title:window.BatumiI18n?.t(property.title)||property.title,checkin:checkin.value,checkout:checkout.value,nights:n,guests:document.getElementById('guests').value,earlyCheckin:document.getElementById('earlyCheckin').checked,lateCheckout:document.getElementById('lateCheckout').checked,contactType:document.getElementById('contactType').value,contact:document.getElementById('contact').value.trim(),wishes:document.getElementById('wishes').value,rate});
  window.BatumiAttribution?.track('booking_form_ready',{property:key,rental:rentalType.value});
- const trackedMessage=message+'\\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
+ const trackedMessage=message+'\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
  window.BatumiAttribution?.track('telegram_handoff',{property:key,rental:rentalType.value});
  location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(trackedMessage);
 });
