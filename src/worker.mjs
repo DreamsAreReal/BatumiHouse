@@ -83,11 +83,27 @@ async function adminApi(request,env,url){
  return json({error:'Not found'},404);
 }
 
+
+const SITE_URL='https://batumihouse.alexxstalkerxx.workers.dev/';
+async function telegramCommand(request,env){
+ if(!env.TELEGRAM_WEBHOOK_SECRET||request.headers.get('X-Telegram-Bot-Api-Secret-Token')!==env.TELEGRAM_WEBHOOK_SECRET)return json({error:'Forbidden'},403);
+ if(request.method!=='POST'||!request.headers.get('content-type')?.startsWith('application/json'))return json({error:'Bad request'},400);
+ let update;try{update=await readLimited(request);}catch{return json({error:'Bad request'},400);}
+ const message=update?.message;
+ if(!message||String(message.chat?.id)!==String(env.TELEGRAM_CHAT_ID))return json({ok:true});
+ if(typeof message.text==='string'&&/^\/(site|start)(?:@BatumiHomeLeadsBot)?(?:\s|$)/i.test(message.text)){
+  const r=await fetch('https://api.telegram.org/bot'+env.TELEGRAM_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text:'🏠 Batumi House · недвижимость в Батуми',reply_markup:{inline_keyboard:[[{text:'🏠 Открыть сайт',url:SITE_URL}]]}}),signal:AbortSignal.timeout(8000)});
+  if(!r.ok)return json({error:'Telegram temporarily unavailable'},503);
+ }
+ return json({ok:true});
+}
+
 export default {
  async fetch(request,env,ctx){
   const url=new URL(request.url);
   if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);
   if(url.pathname.startsWith('/api/admin/'))return adminApi(request,env,url);
+  if(url.pathname==='/api/telegram-webhook')return telegramCommand(request,env);
   // No public read/list/export route. Records are available only through the Cloudflare account.
   if(url.pathname!=='/api/leads')return json({error:'Not found'},404);
   if(request.method!=='POST')return json({error:'Method not allowed'},405);
