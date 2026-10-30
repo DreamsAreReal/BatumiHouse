@@ -94,3 +94,7 @@ final result: passed
 - Browser QA at 390 px: open/close state and visible X, navigation with menu open, empty → add → saved list → detail with persistent heart → list; API/admin/marketing tests passed. Existing 21 offers and backend were not changed.
 
 - Logo / Home correction: brand icon and text now use a real root-page navigation, resetting the displayed search mode, filters and favorites view on return. The bottom Home action uses the same root URL. Browser check: long-term selected → logo icon → root with daily selected and all 21 original cards; favorites and detail → brand text → root.
+
+## Hero simplification — user request
+
+The main hero now contains only three direct navigation choices: daily rental, long-term rental and sale. Removed hero location, check-in date, guests, budget and search submit controls, together with their JS handlers. The separate booking forms and Batumi Calendar are unchanged.

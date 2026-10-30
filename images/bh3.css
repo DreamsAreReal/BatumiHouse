@@ -32,3 +32,10 @@ html[lang=ka] h1,html[lang=ka] h2,html[lang=ka] h3{font-family:var(--font-ui);le
 .mobile-menu{max-height:calc(100dvh - 160px);overflow-y:auto;overscroll-behavior:contain}
 .favorites-section{padding:10px 0 40px;scroll-margin-top:100px}.favorites-count{font-size:13px;color:var(--ocean);margin-bottom:16px}.favorites-count:empty{display:none}.favorites-storage-note{font-size:12px;margin:18px 0;color:var(--muted)}.favorites-empty{text-align:center;padding:36px 20px}.favorites-empty>.icon{color:var(--gold);width:40px;height:40px;display:block;margin:0 auto 16px}.favorites-empty h3{font:600 26px/1.2 var(--font-display);margin:0 0 12px}.favorites-empty p{max-width:430px;margin:0 auto 22px}.favorites-section .section-heading>.text-link{font-size:12px;white-space:nowrap}.favorites-section .section-heading{flex-wrap:wrap}
 @media(max-width:600px){.favorites-section{scroll-margin-top:86px;padding-bottom:28px}.favorites-section .section-heading h2{font-size:28px}.favorites-empty{padding:28px 18px}.favorites-empty h3{font-size:24px}}
+
+/* The hero offers three direct catalogue choices only. */
+.home-page .search-panel{padding:10px;bottom:12px}
+.home-page .rental-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;height:auto;padding:0;margin:0;gap:6px;background:transparent;border-radius:0}
+.home-page .rental-tabs a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 10px;border-radius:7px;background:var(--ivory);color:var(--ink);font-size:14px;font-weight:600;text-align:center}
+.home-page .rental-tabs a.active{background:var(--navy);color:white}.home-page .rental-tabs a:hover:not(.active){background:var(--mist)}
+@media(max-width:600px){.home-page .search-panel{bottom:auto;margin-top:0;padding:8px}.home-page .rental-tabs a{min-height:46px;padding:10px 4px;font-size:12px}}
