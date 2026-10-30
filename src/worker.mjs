@@ -32,10 +32,62 @@ async function notifyTelegram(env,data){
  if(!response.ok)throw Error('Telegram notification failed: HTTP '+response.status);
  return true;
 }
+
+function decodeJwtPart(part){
+ const raw=part.replace(/-/g,'+').replace(/_/g,'/');
+ return JSON.parse(atob(raw+'='.repeat((4-raw.length%4)%4)));
+}
+async function authorizedAdmin(request,env){
+ const domain=(env.ACCESS_TEAM_DOMAIN||'').trim().replace(/^https?:\/\//,'').replace(/\/$/,'');
+ const aud=(env.ACCESS_AUD||'').trim();
+ if(!/^[a-z0-9-]+\.cloudflareaccess\.com$/i.test(domain)||!aud)return false;
+ const token=request.headers.get('Cf-Access-Jwt-Assertion');
+ if(!token)return false;
+ try{
+  const parts=token.split('.');
+  if(parts.length!==3)return false;
+  const header=decodeJwtPart(parts[0]),claims=decodeJwtPart(parts[1]);
+  const now=Math.floor(Date.now()/1000);
+  if(header.alg!=='RS256'||!header.kid||claims.iss!=='https://'+domain||!Array.isArray(claims.aud)||!claims.aud.includes(aud)||!Number.isFinite(claims.exp)||claims.exp<=now||!Number.isFinite(claims.nbf)||claims.nbf>now)return false;
+  const response=await fetch('https://'+domain+'/cdn-cgi/access/certs');
+  if(!response.ok)return false;
+  const certs=await response.json(),jwk=certs.keys?.find(k=>k.kid===header.kid&&k.kty==='RSA');
+  if(!jwk)return false;
+  const key=await crypto.subtle.importKey('jwk',jwk,{name:'RSASSA-PKCS1-v1_5',hash:'SHA-256'},false,['verify']);
+  const raw=parts[2].replace(/-/g,'+').replace(/_/g,'/');
+  const bin=atob(raw+'='.repeat((4-raw.length%4)%4));
+  const signature=Uint8Array.from(bin,c=>c.charCodeAt(0));
+  return await crypto.subtle.verify('RSASSA-PKCS1-v1_5',key,signature,new TextEncoder().encode(parts[0]+'.'+parts[1]));
+ }catch{return false;}
+}
+async function adminApi(request,env,url){
+ if(!await authorizedAdmin(request,env))return json({error:'Access required'},403);
+ if(request.method==='GET'&&url.pathname==='/api/admin/leads'){
+  const status=url.searchParams.get('status')||'all';
+  if(!['all','new','working','closed','lost'].includes(status))return json({error:'Invalid filter'},400);
+  const limit=50;
+  const rows=await (status==='all'
+    ?env.LEADS.prepare('SELECT id,received_at,status,source,property,rental,checkin,checkout,guests,contact_type,contact,budget,duration,wishes FROM leads ORDER BY received_at DESC LIMIT ?').bind(limit)
+    :env.LEADS.prepare('SELECT id,received_at,status,source,property,rental,checkin,checkout,guests,contact_type,contact,budget,duration,wishes FROM leads WHERE status=? ORDER BY received_at DESC LIMIT ?').bind(status,limit)).all();
+  const summary=await env.LEADS.prepare("SELECT status,COUNT(*) AS count FROM leads GROUP BY status").all();
+  const sources=await env.LEADS.prepare("SELECT source,COUNT(*) AS count FROM leads GROUP BY source").all();
+  return json({leads:rows.results||[],statuses:summary.results||[],sources:sources.results||[],limit});
+ }
+ if(request.method==='PATCH'&&url.pathname==='/api/admin/leads/status'){
+  if(request.headers.get('origin')!==url.origin||!request.headers.get('content-type')?.startsWith('application/json'))return json({error:'Forbidden'},403);
+  let data;try{data=await readLimited(request);}catch{return json({error:'Bad request'},400);}
+  if(!data||typeof data.id!=='string'||! /^[a-f0-9-]{36}$/.test(data.id)||!['new','working','closed','lost'].includes(data.status))return json({error:'Invalid status'},422);
+  const result=await env.LEADS.prepare('UPDATE leads SET status=? WHERE id=?').bind(data.status,data.id).run();
+  return json({ok:true,updated:result.meta?.changes||0});
+ }
+ return json({error:'Not found'},404);
+}
+
 export default {
  async fetch(request,env,ctx){
   const url=new URL(request.url);
   if(!url.pathname.startsWith('/api/'))return env.ASSETS.fetch(request);
+  if(url.pathname.startsWith('/api/admin/'))return adminApi(request,env,url);
   // No public read/list/export route. Records are available only through the Cloudflare account.
   if(url.pathname!=='/api/leads')return json({error:'Not found'},404);
   if(request.method!=='POST')return json({error:'Method not allowed'},405);
