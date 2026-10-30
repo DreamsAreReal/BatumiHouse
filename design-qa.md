@@ -92,3 +92,5 @@ final result: passed
 - Open menu now replaces the hamburger with a visible close icon and translated accessible label; closes on in-page navigation, bottom navigation, outside click and Escape. Scrollable height is bounded on short screens.
 - Favorites has its own heading, list, empty state, catalog return links and browser-storage explanation. Saved results ignore room, location and budget filters; no misleading rental-section empty states. Removing a saved card retains keyboard focus.
 - Browser QA at 390 px: open/close state and visible X, navigation with menu open, empty → add → saved list → detail with persistent heart → list; API/admin/marketing tests passed. Existing 21 offers and backend were not changed.
+
+- Logo / Home correction: brand icon and text now use a real root-page navigation, resetting the displayed search mode, filters and favorites view on return. The bottom Home action uses the same root URL. Browser check: long-term selected → logo icon → root with daily selected and all 21 original cards; favorites and detail → brand text → root.

@@ -12,7 +12,7 @@ def icon(name):
     return f'<span class="icon i-{name}" aria-hidden="true"></span>'
 
 def brand():
-    return f'<a class="brand" href="/#top" aria-label="Batumi House — главная">{icon("building-skyscraper")}<span>Batumi House<small>НЕДВИЖИМОСТЬ В БАТУМИ</small></span></a>'
+    return f'<a class="brand" href="/" aria-label="Batumi House — главная">{icon("building-skyscraper")}<span>Batumi House<small>НЕДВИЖИМОСТЬ В БАТУМИ</small></span></a>'
 
 def header():
     return f'''<header class="site-header"><div class="wrap nav">{brand()}
@@ -24,13 +24,13 @@ def footer():
     return '''<footer class="site-footer"><div class="wrap footer-inner"><div><strong>Batumi House</strong><p>Подбор недвижимости в Батуми · Алексей</p></div><nav aria-label="Контакты"><a href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener">Telegram ↗</a><a href="/#request">Оставить заявку</a><a href="https://unsplash.com/photos/RCYC9Fa_wb0" target="_blank" rel="noopener">Панорама: Max / Unsplash</a></nav><small>Доступность, условия и стоимость подтверждаем перед бронированием.</small></div></footer>'''
 
 def bottom():
-    return '<nav class="bottom-nav" aria-label="Быстрая навигация">'+''.join(f'<a href="{url}">{icon(ic)}<span>{label}</span></a>' for url,ic,label in [('/#top','home','Главная'),('/#search','search','Поиск'),('/#favorites','heart','Избранное'),('/#request','message-circle','Заявка'),('/#benefits','user','О нас')])+'</nav>'
+    return '<nav class="bottom-nav" aria-label="Быстрая навигация">'+''.join(f'<a href="{url}">{icon(ic)}<span>{label}</span></a>' for url,ic,label in [('/','home','Главная'),('/#search','search','Поиск'),('/#favorites','heart','Избранное'),('/#request','message-circle','Заявка'),('/#benefits','user','О нас')])+'</nav>'
 
 def head(title, path='/', description='Аренда квартир в Батуми: реальные фотографии, цены и условия. Посуточно и надолго. Подбор с Алексеем.'): 
     return f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071D30"><title>{e(title)} — Batumi House</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{BASE+path}"><meta property="og:title" content="{e(title)} — Batumi House"><meta property="og:description" content="{e(description)}"><meta property="og:type" content="website"><meta property="og:url" content="{BASE+path}"><meta property="og:image" content="{BASE}/images/batumi-panorama-v3.webp"><link rel="stylesheet" href="/images/booking-calendar.css?v=20261029-3"><link rel="stylesheet" href="/images/bh3.css?v=3.1"><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"c5c9ac9359364a608262216ee8f4bb48"}}'></script></head>'''
 
 def scripts(lead=False):
-    return ('''<script src="/images/lead-submit.js?v=20261030-2"></script><script src="/images/marketing-attribution.js?v=20261030-1"></script><script src="/images/booking-validation.js?v=20261030-1"></script><script src="/images/lead-form-existing.js?v=3"></script>''' if lead else '')+'''<script src="/images/localization.js?v=3.1"></script><script src="/images/bh3.js?v=3.1"></script></body></html>'''
+    return ('''<script src="/images/lead-submit.js?v=20261030-2"></script><script src="/images/marketing-attribution.js?v=20261030-1"></script><script src="/images/booking-validation.js?v=20261030-1"></script><script src="/images/lead-form-existing.js?v=3"></script>''' if lead else '')+'''<script src="/images/localization.js?v=3.1"></script><script src="/images/bh3.js?v=3.2"></script></body></html>'''
 
 def price(a):
     raw=a['price'];parts=raw.split(' / ',1)
