@@ -3,6 +3,33 @@
   "name": "batumihouse",
   "compatibility_date": "2026-10-19",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "main": "src/worker.mjs",
+  "d1_databases": [
+    {
+      "binding": "LEADS",
+      "database_name": "batumihouse-leads",
+      "database_id": "1febca94-668b-4dc3-88df-0563bb911cdd"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "LEAD_LIMITER",
+      "namespace_id": "10302026",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "0 2 * * *"
+    ]
   }
 }

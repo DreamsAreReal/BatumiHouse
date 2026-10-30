@@ -58,12 +58,13 @@ footer{border-top:1px solid var(--line);padding:20px 0;color:var(--muted);font-s
   <fieldset class="stay-options" id="stayOptions"><legend>Заезд и выезд</legend><p>Заезд с 15:00 · Выезд до 12:00</p><p class="stay-help">По времени Батуми</p><label><input type="checkbox" id="earlyCheckin" name="earlyCheckin"> <span>Нужен ранний заезд</span></label><label><input type="checkbox" id="lateCheckout" name="lateCheckout"> <span>Нужен поздний выезд</span></label><p class="stay-help">Ранний заезд и поздний выезд — по согласованию. Возможность подтвердим отдельно.</p></fieldset>
   <label for="wishes" id="wishesLabel">Пожелания (необязательно)</label><textarea id="wishes" rows="3" placeholder="Например, парковка или детская кроватка"></textarea>
   <div class="estimate"><span id="estimateLabel">Ориентировочная стоимость</span><strong id="estimateValue" aria-live="polite">Выберите даты</strong><span class="muted" id="estimateSmall">Окончательную стоимость подтвердим перед бронированием.</span></div>
-  <button class="btn" type="submit" id="submitButton">Продолжить в Telegram ↗</button>
-  <p class="fine" id="finePrint">Сообщение откроется в Telegram. Отправьте его, чтобы уточнить доступность. Бронирование подтверждается отдельно.</p>
+  <button class="btn" type="submit" id="submitButton">Отправить заявку</button>
+
  </form>
 </section>
 </main>
 <footer><div class="wrap">BATUMI HOME · АЛЕКСЕЙ · <span id="footerText">Подбор квартир в Батуми</span></div></footer>
+<script src="images/lead-submit.js?v=20261030-1"></script>
 <script src="images/marketing-attribution.js?v=20261030-1"></script>
 <script src="images/booking-validation.js?v=20261030-1"></script>
 <script>
@@ -144,14 +145,13 @@ rentalType.addEventListener('change',updateRentalMode);
 updateRentalMode();
 let lang='ru';
 document.addEventListener('batumi:language',event=>{lang=event.detail;updateEstimate();});
-document.getElementById('bookingForm').addEventListener('submit',e=>{
+document.getElementById('bookingForm').addEventListener('submit',async e=>{
  e.preventDefault();if(!bookingValidation.validate())return;const n=nights();
  if(n<1){alert(lang==='ru'?'Дата выезда должна быть позже даты заезда.':lang==='en'?'Check-out must be after check-in.':'გასვლის თარიღი შესვლის თარიღზე გვიან უნდა იყოს.');return;}
  const message=makeRentalRequest({language:lang,rentalType:rentalType.value,title:window.BatumiI18n?.t(property.title)||property.title,checkin:checkin.value,checkout:checkout.value,nights:n,guests:document.getElementById('guests').value,earlyCheckin:document.getElementById('earlyCheckin').checked,lateCheckout:document.getElementById('lateCheckout').checked,contactType:document.getElementById('contactType').value,contact:document.getElementById('contact').value.trim(),wishes:document.getElementById('wishes').value,rate});
  window.BatumiAttribution?.track('booking_form_ready',{property:key,rental:rentalType.value});
  const trackedMessage=message+'\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
- window.BatumiAttribution?.track('telegram_handoff',{property:key,rental:rentalType.value});
- location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(trackedMessage);
+ await BatumiLeads.submit(document.getElementById('bookingForm'),{property:key,rental:rentalType.value,checkin:checkin.value,checkout:checkout.value,guests:Number(document.getElementById('guests').value),contactType:document.getElementById('contactType').value,contact:document.getElementById('contact').value.trim(),budget:'',duration:'',wishes:document.getElementById('wishes').value,earlyCheckin:rentalType.value==='daily'&&document.getElementById('earlyCheckin').checked,lateCheckout:rentalType.value==='daily'&&document.getElementById('lateCheckout').checked},trackedMessage);
 });
 
 document.getElementById('propertyImage').addEventListener('error',()=>{document.getElementById('propertyImage').style.display='none';});

@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import {DatabaseSync} from 'node:sqlite';
+import {readFileSync} from 'node:fs';
+import worker,{validate} from '../src/worker.mjs';
+const db=new DatabaseSync(':memory:');db.exec(readFileSync(new URL('../migrations/0001_leads.sql',import.meta.url),'utf8'));
+const env={ASSETS:{fetch:()=>new Response('asset')},LEAD_LIMITER:{limit:async()=>({success:true})},LEADS:{prepare(sql){return {bind(...values){return {run:async()=>db.prepare(sql).run(...values),first:async()=>db.prepare(sql).get(...values)}},run:async()=>db.prepare(sql).run()};}}};
+const start=new Date(Date.now()+86400000).toISOString().slice(0,10),end=new Date(Date.now()+172800000).toISOString().slice(0,10);
+const data={id:crypto.randomUUID(),property:'alliance',rental:'daily',checkin:start,checkout:end,guests:2,contactType:'telegram',contact:'@testuser',budget:'',duration:'',wishes:"test '); DROP TABLE leads; --",earlyCheckin:true,lateCheckout:false,source:'threads',website:''};
+function request(body=data,options={}){return new Request('https://site.example/api/leads',{method:'POST',headers:{Origin:'https://site.example','Content-Type':'application/json'},body:JSON.stringify(body),...options});}
+assert.ok(validate(data));
+for(const patch of [{contact:''},{contactType:'phone',contact:'123'},{guests:0},{guests:1.5},{checkin:'2020-01-01'},{checkin:'2026-02-30'},{checkout:start},{rental:'monthly'},{property:'unknown'},{wishes:'x'.repeat(2001)},{website:'spam'}])assert.equal(validate({...data,...patch}),null,JSON.stringify(patch).slice(0,70));
+assert.equal((await worker.fetch(new Request('https://site.example/api/leads'),env)).status,405);
+assert.equal((await worker.fetch(request(data,{headers:{Origin:'https://evil.example','Content-Type':'application/json'}}),env)).status,403);
+assert.equal((await worker.fetch(request({...data,guests:0}),env)).status,422);
+assert.equal((await worker.fetch(request({...data,wishes:'x'.repeat(13000)}),env)).status,400);
+let response=await worker.fetch(request(),env);assert.equal(response.status,201);assert.equal((await response.json()).id,data.id);
+assert.equal((await worker.fetch(request(),env)).status,201);assert.equal(db.prepare('SELECT COUNT(*) n FROM leads').get().n,1);
+assert.equal(db.prepare('SELECT wishes FROM leads').get().wishes,data.wishes);
+assert.equal((await worker.fetch(request({...data,guests:3}),env)).status,409);
+assert.equal((await worker.fetch(request(),{...env,LEAD_LIMITER:{limit:async()=>({success:false})}})).status,429);
+assert.equal((await worker.fetch(request(),{...env,LEADS:{prepare(){throw Error('private database detail');}}})).status,503);
+assert.equal((await worker.fetch(new Request('https://site.example/api/leads/'+data.id),env)).status,404);
+assert.equal((await worker.fetch(new Request('https://site.example/'),env)).status,200);
+db.prepare("UPDATE leads SET received_at='2020-01-01T00:00:00.000Z'").run();await worker.scheduled({},env);assert.equal(db.prepare('SELECT COUNT(*) n FROM leads').get().n,0);
+console.log('Lead API: validation, persistence, duplicate protection, SQL safety, access boundaries, limits, retention and failure handling passed');

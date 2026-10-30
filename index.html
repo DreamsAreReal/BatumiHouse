@@ -325,8 +325,8 @@ footer{background:#0d3028}
   <fieldset class="stay-options" id="leadStayOptions"><legend>Заезд и выезд</legend><p>Заезд с 15:00 · Выезд до 12:00</p><p class="stay-help">По времени Батуми</p><label><input type="checkbox" id="leadEarlyCheckin" name="earlyCheckin"> <span>Нужен ранний заезд</span></label><label><input type="checkbox" id="leadLateCheckout" name="lateCheckout"> <span>Нужен поздний выезд</span></label><p class="stay-help">Ранний заезд и поздний выезд — по согласованию. Возможность подтвердим отдельно.</p></fieldset>
    <label for="area">Район или пожелания</label>
    <input id="area" name="area" type="text" placeholder="Например, рядом с морем, 1 спальня">
-   <button class="btn form-submit" type="submit">Подготовить заявку ↗</button>
-   <p class="form-note">Telegram откроется с готовым текстом. Проверьте сообщение и отправьте его самостоятельно.</p>
+   <button class="btn form-submit" type="submit">Отправить заявку</button>
+
   </form>
  </div>
 </section>
@@ -337,6 +337,7 @@ footer{background:#0d3028}
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">BATUMI HOME · АЛЕКСЕЙ</div><div>Подбор квартир в аренду · Батуми, Грузия</div><div>© <span id="year"></span></div></div></footer>
 <a class="telegram-float" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener" aria-label="Написать в Telegram"><span>➤</span> Написать в Telegram</a>
+<script src="images/lead-submit.js?v=20261030-1"></script>
 <script src="images/marketing-attribution.js?v=20261030-1"></script>
 <script src="images/booking-validation.js?v=20261030-1"></script>
 <script>
@@ -344,7 +345,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const filters=document.querySelectorAll('.filter');
 filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('#apartments .card').forEach(card=>{const p=Number(card.dataset.price);card.style.display=(f==='all'||(f==='300-400'&&p>=300&&p<=400)||(f==='400-500'&&p>400&&p<=500)||(f==='500-600'&&p>500&&p<=600)||(f==='600-700'&&p>600&&p<=700)||(f==='700-800'&&p>700&&p<=800)||(f==='800-1000'&&p>800&&p<=1000)||(f==='1000+'&&p>1000))?'':'none';});}));
 const leadForm=document.getElementById('leadForm');
-if(leadForm){const leadRentType=document.getElementById('rentType');const showStayOptions=()=>{document.getElementById('leadStayOptions').hidden=leadRentType.value!=='Посуточная аренда';};leadRentType.addEventListener('change',showStayOptions);showStayOptions();const leadValidation=BatumiBooking.setup({form:leadForm,checkin:document.getElementById('moveDate'),guests:document.getElementById('leadGuests'),contactType:document.getElementById('leadContactType'),contact:document.getElementById('leadContact')});leadForm.addEventListener('submit',function(e){
+if(leadForm){const leadRentType=document.getElementById('rentType');const showStayOptions=()=>{document.getElementById('leadStayOptions').hidden=leadRentType.value!=='Посуточная аренда';};leadRentType.addEventListener('change',showStayOptions);showStayOptions();const leadValidation=BatumiBooking.setup({form:leadForm,checkin:document.getElementById('moveDate'),guests:document.getElementById('leadGuests'),contactType:document.getElementById('leadContactType'),contact:document.getElementById('leadContact')});leadForm.addEventListener('submit',async function(e){
  e.preventDefault();if(!leadValidation.validate())return;
  const i18n=window.BatumiI18n, lang=i18n?.language||'ru', t=text=>i18n?.t(text)||text;
  const val=id=>document.getElementById(id).value.trim();
@@ -357,8 +358,7 @@ if(leadForm){const leadRentType=document.getElementById('rentType');const showSt
  const message=[labels[0],...stay,guestLabel+': '+val('leadGuests'),contactLabel+': '+val('leadContact'),...fields.map((value,index)=>labels[index+1]+': '+(value||labels[6]))].join('\n');
  window.BatumiAttribution?.track('lead_form_ready',{rental:daily?'daily':'long'});
  const trackedMessage=message+'\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
- window.BatumiAttribution?.track('telegram_handoff',{rental:daily?'daily':'long'});
- location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(trackedMessage);
+ await BatumiLeads.submit(leadForm,{property:'general',rental:daily?'daily':'long',checkin:val('moveDate'),checkout:'',guests:Number(val('leadGuests')),contactType:val('leadContactType'),contact:val('leadContact'),budget:val('budget'),duration:val('duration'),wishes:val('area'),earlyCheckin:daily&&document.getElementById('leadEarlyCheckin').checked,lateCheckout:daily&&document.getElementById('leadLateCheckout').checked},trackedMessage);
 });}
 document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forEach(img=>{img.addEventListener('error',()=>{img.style.display='none';});});
 
