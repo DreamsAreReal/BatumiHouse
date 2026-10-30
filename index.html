@@ -276,9 +276,9 @@ footer{background:#0d3028}
     <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок C</h3><div class="location">⌖ Батуми · улица Давида Хахутаишвили, 4 · Orbi City, блок C</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-c&amp;rate=60">Выбрать даты ↗</a>
      <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=orbi-c&amp;rate=60&amp;rental=monthly">Оставить заявку ↗</a></div></div>
    </article>
-   <article class="card daily-card">
-    <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Orbi City D2" loading="lazy"><span class="sample-label" style="background:#edf2f8;color:#38536e">Фото</span></div>
-    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок D2</h3><div class="location">⌖ Батуми · Orbi City, блок D2</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-d2&amp;rate=60">Выбрать даты ↗</a>
+   <article class="card daily-card" id="daily-orbi-d2" data-orbi-gallery="d2">
+    <div class="card-img"><img src="images/IMG_5974.jpeg" alt="Orbi City, блок D2 — фото 1 из 9" loading="lazy"><span class="sample-label" data-orbi-count>1 / 9</span><button type="button" class="orbi-nav orbi-prev" data-orbi-prev aria-label="Предыдущее фото">‹</button><button type="button" class="orbi-nav orbi-next" data-orbi-next aria-label="Следующее фото">›</button></div>
+    <div class="card-body"><div class="daily-price">60 ₾ <small>/ сутки</small></div><h3>Студия Orbi City · блок D2</h3><div class="mini-gallery" aria-label="Фотографии Orbi City, блок D2" style="display:flex;gap:6px;overflow-x:auto;margin:12px 0"><img src="images/IMG_5973.jpeg" alt="Orbi City D2 — двуспальная кровать и выход на балкон" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5971.jpeg" alt="Orbi City D2 — кухонная зона и студия" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5977.jpeg" alt="Orbi City D2 — телевизор, холодильник и кухня" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5978(1).jpeg" alt="Orbi City D2 — интерьер студии" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5965.jpeg" alt="Orbi City D2 — прихожая и вход в студию" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5966.jpeg" alt="Orbi City D2 — санузел с душем и стиральной машиной" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5968.jpeg" alt="Orbi City D2 — душевая кабина" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"><img src="images/IMG_5970.jpeg" alt="Orbi City D2 — раковина, зеркало и стиральная машина" loading="lazy" style="width:86px;height:64px;object-fit:cover;border-radius:8px;flex:0 0 auto"></div><div class="location">⌖ Батуми · Orbi City, блок D2</div><div class="features"><span>▱ Студия</span><span>⌂ Двуспальная кровать</span><span>♨ Душ и стиральная машина</span></div><p class="listing-desc">Студия с видом на море и город. Двуспальная кровать, мини-кухня, холодильник, микроволновая печь и кондиционер. В ванной — душ и стиральная машина.</p><a class="btn small" href="daily-booking.html?property=orbi-d2&amp;rate=60">Выбрать даты ↗</a>
      <div class="monthly-offer"><div class="monthly-offer-heading"><strong>Аренда на месяц</strong><span>Стоимость по запросу</span></div><a class="btn light monthly-request" href="daily-booking.html?property=orbi-d2&amp;rate=60&amp;rental=monthly">Оставить заявку ↗</a></div></div>
    </article>
 
@@ -362,8 +362,7 @@ document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forE
 
 <script>
 (function(){
- const card=document.querySelector('[data-orbi-gallery="d2"]');
- if(!card)return;
+ document.querySelectorAll('[data-orbi-gallery="d2"]').forEach(card=>{
  const img=card.querySelector('.card-img img'),count=card.querySelector('[data-orbi-count]');
  const pictures=[img,...card.querySelectorAll('.mini-gallery img')];
  const photos=pictures.map((picture,n)=>({src:picture.src,alt:'Orbi City, блок D2 — фото '+(n+1)+' из '+pictures.length}));
@@ -376,6 +375,7 @@ document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forE
  }
  card.querySelector('[data-orbi-prev]').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index-1);});
  card.querySelector('[data-orbi-next]').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();show(index+1);});
+ });
 })();
 </script>
 
