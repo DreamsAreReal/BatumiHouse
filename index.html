@@ -336,6 +336,7 @@ footer{background:#0d3028}
 </main>
 <footer><div class="wrap footer-inner"><div class="footer-brand">BATUMI HOME · АЛЕКСЕЙ</div><div>Подбор квартир в аренду · Батуми, Грузия</div><div>© <span id="year"></span></div></div></footer>
 <a class="telegram-float" href="https://t.me/alexeyrieltor97" target="_blank" rel="noopener" aria-label="Написать в Telegram"><span>➤</span> Написать в Telegram</a>
+<script src="images/marketing-attribution.js?v=20261030-1"></script>
 <script src="images/booking-validation.js?v=20261030-1"></script>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
@@ -353,7 +354,10 @@ if(leadForm){const leadRentType=document.getElementById('rentType');const showSt
  const daily=document.getElementById('rentType').value==='Посуточная аренда';
  const stay=daily?[t('Стандартный заезд: с 15:00; выезд: до 12:00.'),...(document.getElementById('leadEarlyCheckin').checked?[t('Запрос: ранний заезд (по согласованию).')]:[]),...(document.getElementById('leadLateCheckout').checked?[t('Запрос: поздний выезд (по согласованию).')]:[])]:[];
  const message=[labels[0],...stay,guestLabel+': '+val('leadGuests'),contactLabel+': '+val('leadContact'),...fields.map((value,index)=>labels[index+1]+': '+(value||labels[6]))].join('\n');
- location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(message);
+ window.BatumiAttribution?.track('lead_form_ready',{rental:daily?'daily':'long'});
+ const trackedMessage=message+'\\nИсточник заявки: '+(window.BatumiAttribution?.getSource()||'direct');
+ window.BatumiAttribution?.track('telegram_handoff',{rental:daily?'daily':'long'});
+ location.href='https://t.me/alexeyrieltor97?text='+encodeURIComponent(trackedMessage);
 });}
 document.querySelectorAll('.card-img img,.hero-photo img,.about-photo img').forEach(img=>{img.addEventListener('error',()=>{img.style.display='none';});});
 
